@@ -3,8 +3,8 @@ import 'package:academic_master/domain/e_learning/subject.dart';
 import 'package:academic_master/domain/e_learning/subject_material.dart';
 import 'package:academic_master/domain/e_learning/value_objects.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:kt_dart/kt.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:kt_dart/kt.dart';
 
 part 'subject_dtos.freezed.dart';
 part 'subject_dtos.g.dart';

@@ -1,5 +1,7 @@
+import 'package:academic_master/presentation/utils/page_transition.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Apptheme {
   final BuildContext context;
@@ -10,24 +12,38 @@ class Apptheme {
 
   static const secondaryColor = Color(0xffD8EAF2);
   static const assentColor = Color(0xff253157);
+  static const black = Colors.black;
 
-  TextStyle boldText = const TextStyle(
+  static const lightColor = Color.fromRGBO(
+    142,
+    142,
+    142,
+    0.5,
+  );
+
+  TextStyle boldText = GoogleFonts.poppins(
     color: assentColor,
-    fontWeight: FontWeight.w900,
-    fontFamily: "Circular_Bold",
+    fontWeight: FontWeight.w500,
   );
   TextStyle thinText = const TextStyle(
     color: assentColor,
     fontWeight: FontWeight.w100,
     //fontFamily: "Circular_Bold",
   );
-  TextStyle normalText = const TextStyle(
+  TextStyle normalText = GoogleFonts.poppins(
+    color: assentColor,
+    fontWeight: FontWeight.w300,
+  );
+  TextStyle lightboldText = GoogleFonts.poppins(
     color: assentColor,
     fontWeight: FontWeight.w400,
-    fontFamily: "Circular_Bold",
   );
 
   static ThemeData theme = ThemeData(
+    pageTransitionsTheme: const PageTransitionsTheme(builders: {
+      TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+      TargetPlatform.android: RotationFadeTransitionBuilder(),
+    }),
     primaryTextTheme: const TextTheme(
       headline1: TextStyle(
         fontSize: 10,

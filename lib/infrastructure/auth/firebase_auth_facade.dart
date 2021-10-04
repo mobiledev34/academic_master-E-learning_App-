@@ -3,17 +3,15 @@ import 'package:academic_master/domain/auth/i_auth_facade.dart';
 import 'package:academic_master/domain/auth/user.dart';
 import 'package:academic_master/domain/auth/value_objects.dart';
 import 'package:academic_master/domain/core/value_objects.dart';
+import 'package:academic_master/infrastructure/core/firestore_helpers.dart';
 import 'package:academic_master/infrastructure/core/user_dtos.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' hide User;
-
-import 'package:academic_master/infrastructure/core/firestore_helpers.dart';
 import 'package:flutter/foundation.dart';
-
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+
 import "./firebase_user_mapper.dart";
 
 @LazySingleton(as: IAuthFacade)

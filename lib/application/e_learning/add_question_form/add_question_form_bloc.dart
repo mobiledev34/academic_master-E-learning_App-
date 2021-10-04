@@ -1,14 +1,17 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:academic_master/domain/auth/user.dart';
 import 'package:academic_master/domain/core/firebase_failures.dart';
+import 'package:academic_master/domain/core/value_objects.dart';
 
 import 'package:academic_master/domain/e_learning/i_e_learning_repository.dart';
 import 'package:academic_master/domain/e_learning/question.dart';
 import 'package:academic_master/domain/e_learning/value_objects.dart';
+import 'package:academic_master/infrastructure/core/user_dtos.dart';
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
-import 'package:file_picker/file_picker.dart';
+
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';

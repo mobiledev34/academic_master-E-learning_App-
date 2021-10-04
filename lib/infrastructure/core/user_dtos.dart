@@ -1,8 +1,8 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:academic_master/domain/auth/user.dart';
 import 'package:academic_master/domain/auth/value_objects.dart';
 import 'package:academic_master/domain/core/value_objects.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'user_dtos.freezed.dart';
 part 'user_dtos.g.dart';

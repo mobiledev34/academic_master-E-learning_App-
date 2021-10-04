@@ -1,10 +1,8 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-
 import 'package:academic_master/domain/core/value_objects.dart';
 import 'package:academic_master/domain/e_learning/question.dart';
-
 import 'package:academic_master/domain/e_learning/value_objects.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'question_dtos.freezed.dart';
 part 'question_dtos.g.dart';
@@ -17,7 +15,6 @@ abstract class QuestionDto implements _$QuestionDto {
   const factory QuestionDto({
     required String questionId,
     required String userId,
-    required String name,
     required String questionDescription,
     required String mediaUrl,
     required DateTime askAt,
@@ -27,7 +24,6 @@ abstract class QuestionDto implements _$QuestionDto {
     return QuestionDto(
       questionId: question.questionId.getorCrash(),
       questionDescription: question.questionDescription.getorCrash(),
-      name: question.name.getorCrash(),
       userId: question.userId.getorCrash(),
       mediaUrl: question.mediaUrl.getorCrash(),
       askAt: DateTime.now(),
@@ -38,7 +34,6 @@ abstract class QuestionDto implements _$QuestionDto {
     return Question(
         questionDescription: QuestionDescription(questionDescription),
         userId: UniqueId.fromUniqueString(userId),
-        name: Name(name),
         questionId: UniqueId.fromUniqueString(questionId),
         mediaUrl: MediaUrl(mediaUrl),
         askAt: Time(askAt.toString()));

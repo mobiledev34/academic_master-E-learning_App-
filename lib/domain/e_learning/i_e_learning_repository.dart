@@ -10,10 +10,10 @@ import 'package:kt_dart/collection.dart';
 
 abstract class IElearningRepository {
   Stream<Either<FirebaseFailure, KtList<Subject>>> watchAllSubjects();
-  Stream<Either<FirebaseFailure, List<User>>> watchAllUsers();
+  Stream<Either<FirebaseFailure, List<User>>> watchAllUsers(String uId);
   Stream<Either<FirebaseFailure, KtList<Question>>> watchAllQuestion();
   Future<Either<FirebaseFailure, Unit>> createQuestion(
-    File questionImage,
+    File? questionImage,
     Question question,
   );
   Future<Either<FirebaseFailure, Unit>> updateQuestion(Question question);

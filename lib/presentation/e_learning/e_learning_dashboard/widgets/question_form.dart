@@ -3,20 +3,16 @@ import 'dart:io';
 import 'package:academic_master/application/e_learning/add_question_form/add_question_form_bloc.dart';
 
 import 'package:academic_master/domain/e_learning/question.dart';
+import 'package:academic_master/presentation/core/custum_textfield.dart';
 
 import 'package:academic_master/presentation/routes/router.gr.dart';
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:auto_route/auto_route.dart';
-
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/cupertino.dart';
-
 import 'package:flutter/material.dart';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-
-import 'package:academic_master/presentation/core/custum_textfield.dart';
 
 import '../../../../injection.dart';
 
@@ -32,11 +28,6 @@ class QuestionFormPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => getIt<AddQuestionFormBloc>(),
-      // ..add(
-      //   AddQuestionFormEvent.initialized(
-      //     dartz.optionOf(editedQuestion),
-      //   ),
-      // ),
       child: BlocConsumer<AddQuestionFormBloc, AddQuestionFormState>(
         listenWhen: (p, c) =>
             p.saveFailureOrSuccessOption != c.saveFailureOrSuccessOption,
@@ -169,7 +160,7 @@ class _QuestionFormPageScaffoldState extends State<QuestionFormPageScaffold> {
                         height: 300,
                         child: Center(
                             child: questionImage == null
-                                ? Text('Pick Question Image')
+                                ? const Text('Pick Question Image')
                                 : Image(
                                     image: FileImage(questionImage!),
                                   )),
@@ -182,10 +173,9 @@ class _QuestionFormPageScaffoldState extends State<QuestionFormPageScaffold> {
                       context
                           .read<AddQuestionFormBloc>()
                           .add(AddQuestionFormEvent.addQuestionPressed(
-                            questionImage!,
+                            questionImage,
                             state.question,
                           ));
-                      // FocusScope.of(context).unfocus();
                     },
                     //colorBrightness: Brightness.dark,
                     child: const Text('Raise Your Doubt'),

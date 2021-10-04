@@ -1,14 +1,12 @@
 import 'package:academic_master/application/auth/auth_bloc.dart';
 import 'package:academic_master/application/e_learning/question_watcher/question_watcher_bloc.dart';
-
 import 'package:academic_master/application/e_learning/subject_watcher/subject_watcher_bloc.dart';
 import 'package:academic_master/application/e_learning/users_watcher/users_watcher_bloc.dart';
-
 import 'package:academic_master/injection.dart';
-
 import 'package:academic_master/presentation/e_learning/e_learning_dashboard/dashboard.dart';
 import 'package:academic_master/presentation/e_learning/subjects/subjects.dart';
 import 'package:academic_master/presentation/routes/router.gr.dart';
+import 'package:academic_master/presentation/theme/theme.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -16,14 +14,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:line_icons/line_icon.dart';
-
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
-
-import 'package:academic_master/presentation/theme/theme.dart';
 
 // ignore: must_be_immutable
 class Homepage extends HookWidget {
-  PersistentTabController _controller =
+  final PersistentTabController _controller =
       PersistentTabController(initialIndex: 0);
 
   @override
@@ -43,9 +38,9 @@ class Homepage extends HookWidget {
             ..add(const SubjectWatcherEvent.watchAllSubject()),
         ),
         BlocProvider<UsersWatcherBloc>(
-          create: (context) => getIt<UsersWatcherBloc>()
-            ..add(const UsersWatcherEvent.watchAllUsers()),
-        ),
+            create: (context) => getIt<UsersWatcherBloc>()
+            // ..add(const UsersWatcherEvent.watchAllUsers("")),
+            ),
         BlocProvider<QuestionWatcherBloc>(
           create: (context) => getIt<QuestionWatcherBloc>()
             ..add(const QuestionWatcherEvent.watchAllQuestions()),
