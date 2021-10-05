@@ -21,14 +21,17 @@ class UsersWatcherBloc extends Bloc<UsersWatcherEvent, UsersWatcherState> {
     UsersWatcherEvent event,
   ) async* {
     yield* event.map(
-      watchAllUsers: (e) async* {
+      watchCurrentUser: (e) async* {
         print("@@@@@this is user id ${e.uId}"); //run this and let me see
         yield const UsersWatcherState.loadInProgress();
-        yield* _iElearningRepository.watchAllUsers(e.uId.toString()).map(
+        yield* _iElearningRepository
+            .watchCurrentUser(uId: e.uId.toString())
+            .map(
               (failureOrUsers) => failureOrUsers.fold(
                 (f) => UsersWatcherState.loadFailure(f),
                 (users) {
                   if (users.isEmpty) {
+                    print("therer is no user");
                     return const UsersWatcherState.empty();
                   }
 

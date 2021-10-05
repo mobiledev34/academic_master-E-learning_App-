@@ -1,24 +1,16 @@
-import 'package:academic_master/presentation/core/appbar.dart';
-
 import 'package:academic_master/application/e_learning/subject_watcher/subject_watcher_bloc.dart';
-
 import 'package:academic_master/domain/e_learning/subject_material.dart';
-
+import 'package:academic_master/presentation/core/appbar.dart';
 import 'package:academic_master/presentation/core/critical_failure.dart';
-
 import 'package:academic_master/presentation/core/loading.dart';
-
 import 'package:academic_master/presentation/theme/theme.dart';
-
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/foundation.dart';
-
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-import 'package:flutter/widgets.dart';
 
 import 'widgets/subject_tile.dart';
 
@@ -139,14 +131,14 @@ class FrontWidget extends StatelessWidget {
               padding: EdgeInsets.only(top: 1.sw > 450 ? 20.h : 30.h),
               child: SvgPicture.network(
                 studyMaterials.subjectIcon.getorCrash(),
-                height: 1.sw > 450 ? 60.w : 70.h,
+                height: 1.sw > 450 ? 60.w : 60.h,
                 width: 1.sw > 450 ? 60.w : 70.h,
               ),
             ),
           ),
           Flexible(
             child: Padding(
-              padding: EdgeInsets.only(top: 1.sw > 450 ? 15.h : 10.h),
+              padding: EdgeInsets.only(top: 1.sw > 450 ? 15.h : 3.h),
               child: Text(
                 studyMaterials.subjectName.getorCrash(),
                 style: Apptheme(context).boldText.copyWith(

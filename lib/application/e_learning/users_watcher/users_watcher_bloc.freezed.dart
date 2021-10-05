@@ -16,9 +16,9 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$UsersWatcherEventTearOff {
   const _$UsersWatcherEventTearOff();
 
-  _Started watchAllUsers(String uId) {
+  _Started watchCurrentUser({String? uId}) {
     return _Started(
-      uId,
+      uId: uId,
     );
   }
 }
@@ -28,27 +28,27 @@ const $UsersWatcherEvent = _$UsersWatcherEventTearOff();
 
 /// @nodoc
 mixin _$UsersWatcherEvent {
-  String get uId => throw _privateConstructorUsedError;
+  String? get uId => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String uId) watchAllUsers,
+    required TResult Function(String? uId) watchCurrentUser,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String uId)? watchAllUsers,
+    TResult Function(String? uId)? watchCurrentUser,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) watchAllUsers,
+    required TResult Function(_Started value) watchCurrentUser,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? watchAllUsers,
+    TResult Function(_Started value)? watchCurrentUser,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -63,7 +63,7 @@ abstract class $UsersWatcherEventCopyWith<$Res> {
   factory $UsersWatcherEventCopyWith(
           UsersWatcherEvent value, $Res Function(UsersWatcherEvent) then) =
       _$UsersWatcherEventCopyWithImpl<$Res>;
-  $Res call({String uId});
+  $Res call({String? uId});
 }
 
 /// @nodoc
@@ -83,7 +83,7 @@ class _$UsersWatcherEventCopyWithImpl<$Res>
       uId: uId == freezed
           ? _value.uId
           : uId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -94,7 +94,7 @@ abstract class _$StartedCopyWith<$Res>
   factory _$StartedCopyWith(_Started value, $Res Function(_Started) then) =
       __$StartedCopyWithImpl<$Res>;
   @override
-  $Res call({String uId});
+  $Res call({String? uId});
 }
 
 /// @nodoc
@@ -111,24 +111,24 @@ class __$StartedCopyWithImpl<$Res> extends _$UsersWatcherEventCopyWithImpl<$Res>
     Object? uId = freezed,
   }) {
     return _then(_Started(
-      uId == freezed
+      uId: uId == freezed
           ? _value.uId
           : uId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
 
 /// @nodoc
 class _$_Started implements _Started {
-  const _$_Started(this.uId);
+  const _$_Started({this.uId});
 
   @override
-  final String uId;
+  final String? uId;
 
   @override
   String toString() {
-    return 'UsersWatcherEvent.watchAllUsers(uId: $uId)';
+    return 'UsersWatcherEvent.watchCurrentUser(uId: $uId)';
   }
 
   @override
@@ -151,19 +151,19 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String uId) watchAllUsers,
+    required TResult Function(String? uId) watchCurrentUser,
   }) {
-    return watchAllUsers(uId);
+    return watchCurrentUser(uId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String uId)? watchAllUsers,
+    TResult Function(String? uId)? watchCurrentUser,
     required TResult orElse(),
   }) {
-    if (watchAllUsers != null) {
-      return watchAllUsers(uId);
+    if (watchCurrentUser != null) {
+      return watchCurrentUser(uId);
     }
     return orElse();
   }
@@ -171,29 +171,29 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) watchAllUsers,
+    required TResult Function(_Started value) watchCurrentUser,
   }) {
-    return watchAllUsers(this);
+    return watchCurrentUser(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? watchAllUsers,
+    TResult Function(_Started value)? watchCurrentUser,
     required TResult orElse(),
   }) {
-    if (watchAllUsers != null) {
-      return watchAllUsers(this);
+    if (watchCurrentUser != null) {
+      return watchCurrentUser(this);
     }
     return orElse();
   }
 }
 
 abstract class _Started implements UsersWatcherEvent {
-  const factory _Started(String uId) = _$_Started;
+  const factory _Started({String? uId}) = _$_Started;
 
   @override
-  String get uId => throw _privateConstructorUsedError;
+  String? get uId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$StartedCopyWith<_Started> get copyWith =>

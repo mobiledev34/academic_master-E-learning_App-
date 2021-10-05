@@ -16,6 +16,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:line_icons/line_icon.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
+import 'profile/profile_page.dart';
+
 // ignore: must_be_immutable
 class Homepage extends HookWidget {
   final PersistentTabController _controller =
@@ -39,7 +41,7 @@ class Homepage extends HookWidget {
         ),
         BlocProvider<UsersWatcherBloc>(
             create: (context) => getIt<UsersWatcherBloc>()
-            // ..add(const UsersWatcherEvent.watchAllUsers("")),
+            // ..add(const UsersWatcherEvent.watchCurrentUser("")),
             ),
         BlocProvider<QuestionWatcherBloc>(
           create: (context) => getIt<QuestionWatcherBloc>()
@@ -65,7 +67,7 @@ class Homepage extends HookWidget {
             Dashboard(),
             Subjects(),
             Text("3"),
-            Text("4"),
+            ProfilePage(),
           ],
           items: _navBarsItems(),
 

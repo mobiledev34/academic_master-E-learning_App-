@@ -28,16 +28,15 @@ class ElearningRepository implements IElearningRepository {
   ElearningRepository(this._firestore, this._firebaseAuth);
 
   @override
-  Stream<Either<FirebaseFailure, List<loacal.User>>> watchAllUsers(
-      String uId) async* {
+  Stream<Either<FirebaseFailure, List<loacal.User>>> watchCurrentUser(
+      {String? uId}) async* {
     final userDoc = await _firestore.usersCollection();
     debugPrint("this is my userId $uId");
+    debugPrint("this is my authuserId ${_firebaseAuth.currentUser!.uid}");
+
     yield* userDoc
-        .where('id', isEqualTo: uId
-
-            //  _firebaseAuth.currentUser!.uid
-
-            )
+        .where('id',
+            isEqualTo: uId != "null" ? uId : _firebaseAuth.currentUser!.uid)
         .snapshots()
         .map(
           (snapshot) => right<FirebaseFailure, List<loacal.User>>(
