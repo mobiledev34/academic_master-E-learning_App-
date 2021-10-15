@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:academic_master/domain/core/firebase_failures.dart';
 import 'package:academic_master/domain/e_learning/i_e_learning_repository.dart';
 import 'package:academic_master/domain/e_learning/question.dart';
+// ignore: depend_on_referenced_packages
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';

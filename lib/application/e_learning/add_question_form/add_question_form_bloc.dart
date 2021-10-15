@@ -1,14 +1,12 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:academic_master/domain/auth/user.dart';
 import 'package:academic_master/domain/core/firebase_failures.dart';
-import 'package:academic_master/domain/core/value_objects.dart';
 
 import 'package:academic_master/domain/e_learning/i_e_learning_repository.dart';
 import 'package:academic_master/domain/e_learning/question.dart';
 import 'package:academic_master/domain/e_learning/value_objects.dart';
-import 'package:academic_master/infrastructure/core/user_dtos.dart';
+// ignore: depend_on_referenced_packages
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 

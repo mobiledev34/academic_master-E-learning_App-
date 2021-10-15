@@ -53,7 +53,7 @@ abstract class UserDto implements _$UserDto {
       _$UserDtoFromJson(json);
 
   factory UserDto.fromFirestore(DocumentSnapshot doc) {
-    return UserDto.fromJson(doc.data()!).copyWith(
+    return UserDto.fromJson(doc.data()! as Map<String, dynamic>).copyWith(
       id: doc.id,
     );
   }

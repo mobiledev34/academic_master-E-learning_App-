@@ -38,4 +38,20 @@ extension FirestoreX on FirebaseFirestore {
         .doc("questions")
         .collection("questions");
   }
+
+  Future<CollectionReference> commentCollection(
+    User user,
+    String questionId,
+  ) async {
+    return FirebaseFirestore.instance
+        .collection('courses')
+        .doc(user.course.getorCrash())
+        .collection("branch")
+        .doc(user.branch.getorCrash())
+        .collection(user.year.getorCrash())
+        .doc("questions")
+        .collection("questions")
+        .doc(questionId)
+        .collection("comment");
+  }
 }

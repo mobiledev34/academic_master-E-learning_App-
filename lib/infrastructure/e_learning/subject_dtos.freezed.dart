@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'subject_dtos.dart';
 
@@ -31,7 +32,7 @@ class _$SubjectDtoTearOff {
     );
   }
 
-  SubjectDto fromJson(Map<String, Object> json) {
+  SubjectDto fromJson(Map<String, Object?> json) {
     return SubjectDto.fromJson(json);
   }
 }
@@ -140,9 +141,8 @@ class __$SubjectDtoCopyWithImpl<$Res> extends _$SubjectDtoCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_SubjectDto extends _SubjectDto {
   const _$_SubjectDto(
       {@JsonKey(ignore: true) this.id = "studyMaterial",
@@ -151,7 +151,7 @@ class _$_SubjectDto extends _SubjectDto {
       : super._();
 
   factory _$_SubjectDto.fromJson(Map<String, dynamic> json) =>
-      _$_$_SubjectDtoFromJson(json);
+      _$$_SubjectDtoFromJson(json);
 
   @override
   @JsonKey(ignore: true)
@@ -169,23 +169,18 @@ class _$_SubjectDto extends _SubjectDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SubjectDto &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
+        (other.runtimeType == runtimeType &&
+            other is _SubjectDto &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.subjectIcon, subjectIcon) ||
-                const DeepCollectionEquality()
-                    .equals(other.subjectIcon, subjectIcon)) &&
-            (identical(other.studyMaterial, studyMaterial) ||
-                const DeepCollectionEquality()
-                    .equals(other.studyMaterial, studyMaterial)));
+                other.subjectIcon == subjectIcon) &&
+            const DeepCollectionEquality()
+                .equals(other.studyMaterial, studyMaterial));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(subjectIcon) ^
-      const DeepCollectionEquality().hash(studyMaterial);
+  int get hashCode => Object.hash(runtimeType, id, subjectIcon,
+      const DeepCollectionEquality().hash(studyMaterial));
 
   @JsonKey(ignore: true)
   @override
@@ -194,7 +189,7 @@ class _$_SubjectDto extends _SubjectDto {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_SubjectDtoToJson(this);
+    return _$$_SubjectDtoToJson(this);
   }
 }
 
@@ -210,12 +205,11 @@ abstract class _SubjectDto extends SubjectDto {
 
   @override
   @JsonKey(ignore: true)
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get subjectIcon => throw _privateConstructorUsedError;
+  String get subjectIcon;
   @override
-  List<SubjectMaterialDto> get studyMaterial =>
-      throw _privateConstructorUsedError;
+  List<SubjectMaterialDto> get studyMaterial;
   @override
   @JsonKey(ignore: true)
   _$SubjectDtoCopyWith<_SubjectDto> get copyWith =>
@@ -249,7 +243,7 @@ class _$SubjectMaterialDtoTearOff {
     );
   }
 
-  SubjectMaterialDto fromJson(Map<String, Object> json) {
+  SubjectMaterialDto fromJson(Map<String, Object?> json) {
     return SubjectMaterialDto.fromJson(json);
   }
 }
@@ -411,9 +405,8 @@ class __$SubjectMaterialDtoCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_SubjectMaterialDto extends _SubjectMaterialDto {
   const _$_SubjectMaterialDto(
       {required this.id,
@@ -426,7 +419,7 @@ class _$_SubjectMaterialDto extends _SubjectMaterialDto {
       : super._();
 
   factory _$_SubjectMaterialDto.fromJson(Map<String, dynamic> json) =>
-      _$_$_SubjectMaterialDtoFromJson(json);
+      _$$_SubjectMaterialDtoFromJson(json);
 
   @override
   final String id;
@@ -451,39 +444,26 @@ class _$_SubjectMaterialDto extends _SubjectMaterialDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SubjectMaterialDto &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
+        (other.runtimeType == runtimeType &&
+            other is _SubjectMaterialDto &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.subjectName, subjectName) ||
-                const DeepCollectionEquality()
-                    .equals(other.subjectName, subjectName)) &&
+                other.subjectName == subjectName) &&
             (identical(other.subjectNote, subjectNote) ||
-                const DeepCollectionEquality()
-                    .equals(other.subjectNote, subjectNote)) &&
+                other.subjectNote == subjectNote) &&
             (identical(other.subjectSyllabus, subjectSyllabus) ||
-                const DeepCollectionEquality()
-                    .equals(other.subjectSyllabus, subjectSyllabus)) &&
+                other.subjectSyllabus == subjectSyllabus) &&
             (identical(other.subjectIcon, subjectIcon) ||
-                const DeepCollectionEquality()
-                    .equals(other.subjectIcon, subjectIcon)) &&
+                other.subjectIcon == subjectIcon) &&
             (identical(other.subjectPaper, subjectPaper) ||
-                const DeepCollectionEquality()
-                    .equals(other.subjectPaper, subjectPaper)) &&
+                other.subjectPaper == subjectPaper) &&
             (identical(other.subjectColor, subjectColor) ||
-                const DeepCollectionEquality()
-                    .equals(other.subjectColor, subjectColor)));
+                other.subjectColor == subjectColor));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(subjectName) ^
-      const DeepCollectionEquality().hash(subjectNote) ^
-      const DeepCollectionEquality().hash(subjectSyllabus) ^
-      const DeepCollectionEquality().hash(subjectIcon) ^
-      const DeepCollectionEquality().hash(subjectPaper) ^
-      const DeepCollectionEquality().hash(subjectColor);
+  int get hashCode => Object.hash(runtimeType, id, subjectName, subjectNote,
+      subjectSyllabus, subjectIcon, subjectPaper, subjectColor);
 
   @JsonKey(ignore: true)
   @override
@@ -492,7 +472,7 @@ class _$_SubjectMaterialDto extends _SubjectMaterialDto {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_SubjectMaterialDtoToJson(this);
+    return _$$_SubjectMaterialDtoToJson(this);
   }
 }
 
@@ -511,19 +491,19 @@ abstract class _SubjectMaterialDto extends SubjectMaterialDto {
       _$_SubjectMaterialDto.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get subjectName => throw _privateConstructorUsedError;
+  String get subjectName;
   @override
-  String get subjectNote => throw _privateConstructorUsedError;
+  String get subjectNote;
   @override
-  String get subjectSyllabus => throw _privateConstructorUsedError;
+  String get subjectSyllabus;
   @override
-  String get subjectIcon => throw _privateConstructorUsedError;
+  String get subjectIcon;
   @override
-  String get subjectPaper => throw _privateConstructorUsedError;
+  String get subjectPaper;
   @override
-  String get subjectColor => throw _privateConstructorUsedError;
+  String get subjectColor;
   @override
   @JsonKey(ignore: true)
   _$SubjectMaterialDtoCopyWith<_SubjectMaterialDto> get copyWith =>

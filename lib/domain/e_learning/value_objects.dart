@@ -145,3 +145,16 @@ class QuestionDescription extends ValueObject<String> {
 
   const QuestionDescription._(this.value);
 }
+
+class CommentDescription extends ValueObject<String> {
+  @override
+  final Either<ValueFailure<String>, String> value;
+  static const maxLength = 3000;
+  factory CommentDescription(String input) {
+    return CommentDescription._(
+      validateMaxStringLength(input, maxLength),
+    );
+  }
+
+  const CommentDescription._(this.value);
+}

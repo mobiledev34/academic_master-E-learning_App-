@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'forgot_password_bloc.dart';
 
@@ -39,6 +40,12 @@ mixin _$ForgotPasswordEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function()? sendPasswordResetEmailPressed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String emailStr)? emailChanged,
     TResult Function()? sendPasswordResetEmailPressed,
@@ -49,6 +56,13 @@ mixin _$ForgotPasswordEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(SendPasswordResetEmailPressed value)
+        sendPasswordResetEmailPressed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(SendPasswordResetEmailPressed value)?
         sendPasswordResetEmailPressed,
   }) =>
       throw _privateConstructorUsedError;
@@ -112,6 +126,7 @@ class _$EmailChangedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$EmailChanged implements EmailChanged {
   const _$EmailChanged(this.emailStr);
 
@@ -126,15 +141,14 @@ class _$EmailChanged implements EmailChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is EmailChanged &&
+        (other.runtimeType == runtimeType &&
+            other is EmailChanged &&
             (identical(other.emailStr, emailStr) ||
-                const DeepCollectionEquality()
-                    .equals(other.emailStr, emailStr)));
+                other.emailStr == emailStr));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(emailStr);
+  int get hashCode => Object.hash(runtimeType, emailStr);
 
   @JsonKey(ignore: true)
   @override
@@ -148,6 +162,15 @@ class _$EmailChanged implements EmailChanged {
     required TResult Function() sendPasswordResetEmailPressed,
   }) {
     return emailChanged(emailStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function()? sendPasswordResetEmailPressed,
+  }) {
+    return emailChanged?.call(emailStr);
   }
 
   @override
@@ -175,6 +198,16 @@ class _$EmailChanged implements EmailChanged {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(SendPasswordResetEmailPressed value)?
+        sendPasswordResetEmailPressed,
+  }) {
+    return emailChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(SendPasswordResetEmailPressed value)?
@@ -191,7 +224,7 @@ class _$EmailChanged implements EmailChanged {
 abstract class EmailChanged implements ForgotPasswordEvent {
   const factory EmailChanged(String emailStr) = _$EmailChanged;
 
-  String get emailStr => throw _privateConstructorUsedError;
+  String get emailStr;
   @JsonKey(ignore: true)
   $EmailChangedCopyWith<EmailChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -220,6 +253,7 @@ class _$SendPasswordResetEmailPressedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$SendPasswordResetEmailPressed implements SendPasswordResetEmailPressed {
   const _$SendPasswordResetEmailPressed();
 
@@ -230,7 +264,9 @@ class _$SendPasswordResetEmailPressed implements SendPasswordResetEmailPressed {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SendPasswordResetEmailPressed);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SendPasswordResetEmailPressed);
   }
 
   @override
@@ -243,6 +279,15 @@ class _$SendPasswordResetEmailPressed implements SendPasswordResetEmailPressed {
     required TResult Function() sendPasswordResetEmailPressed,
   }) {
     return sendPasswordResetEmailPressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function()? sendPasswordResetEmailPressed,
+  }) {
+    return sendPasswordResetEmailPressed?.call();
   }
 
   @override
@@ -266,6 +311,16 @@ class _$SendPasswordResetEmailPressed implements SendPasswordResetEmailPressed {
         sendPasswordResetEmailPressed,
   }) {
     return sendPasswordResetEmailPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(SendPasswordResetEmailPressed value)?
+        sendPasswordResetEmailPressed,
+  }) {
+    return sendPasswordResetEmailPressed?.call(this);
   }
 
   @override
@@ -424,6 +479,7 @@ class __$ForgotPasswordStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_ForgotPasswordState implements _ForgotPasswordState {
   const _$_ForgotPasswordState(
       {required this.emailAddress,
@@ -448,27 +504,20 @@ class _$_ForgotPasswordState implements _ForgotPasswordState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ForgotPasswordState &&
+        (other.runtimeType == runtimeType &&
+            other is _ForgotPasswordState &&
             (identical(other.emailAddress, emailAddress) ||
-                const DeepCollectionEquality()
-                    .equals(other.emailAddress, emailAddress)) &&
+                other.emailAddress == emailAddress) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
-            (identical(other.isSent, isSent) ||
-                const DeepCollectionEquality().equals(other.isSent, isSent)) &&
+                other.showErrorMessages == showErrorMessages) &&
+            (identical(other.isSent, isSent) || other.isSent == isSent) &&
             (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSubmitting, isSubmitting)));
+                other.isSubmitting == isSubmitting));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(emailAddress) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(isSent) ^
-      const DeepCollectionEquality().hash(isSubmitting);
+  int get hashCode => Object.hash(
+      runtimeType, emailAddress, showErrorMessages, isSent, isSubmitting);
 
   @JsonKey(ignore: true)
   @override
@@ -485,13 +534,13 @@ abstract class _ForgotPasswordState implements ForgotPasswordState {
       required bool isSubmitting}) = _$_ForgotPasswordState;
 
   @override
-  EmailAddress get emailAddress => throw _privateConstructorUsedError;
+  EmailAddress get emailAddress;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSent => throw _privateConstructorUsedError;
+  bool get isSent;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
   @JsonKey(ignore: true)
   _$ForgotPasswordStateCopyWith<_ForgotPasswordState> get copyWith =>

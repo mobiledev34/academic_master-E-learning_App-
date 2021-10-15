@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'subject.dart';
 
@@ -122,6 +123,7 @@ class __$SubjectCopyWithImpl<$Res> extends _$SubjectCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Subject extends _Subject {
   const _$_Subject(
       {required this.id,
@@ -144,23 +146,17 @@ class _$_Subject extends _Subject {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Subject &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
+        (other.runtimeType == runtimeType &&
+            other is _Subject &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.subjectIcon, subjectIcon) ||
-                const DeepCollectionEquality()
-                    .equals(other.subjectIcon, subjectIcon)) &&
+                other.subjectIcon == subjectIcon) &&
             (identical(other.studyMaterial, studyMaterial) ||
-                const DeepCollectionEquality()
-                    .equals(other.studyMaterial, studyMaterial)));
+                other.studyMaterial == studyMaterial));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(subjectIcon) ^
-      const DeepCollectionEquality().hash(studyMaterial);
+  int get hashCode => Object.hash(runtimeType, id, subjectIcon, studyMaterial);
 
   @JsonKey(ignore: true)
   @override
@@ -176,11 +172,11 @@ abstract class _Subject extends Subject {
   const _Subject._() : super._();
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  SubjectIcon get subjectIcon => throw _privateConstructorUsedError;
+  SubjectIcon get subjectIcon;
   @override
-  List3<StudyMaterial> get studyMaterial => throw _privateConstructorUsedError;
+  List3<StudyMaterial> get studyMaterial;
   @override
   @JsonKey(ignore: true)
   _$SubjectCopyWith<_Subject> get copyWith =>

@@ -142,7 +142,7 @@ class FrontWidget extends StatelessWidget {
               child: Text(
                 studyMaterials.subjectName.getorCrash(),
                 style: Apptheme(context).boldText.copyWith(
-                      fontSize: 20.h,
+                      fontSize: 18.h,
                     ),
               ),
             ),

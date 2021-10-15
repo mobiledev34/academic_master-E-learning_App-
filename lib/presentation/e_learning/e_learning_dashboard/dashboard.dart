@@ -20,8 +20,8 @@ class Dashboard extends HookWidget {
         showShadow: true,
         angle: 0.0,
         backgroundColor: Colors.grey[300]!,
-        slideWidth: MediaQuery.of(context).size.width *
-            (ZoomDrawer.isRTL() ? .45 : 0.25),
+        // slideWidth: MediaQuery.of(context).size.width *
+        //     (ZoomDrawer.isRTL() ? .45 : 0.25),
         openCurve: Curves.fastOutSlowIn,
         closeCurve: Curves.bounceIn,
       ),

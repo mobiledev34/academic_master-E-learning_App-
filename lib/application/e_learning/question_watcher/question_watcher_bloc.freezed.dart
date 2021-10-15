@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'question_watcher_bloc.dart';
 
@@ -32,6 +33,11 @@ mixin _$QuestionWatcherEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? watchAllQuestions,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? watchAllQuestions,
     required TResult orElse(),
@@ -40,6 +46,11 @@ mixin _$QuestionWatcherEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_WatchAllQuestions value) watchAllQuestions,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_WatchAllQuestions value)? watchAllQuestions,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -87,6 +98,7 @@ class __$WatchAllQuestionsCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_WatchAllQuestions implements _WatchAllQuestions {
   const _$_WatchAllQuestions();
 
@@ -97,7 +109,8 @@ class _$_WatchAllQuestions implements _WatchAllQuestions {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _WatchAllQuestions);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _WatchAllQuestions);
   }
 
   @override
@@ -109,6 +122,14 @@ class _$_WatchAllQuestions implements _WatchAllQuestions {
     required TResult Function() watchAllQuestions,
   }) {
     return watchAllQuestions();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? watchAllQuestions,
+  }) {
+    return watchAllQuestions?.call();
   }
 
   @override
@@ -129,6 +150,14 @@ class _$_WatchAllQuestions implements _WatchAllQuestions {
     required TResult Function(_WatchAllQuestions value) watchAllQuestions,
   }) {
     return watchAllQuestions(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_WatchAllQuestions value)? watchAllQuestions,
+  }) {
+    return watchAllQuestions?.call(this);
   }
 
   @override
@@ -192,6 +221,15 @@ mixin _$QuestionWatcherState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<Question> questions)? loadSuccess,
+    TResult Function(FirebaseFailure firebaseFailure)? loadFailure,
+    TResult Function()? empty,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
@@ -208,6 +246,15 @@ mixin _$QuestionWatcherState {
     required TResult Function(_LoadSuccess value) loadSuccess,
     required TResult Function(_LoadFailure value) loadFailure,
     required TResult Function(_Empty value) empty,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_Empty value)? empty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -257,6 +304,7 @@ class __$InitialCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -267,7 +315,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -283,6 +332,18 @@ class _$_Initial implements _Initial {
     required TResult Function() empty,
   }) {
     return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<Question> questions)? loadSuccess,
+    TResult Function(FirebaseFailure firebaseFailure)? loadFailure,
+    TResult Function()? empty,
+  }) {
+    return initial?.call();
   }
 
   @override
@@ -311,6 +372,18 @@ class _$_Initial implements _Initial {
     required TResult Function(_Empty value) empty,
   }) {
     return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_Empty value)? empty,
+  }) {
+    return initial?.call(this);
   }
 
   @override
@@ -354,6 +427,7 @@ class __$LoadInProgressCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_LoadInProgress implements _LoadInProgress {
   const _$_LoadInProgress();
 
@@ -364,7 +438,8 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _LoadInProgress);
   }
 
   @override
@@ -380,6 +455,18 @@ class _$_LoadInProgress implements _LoadInProgress {
     required TResult Function() empty,
   }) {
     return loadInProgress();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<Question> questions)? loadSuccess,
+    TResult Function(FirebaseFailure firebaseFailure)? loadFailure,
+    TResult Function()? empty,
+  }) {
+    return loadInProgress?.call();
   }
 
   @override
@@ -408,6 +495,18 @@ class _$_LoadInProgress implements _LoadInProgress {
     required TResult Function(_Empty value) empty,
   }) {
     return loadInProgress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_Empty value)? empty,
+  }) {
+    return loadInProgress?.call(this);
   }
 
   @override
@@ -464,6 +563,7 @@ class __$LoadSuccessCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_LoadSuccess implements _LoadSuccess {
   const _$_LoadSuccess(this.questions);
 
@@ -478,15 +578,14 @@ class _$_LoadSuccess implements _LoadSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadSuccess &&
+        (other.runtimeType == runtimeType &&
+            other is _LoadSuccess &&
             (identical(other.questions, questions) ||
-                const DeepCollectionEquality()
-                    .equals(other.questions, questions)));
+                other.questions == questions));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(questions);
+  int get hashCode => Object.hash(runtimeType, questions);
 
   @JsonKey(ignore: true)
   @override
@@ -503,6 +602,18 @@ class _$_LoadSuccess implements _LoadSuccess {
     required TResult Function() empty,
   }) {
     return loadSuccess(questions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<Question> questions)? loadSuccess,
+    TResult Function(FirebaseFailure firebaseFailure)? loadFailure,
+    TResult Function()? empty,
+  }) {
+    return loadSuccess?.call(questions);
   }
 
   @override
@@ -535,6 +646,18 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_Empty value)? empty,
+  }) {
+    return loadSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadInProgress value)? loadInProgress,
@@ -553,7 +676,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 abstract class _LoadSuccess implements QuestionWatcherState {
   const factory _LoadSuccess(KtList<Question> questions) = _$_LoadSuccess;
 
-  KtList<Question> get questions => throw _privateConstructorUsedError;
+  KtList<Question> get questions;
   @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -601,6 +724,7 @@ class __$LoadFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_LoadFailure implements _LoadFailure {
   const _$_LoadFailure(this.firebaseFailure);
 
@@ -615,16 +739,14 @@ class _$_LoadFailure implements _LoadFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadFailure &&
+        (other.runtimeType == runtimeType &&
+            other is _LoadFailure &&
             (identical(other.firebaseFailure, firebaseFailure) ||
-                const DeepCollectionEquality()
-                    .equals(other.firebaseFailure, firebaseFailure)));
+                other.firebaseFailure == firebaseFailure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(firebaseFailure);
+  int get hashCode => Object.hash(runtimeType, firebaseFailure);
 
   @JsonKey(ignore: true)
   @override
@@ -641,6 +763,18 @@ class _$_LoadFailure implements _LoadFailure {
     required TResult Function() empty,
   }) {
     return loadFailure(firebaseFailure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<Question> questions)? loadSuccess,
+    TResult Function(FirebaseFailure firebaseFailure)? loadFailure,
+    TResult Function()? empty,
+  }) {
+    return loadFailure?.call(firebaseFailure);
   }
 
   @override
@@ -673,6 +807,18 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_Empty value)? empty,
+  }) {
+    return loadFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadInProgress value)? loadInProgress,
@@ -691,7 +837,7 @@ class _$_LoadFailure implements _LoadFailure {
 abstract class _LoadFailure implements QuestionWatcherState {
   const factory _LoadFailure(FirebaseFailure firebaseFailure) = _$_LoadFailure;
 
-  FirebaseFailure get firebaseFailure => throw _privateConstructorUsedError;
+  FirebaseFailure get firebaseFailure;
   @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;
@@ -715,6 +861,7 @@ class __$EmptyCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Empty implements _Empty {
   const _$_Empty();
 
@@ -725,7 +872,8 @@ class _$_Empty implements _Empty {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Empty);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Empty);
   }
 
   @override
@@ -741,6 +889,18 @@ class _$_Empty implements _Empty {
     required TResult Function() empty,
   }) {
     return empty();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function(KtList<Question> questions)? loadSuccess,
+    TResult Function(FirebaseFailure firebaseFailure)? loadFailure,
+    TResult Function()? empty,
+  }) {
+    return empty?.call();
   }
 
   @override
@@ -769,6 +929,18 @@ class _$_Empty implements _Empty {
     required TResult Function(_Empty value) empty,
   }) {
     return empty(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadSuccess value)? loadSuccess,
+    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_Empty value)? empty,
+  }) {
+    return empty?.call(this);
   }
 
   @override

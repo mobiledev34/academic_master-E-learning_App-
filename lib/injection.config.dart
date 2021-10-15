@@ -11,13 +11,17 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:google_sign_in/google_sign_in.dart' as _i6;
 import 'package:injectable/injectable.dart' as _i2;
 
-import 'application/auth/auth_bloc.dart' as _i18;
+import 'application/auth/auth_bloc.dart' as _i19;
 import 'application/auth/forgot_password_form/forgot_password_bloc.dart'
-    as _i19;
+    as _i21;
 import 'application/auth/register_form/register_form_bloc.dart' as _i13;
 import 'application/auth/sign_in_form/sign_in_form_bloc.dart' as _i14;
 import 'application/e_learning/add_question_form/add_question_form_bloc.dart'
     as _i17;
+import 'application/e_learning/add_user_comment/add_user_comment_bloc.dart'
+    as _i18;
+import 'application/e_learning/comments_watcher/comments_watcher_bloc.dart'
+    as _i20;
 import 'application/e_learning/question_actor/question_actor_bloc.dart' as _i11;
 import 'application/e_learning/question_watcher/question_watcher_bloc.dart'
     as _i12;
@@ -27,7 +31,7 @@ import 'application/e_learning/users_watcher/users_watcher_bloc.dart' as _i16;
 import 'domain/auth/i_auth_facade.dart' as _i7;
 import 'domain/e_learning/i_e_learning_repository.dart' as _i9;
 import 'infrastructure/auth/firebase_auth_facade.dart' as _i8;
-import 'infrastructure/core/firebase_injectable_module.dart' as _i20;
+import 'infrastructure/core/firebase_injectable_module.dart' as _i22;
 import 'infrastructure/e_learning/e_learning_repository.dart'
     as _i10; // ignore_for_file: unnecessary_lambdas
 
@@ -65,10 +69,14 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i16.UsersWatcherBloc(get<_i9.IElearningRepository>()));
   gh.factory<_i17.AddQuestionFormBloc>(
       () => _i17.AddQuestionFormBloc(get<_i9.IElearningRepository>()));
-  gh.factory<_i18.AuthBloc>(() => _i18.AuthBloc(get<_i7.IAuthFacade>()));
-  gh.factory<_i19.ForgotPasswordBloc>(
-      () => _i19.ForgotPasswordBloc(get<_i7.IAuthFacade>()));
+  gh.factory<_i18.AddUserCommentBloc>(
+      () => _i18.AddUserCommentBloc(get<_i9.IElearningRepository>()));
+  gh.factory<_i19.AuthBloc>(() => _i19.AuthBloc(get<_i7.IAuthFacade>()));
+  gh.factory<_i20.CommentsWatcherBloc>(
+      () => _i20.CommentsWatcherBloc(get<_i9.IElearningRepository>()));
+  gh.factory<_i21.ForgotPasswordBloc>(
+      () => _i21.ForgotPasswordBloc(get<_i7.IAuthFacade>()));
   return get;
 }
 
-class _$FirebaseInjectableModule extends _i20.FirebaseInjectableModule {}
+class _$FirebaseInjectableModule extends _i22.FirebaseInjectableModule {}

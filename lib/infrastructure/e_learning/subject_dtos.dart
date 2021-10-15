@@ -46,7 +46,7 @@ abstract class SubjectDto implements _$SubjectDto {
       _$SubjectDtoFromJson(json);
 
   factory SubjectDto.fromFirestore(DocumentSnapshot doc) {
-    return SubjectDto.fromJson(doc.data()!).copyWith(
+    return SubjectDto.fromJson(doc.data()! as Map<String, dynamic>).copyWith(
       id: doc.id,
     );
   }

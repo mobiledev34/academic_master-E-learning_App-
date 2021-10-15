@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'auth_bloc.dart';
 
@@ -37,6 +38,12 @@ mixin _$AuthEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? authCheckRequested,
+    TResult Function()? signOut,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authCheckRequested,
     TResult Function()? signOut,
@@ -47,6 +54,12 @@ mixin _$AuthEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(AuthCheckRequested value) authCheckRequested,
     required TResult Function(SignedOut value) signOut,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AuthCheckRequested value)? authCheckRequested,
+    TResult Function(SignedOut value)? signOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -93,6 +106,7 @@ class _$AuthCheckRequestedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$AuthCheckRequested implements AuthCheckRequested {
   const _$AuthCheckRequested();
 
@@ -103,7 +117,8 @@ class _$AuthCheckRequested implements AuthCheckRequested {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is AuthCheckRequested);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is AuthCheckRequested);
   }
 
   @override
@@ -116,6 +131,15 @@ class _$AuthCheckRequested implements AuthCheckRequested {
     required TResult Function() signOut,
   }) {
     return authCheckRequested();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? authCheckRequested,
+    TResult Function()? signOut,
+  }) {
+    return authCheckRequested?.call();
   }
 
   @override
@@ -138,6 +162,15 @@ class _$AuthCheckRequested implements AuthCheckRequested {
     required TResult Function(SignedOut value) signOut,
   }) {
     return authCheckRequested(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AuthCheckRequested value)? authCheckRequested,
+    TResult Function(SignedOut value)? signOut,
+  }) {
+    return authCheckRequested?.call(this);
   }
 
   @override
@@ -175,6 +208,7 @@ class _$SignedOutCopyWithImpl<$Res> extends _$AuthEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$SignedOut implements SignedOut {
   const _$SignedOut();
 
@@ -185,7 +219,8 @@ class _$SignedOut implements SignedOut {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SignedOut);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SignedOut);
   }
 
   @override
@@ -198,6 +233,15 @@ class _$SignedOut implements SignedOut {
     required TResult Function() signOut,
   }) {
     return signOut();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? authCheckRequested,
+    TResult Function()? signOut,
+  }) {
+    return signOut?.call();
   }
 
   @override
@@ -220,6 +264,15 @@ class _$SignedOut implements SignedOut {
     required TResult Function(SignedOut value) signOut,
   }) {
     return signOut(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AuthCheckRequested value)? authCheckRequested,
+    TResult Function(SignedOut value)? signOut,
+  }) {
+    return signOut?.call(this);
   }
 
   @override
@@ -270,6 +323,13 @@ mixin _$AuthState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? authenticated,
+    TResult Function()? unauthenticated,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? authenticated,
@@ -282,6 +342,13 @@ mixin _$AuthState {
     required TResult Function(Initial value) initial,
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(Unauthenticated value) unauthenticated,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -326,6 +393,7 @@ class _$InitialCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$Initial implements Initial {
   const _$Initial();
 
@@ -336,7 +404,8 @@ class _$Initial implements Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is Initial);
   }
 
   @override
@@ -350,6 +419,16 @@ class _$Initial implements Initial {
     required TResult Function() unauthenticated,
   }) {
     return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? authenticated,
+    TResult Function()? unauthenticated,
+  }) {
+    return initial?.call();
   }
 
   @override
@@ -374,6 +453,16 @@ class _$Initial implements Initial {
     required TResult Function(Unauthenticated value) unauthenticated,
   }) {
     return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
+  }) {
+    return initial?.call(this);
   }
 
   @override
@@ -414,6 +503,7 @@ class _$AuthenticatedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$Authenticated implements Authenticated {
   const _$Authenticated();
 
@@ -424,7 +514,8 @@ class _$Authenticated implements Authenticated {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Authenticated);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is Authenticated);
   }
 
   @override
@@ -438,6 +529,16 @@ class _$Authenticated implements Authenticated {
     required TResult Function() unauthenticated,
   }) {
     return authenticated();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? authenticated,
+    TResult Function()? unauthenticated,
+  }) {
+    return authenticated?.call();
   }
 
   @override
@@ -462,6 +563,16 @@ class _$Authenticated implements Authenticated {
     required TResult Function(Unauthenticated value) unauthenticated,
   }) {
     return authenticated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
+  }) {
+    return authenticated?.call(this);
   }
 
   @override
@@ -502,6 +613,7 @@ class _$UnauthenticatedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$Unauthenticated implements Unauthenticated {
   const _$Unauthenticated();
 
@@ -512,7 +624,8 @@ class _$Unauthenticated implements Unauthenticated {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Unauthenticated);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is Unauthenticated);
   }
 
   @override
@@ -526,6 +639,16 @@ class _$Unauthenticated implements Unauthenticated {
     required TResult Function() unauthenticated,
   }) {
     return unauthenticated();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? authenticated,
+    TResult Function()? unauthenticated,
+  }) {
+    return unauthenticated?.call();
   }
 
   @override
@@ -550,6 +673,16 @@ class _$Unauthenticated implements Unauthenticated {
     required TResult Function(Unauthenticated value) unauthenticated,
   }) {
     return unauthenticated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(Unauthenticated value)? unauthenticated,
+  }) {
+    return unauthenticated?.call(this);
   }
 
   @override

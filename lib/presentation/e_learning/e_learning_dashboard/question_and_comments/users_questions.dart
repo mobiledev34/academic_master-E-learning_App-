@@ -3,6 +3,7 @@ import 'package:academic_master/application/e_learning/users_watcher/users_watch
 import 'package:academic_master/injection.dart';
 import 'package:academic_master/presentation/core/critical_failure.dart';
 import 'package:academic_master/presentation/core/empty.dart';
+import 'package:academic_master/presentation/core/user_dp.dart';
 import 'package:academic_master/presentation/theme/theme.dart';
 import 'package:academic_master/presentation/utils/constants.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -11,7 +12,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'post_crud_popup.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
+import 'package:selectable_autolink_text/selectable_autolink_text.dart';
+import 'package:share/share.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+import '../widgets/post_crud_popup.dart';
+import 'users_comments.dart';
 
 class UsersQuestions extends StatelessWidget {
   @override
@@ -42,7 +49,7 @@ class UsersQuestions extends StatelessWidget {
                   create: (context) => getIt<UsersWatcherBloc>()
                     ..add(
                       UsersWatcherEvent.watchCurrentUser(
-                       uId: state.questions.get(index).userId.getorCrash(),
+                        uId: state.questions.get(index).userId.getorCrash(),
                       ),
                     ),
                   child: Container(
@@ -57,63 +64,7 @@ class UsersQuestions extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(children: [
-                          CachedNetworkImage(
-                              imageUrl: state.questions
-                                  .get(index)
-                                  .mediaUrl
-                                  .getorCrash(),
-                              imageBuilder: (context, imageProvider) =>
-                                  Container(
-                                    width: 60.0,
-                                    height: 60.0,
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      image: DecorationImage(
-                                          image: imageProvider,
-                                          fit: BoxFit.cover),
-                                    ),
-                                  ),
-                              placeholder: (context, url) =>
-                                  SpinKitDoubleBounce(
-                                    color: Apptheme.secondaryColor,
-                                    size: .05.sh,
-                                  ),
-                              errorWidget: (context, url, error) =>
-                                  // const Icon(Icons.error),
-                                  SizedBox(
-                                    width: 60.0,
-                                    height: 60.0,
-                                    child: CircleAvatar(
-                                      backgroundColor: Apptheme.secondaryColor,
-                                      child: BlocBuilder<UsersWatcherBloc,
-                                          UsersWatcherState>(
-                                        builder: (context, newState) {
-                                          return newState.map(
-                                              empty: (_) => const SizedBox(),
-                                              initial: (value) =>
-                                                  const SizedBox(),
-                                              loadFailure: (value) =>
-                                                  const SizedBox(),
-                                              loadInProgress: (value) =>
-                                                  const SizedBox(),
-                                              loadSuccess: (value) {
-                                                return Text(
-                                                  value.users.first.name
-                                                      .getorCrash()
-                                                      .substring(0, 1),
-                                                  style: Apptheme(context)
-                                                      .boldText
-                                                      .copyWith(
-                                                        color: Apptheme
-                                                            .primaryColor,
-                                                        fontSize: 20.sp,
-                                                      ),
-                                                );
-                                              });
-                                        },
-                                      ),
-                                    ),
-                                  )),
+                          const Userdp(),
                           SizedBox(
                             width: 10.w,
                           ),
@@ -171,7 +122,9 @@ class UsersQuestions extends StatelessWidget {
                                     const Duration(milliseconds: 800),
                                 context: context,
                                 pageBuilder: (_, __, ___) {
-                                  return PostCrudPopup();
+                                  return PostCrudPopup(
+                                    question: state.questions.get(index),
+                                  );
                                 },
                                 transitionBuilder: (_, anim, __, child) {
                                   return SlideTransition(
@@ -188,7 +141,7 @@ class UsersQuestions extends StatelessWidget {
                         ]),
 
                         SizedBox(height: 10.h),
-                        Text(
+                        SelectableAutoLinkText(
                           state.questions
                               .get(index)
                               .questionDescription
@@ -198,6 +151,18 @@ class UsersQuestions extends StatelessWidget {
                                 fontSize: 13.sp,
                                 fontWeight: FontWeight.w300,
                               ),
+                          linkStyle: Apptheme(context)
+                              .boldText
+                              .copyWith(color: Apptheme.primaryColor),
+                          onTransformDisplayLink: AutoLinkUtils.shrinkUrl,
+                          onTap: (url) async {
+                            if (await canLaunch(url)) {
+                              launch(url, forceSafariVC: false);
+                            }
+                          },
+                          onLongPress: (url) {
+                            Share.share(url);
+                          },
                         ),
                         SizedBox(height: toppadding - 10),
                         // ignore: prefer_if_elements_to_conditional_expressions
@@ -286,7 +251,30 @@ class UsersQuestions extends StatelessWidget {
                             Column(
                               children: [
                                 IconButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    showMaterialModalBottomSheet(
+                                      // expand: true,
+                                      backgroundColor: Apptheme.backgroundColor,
+
+                                      shape: const RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(30),
+                                        topRight: Radius.circular(30),
+                                      )),
+                                      // shape:
+                                      context: context,
+                                      builder: (context) => UsersComments(
+                                        questionId: state.questions
+                                            .get(index)
+                                            .questionId
+                                            .getorCrash(),
+                                        questionUserId: state.questions
+                                            .get(index)
+                                            .userId
+                                            .getorCrash(),
+                                      ),
+                                    );
+                                  },
                                   icon: const Icon(
                                     FeatherIcons.messageCircle,
                                     color: Apptheme.primaryColor,

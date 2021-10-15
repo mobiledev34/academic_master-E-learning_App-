@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'question.dart';
 
@@ -158,6 +159,7 @@ class __$QuestionCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Question extends _Question {
   const _$_Question(
       {required this.questionId,
@@ -186,30 +188,21 @@ class _$_Question extends _Question {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Question &&
+        (other.runtimeType == runtimeType &&
+            other is _Question &&
             (identical(other.questionId, questionId) ||
-                const DeepCollectionEquality()
-                    .equals(other.questionId, questionId)) &&
-            (identical(other.userId, userId) ||
-                const DeepCollectionEquality().equals(other.userId, userId)) &&
+                other.questionId == questionId) &&
+            (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.questionDescription, questionDescription) ||
-                const DeepCollectionEquality()
-                    .equals(other.questionDescription, questionDescription)) &&
+                other.questionDescription == questionDescription) &&
             (identical(other.mediaUrl, mediaUrl) ||
-                const DeepCollectionEquality()
-                    .equals(other.mediaUrl, mediaUrl)) &&
-            (identical(other.askAt, askAt) ||
-                const DeepCollectionEquality().equals(other.askAt, askAt)));
+                other.mediaUrl == mediaUrl) &&
+            (identical(other.askAt, askAt) || other.askAt == askAt));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(questionId) ^
-      const DeepCollectionEquality().hash(userId) ^
-      const DeepCollectionEquality().hash(questionDescription) ^
-      const DeepCollectionEquality().hash(mediaUrl) ^
-      const DeepCollectionEquality().hash(askAt);
+  int get hashCode => Object.hash(
+      runtimeType, questionId, userId, questionDescription, mediaUrl, askAt);
 
   @JsonKey(ignore: true)
   @override
@@ -227,16 +220,15 @@ abstract class _Question extends Question {
   const _Question._() : super._();
 
   @override
-  UniqueId get questionId => throw _privateConstructorUsedError;
+  UniqueId get questionId;
   @override
-  UniqueId get userId => throw _privateConstructorUsedError;
+  UniqueId get userId;
   @override
-  QuestionDescription get questionDescription =>
-      throw _privateConstructorUsedError;
+  QuestionDescription get questionDescription;
   @override
-  MediaUrl get mediaUrl => throw _privateConstructorUsedError;
+  MediaUrl get mediaUrl;
   @override
-  Time get askAt => throw _privateConstructorUsedError;
+  Time get askAt;
   @override
   @JsonKey(ignore: true)
   _$QuestionCopyWith<_Question> get copyWith =>

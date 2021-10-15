@@ -1,4 +1,6 @@
 import 'package:academic_master/application/auth/auth_bloc.dart';
+import 'package:academic_master/application/e_learning/add_user_comment/add_user_comment_bloc.dart';
+import 'package:academic_master/application/e_learning/question_actor/question_actor_bloc.dart';
 import 'package:academic_master/application/e_learning/question_watcher/question_watcher_bloc.dart';
 import 'package:academic_master/application/e_learning/subject_watcher/subject_watcher_bloc.dart';
 import 'package:academic_master/application/e_learning/users_watcher/users_watcher_bloc.dart';
@@ -30,22 +32,26 @@ class Homepage extends HookWidget {
         maxHeight: MediaQuery.of(context).size.height,
         maxWidth: MediaQuery.of(context).size.width,
       ),
-      allowFontScaling: true,
     );
 
     return MultiBlocProvider(
       providers: [
+        /// we are callin gall the provider which are needed in Homepage
         BlocProvider<SubjectWatcherBloc>(
-          create: (context) => getIt<SubjectWatcherBloc>()
+          create: (context) => getIt<
+              SubjectWatcherBloc>() //** Subject watcher will give us all the subject of current users */
             ..add(const SubjectWatcherEvent.watchAllSubject()),
         ),
         BlocProvider<UsersWatcherBloc>(
-            create: (context) => getIt<UsersWatcherBloc>()
-            // ..add(const UsersWatcherEvent.watchCurrentUser("")),
-            ),
+          create: (context) => getIt<UsersWatcherBloc>(),
+        ),
         BlocProvider<QuestionWatcherBloc>(
-          create: (context) => getIt<QuestionWatcherBloc>()
+          create: (context) => getIt<
+              QuestionWatcherBloc>() //** questionwatcher will give us users question */
             ..add(const QuestionWatcherEvent.watchAllQuestions()),
+        ),
+        BlocProvider<AddUserCommentBloc>(
+          create: (context) => getIt<AddUserCommentBloc>(),
         ),
       ],
       child: MultiBlocListener(

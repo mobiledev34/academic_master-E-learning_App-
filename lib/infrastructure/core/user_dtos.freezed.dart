@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'user_dtos.dart';
 
@@ -43,7 +44,7 @@ class _$UserDtoTearOff {
     );
   }
 
-  UserDto fromJson(Map<String, Object> json) {
+  UserDto fromJson(Map<String, Object?> json) {
     return UserDto.fromJson(json);
   }
 }
@@ -224,9 +225,8 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_UserDto extends _UserDto {
   const _$_UserDto(
       {this.id,
@@ -241,7 +241,7 @@ class _$_UserDto extends _UserDto {
       : super._();
 
   factory _$_UserDto.fromJson(Map<String, dynamic> json) =>
-      _$_$_UserDtoFromJson(json);
+      _$$_UserDtoFromJson(json);
 
   @override
   final String? id;
@@ -270,42 +270,24 @@ class _$_UserDto extends _UserDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UserDto &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)) &&
+        (other.runtimeType == runtimeType &&
+            other is _UserDto &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.email, email) || other.email == email) &&
             (identical(other.contactNumber, contactNumber) ||
-                const DeepCollectionEquality()
-                    .equals(other.contactNumber, contactNumber)) &&
-            (identical(other.college, college) ||
-                const DeepCollectionEquality()
-                    .equals(other.college, college)) &&
-            (identical(other.course, course) ||
-                const DeepCollectionEquality().equals(other.course, course)) &&
-            (identical(other.branch, branch) ||
-                const DeepCollectionEquality().equals(other.branch, branch)) &&
-            (identical(other.year, year) ||
-                const DeepCollectionEquality().equals(other.year, year)) &&
+                other.contactNumber == contactNumber) &&
+            (identical(other.college, college) || other.college == college) &&
+            (identical(other.course, course) || other.course == course) &&
+            (identical(other.branch, branch) || other.branch == branch) &&
+            (identical(other.year, year) || other.year == year) &&
             (identical(other.createdAt, createdAt) ||
-                const DeepCollectionEquality()
-                    .equals(other.createdAt, createdAt)));
+                other.createdAt == createdAt));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(email) ^
-      const DeepCollectionEquality().hash(contactNumber) ^
-      const DeepCollectionEquality().hash(college) ^
-      const DeepCollectionEquality().hash(course) ^
-      const DeepCollectionEquality().hash(branch) ^
-      const DeepCollectionEquality().hash(year) ^
-      const DeepCollectionEquality().hash(createdAt);
+  int get hashCode => Object.hash(runtimeType, id, name, email, contactNumber,
+      college, course, branch, year, createdAt);
 
   @JsonKey(ignore: true)
   @override
@@ -314,7 +296,7 @@ class _$_UserDto extends _UserDto {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_UserDtoToJson(this);
+    return _$$_UserDtoToJson(this);
   }
 }
 
@@ -334,23 +316,23 @@ abstract class _UserDto extends UserDto {
   factory _UserDto.fromJson(Map<String, dynamic> json) = _$_UserDto.fromJson;
 
   @override
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  String get email => throw _privateConstructorUsedError;
+  String get email;
   @override
-  String get contactNumber => throw _privateConstructorUsedError;
+  String get contactNumber;
   @override
-  String get college => throw _privateConstructorUsedError;
+  String get college;
   @override
-  String get course => throw _privateConstructorUsedError;
+  String get course;
   @override
-  String get branch => throw _privateConstructorUsedError;
+  String get branch;
   @override
-  String get year => throw _privateConstructorUsedError;
+  String get year;
   @override
-  DateTime get createdAt => throw _privateConstructorUsedError;
+  DateTime get createdAt;
   @override
   @JsonKey(ignore: true)
   _$UserDtoCopyWith<_UserDto> get copyWith =>

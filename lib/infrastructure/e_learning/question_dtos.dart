@@ -43,7 +43,7 @@ abstract class QuestionDto implements _$QuestionDto {
       _$QuestionDtoFromJson(json);
 
   factory QuestionDto.fromFirestore(DocumentSnapshot doc) {
-    return QuestionDto.fromJson(doc.data()!).copyWith(
+    return QuestionDto.fromJson(doc.data()! as Map<String, dynamic>).copyWith(
       questionId: doc.id,
     );
   }

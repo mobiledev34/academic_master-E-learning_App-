@@ -6,8 +6,11 @@ class InputField extends StatefulWidget {
   final bool enabled;
   final TextInputType? keyboardType;
   final TextEditingController? controller;
-  final String labelText;
-  final Icon prefixIcon;
+  final String? labelText;
+  final Icon? prefixIcon;
+  final Widget? suffixIcon;
+  final String? hintText;
+  final Color? backgroundColor;
   final Function? onDoubleTap;
   final String? helperText;
   final String? Function(String?)? validator;
@@ -23,8 +26,11 @@ class InputField extends StatefulWidget {
     this.enabled = true,
     this.controller,
     this.keyboardType,
-    required this.labelText,
-    required this.prefixIcon,
+    this.labelText,
+    this.hintText,
+    this.prefixIcon,
+    this.suffixIcon,
+    this.backgroundColor,
     this.onDoubleTap,
     this.helperText,
     this.validator,
@@ -67,6 +73,14 @@ class _InputFieldState extends State<InputField> {
           onTap: widget.onTap,
           decoration: InputDecoration(
             helperText: widget.helperText,
+            fillColor: widget.backgroundColor,
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(30),
+              borderSide: const BorderSide(
+                width: 1,
+                style: BorderStyle.none,
+              ),
+            ),
             suffixIcon: widget.isPassword
                 ? InkResponse(
                     onTap: () {
@@ -84,8 +98,9 @@ class _InputFieldState extends State<InputField> {
                               : const Icon(Icons.remove_red_eye_outlined),
                     ),
                   )
-                : null,
+                : (widget.suffixIcon),
             labelText: widget.labelText,
+            hintText: widget.hintText,
             prefixIcon: widget.prefixIcon,
           ),
         ),

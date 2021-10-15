@@ -1,5 +1,5 @@
 import 'package:academic_master/presentation/auth/sign_in_page.dart';
-import 'package:academic_master/presentation/e_learning/e_learning_dashboard/widgets/question_form.dart';
+import 'package:academic_master/presentation/e_learning/e_learning_dashboard/question_and_comments/question_form.dart';
 import 'package:academic_master/presentation/e_learning/subjects/widgets/subject_pdfview.dart';
 import 'package:academic_master/presentation/e_learning/homepage.dart';
 

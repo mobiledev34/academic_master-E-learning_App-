@@ -5,7 +5,8 @@ import 'package:academic_master/presentation/core/loading.dart';
 import 'package:academic_master/presentation/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/screen_util.dart';
+
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WelcomeTile extends StatelessWidget {
   @override

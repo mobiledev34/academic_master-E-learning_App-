@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'question_dtos.dart';
 
@@ -35,7 +36,7 @@ class _$QuestionDtoTearOff {
     );
   }
 
-  QuestionDto fromJson(Map<String, Object> json) {
+  QuestionDto fromJson(Map<String, Object?> json) {
     return QuestionDto.fromJson(json);
   }
 }
@@ -169,9 +170,8 @@ class __$QuestionDtoCopyWithImpl<$Res> extends _$QuestionDtoCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_QuestionDto extends _QuestionDto {
   const _$_QuestionDto(
       {required this.questionId,
@@ -182,7 +182,7 @@ class _$_QuestionDto extends _QuestionDto {
       : super._();
 
   factory _$_QuestionDto.fromJson(Map<String, dynamic> json) =>
-      _$_$_QuestionDtoFromJson(json);
+      _$$_QuestionDtoFromJson(json);
 
   @override
   final String questionId;
@@ -203,30 +203,21 @@ class _$_QuestionDto extends _QuestionDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _QuestionDto &&
+        (other.runtimeType == runtimeType &&
+            other is _QuestionDto &&
             (identical(other.questionId, questionId) ||
-                const DeepCollectionEquality()
-                    .equals(other.questionId, questionId)) &&
-            (identical(other.userId, userId) ||
-                const DeepCollectionEquality().equals(other.userId, userId)) &&
+                other.questionId == questionId) &&
+            (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.questionDescription, questionDescription) ||
-                const DeepCollectionEquality()
-                    .equals(other.questionDescription, questionDescription)) &&
+                other.questionDescription == questionDescription) &&
             (identical(other.mediaUrl, mediaUrl) ||
-                const DeepCollectionEquality()
-                    .equals(other.mediaUrl, mediaUrl)) &&
-            (identical(other.askAt, askAt) ||
-                const DeepCollectionEquality().equals(other.askAt, askAt)));
+                other.mediaUrl == mediaUrl) &&
+            (identical(other.askAt, askAt) || other.askAt == askAt));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(questionId) ^
-      const DeepCollectionEquality().hash(userId) ^
-      const DeepCollectionEquality().hash(questionDescription) ^
-      const DeepCollectionEquality().hash(mediaUrl) ^
-      const DeepCollectionEquality().hash(askAt);
+  int get hashCode => Object.hash(
+      runtimeType, questionId, userId, questionDescription, mediaUrl, askAt);
 
   @JsonKey(ignore: true)
   @override
@@ -235,7 +226,7 @@ class _$_QuestionDto extends _QuestionDto {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_QuestionDtoToJson(this);
+    return _$$_QuestionDtoToJson(this);
   }
 }
 
@@ -252,15 +243,15 @@ abstract class _QuestionDto extends QuestionDto {
       _$_QuestionDto.fromJson;
 
   @override
-  String get questionId => throw _privateConstructorUsedError;
+  String get questionId;
   @override
-  String get userId => throw _privateConstructorUsedError;
+  String get userId;
   @override
-  String get questionDescription => throw _privateConstructorUsedError;
+  String get questionDescription;
   @override
-  String get mediaUrl => throw _privateConstructorUsedError;
+  String get mediaUrl;
   @override
-  DateTime get askAt => throw _privateConstructorUsedError;
+  DateTime get askAt;
   @override
   @JsonKey(ignore: true)
   _$QuestionDtoCopyWith<_QuestionDto> get copyWith =>

@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'register_form_bloc.dart';
 
@@ -88,6 +89,19 @@ mixin _$RegisterFormEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String branchStr)? branchChanged,
+    TResult Function(String courseStr)? courseChanged,
+    TResult Function(String collegeStr)? collegeChanged,
+    TResult Function(String yearStr)? yearChanged,
+    TResult Function()? registerWithEmailAndPasswordPressed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String emailStr)? emailChanged,
     TResult Function(String passwordStr)? passwordChanged,
@@ -112,6 +126,20 @@ mixin _$RegisterFormEvent {
     required TResult Function(CollegeChanged value) collegeChanged,
     required TResult Function(YearChanged value) yearChanged,
     required TResult Function(RegisterWithEmailAndPasswordPressed value)
+        registerWithEmailAndPasswordPressed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(NameChanged value)? nameChanged,
+    TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
+    TResult Function(BranchChanged value)? branchChanged,
+    TResult Function(CourseChanged value)? courseChanged,
+    TResult Function(CollegeChanged value)? collegeChanged,
+    TResult Function(YearChanged value)? yearChanged,
+    TResult Function(RegisterWithEmailAndPasswordPressed value)?
         registerWithEmailAndPasswordPressed,
   }) =>
       throw _privateConstructorUsedError;
@@ -182,6 +210,7 @@ class _$EmailChangedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$EmailChanged with DiagnosticableTreeMixin implements EmailChanged {
   const _$EmailChanged(this.emailStr);
 
@@ -204,15 +233,14 @@ class _$EmailChanged with DiagnosticableTreeMixin implements EmailChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is EmailChanged &&
+        (other.runtimeType == runtimeType &&
+            other is EmailChanged &&
             (identical(other.emailStr, emailStr) ||
-                const DeepCollectionEquality()
-                    .equals(other.emailStr, emailStr)));
+                other.emailStr == emailStr));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(emailStr);
+  int get hashCode => Object.hash(runtimeType, emailStr);
 
   @JsonKey(ignore: true)
   @override
@@ -233,6 +261,22 @@ class _$EmailChanged with DiagnosticableTreeMixin implements EmailChanged {
     required TResult Function() registerWithEmailAndPasswordPressed,
   }) {
     return emailChanged(emailStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String branchStr)? branchChanged,
+    TResult Function(String courseStr)? courseChanged,
+    TResult Function(String collegeStr)? collegeChanged,
+    TResult Function(String yearStr)? yearChanged,
+    TResult Function()? registerWithEmailAndPasswordPressed,
+  }) {
+    return emailChanged?.call(emailStr);
   }
 
   @override
@@ -274,6 +318,23 @@ class _$EmailChanged with DiagnosticableTreeMixin implements EmailChanged {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(NameChanged value)? nameChanged,
+    TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
+    TResult Function(BranchChanged value)? branchChanged,
+    TResult Function(CourseChanged value)? courseChanged,
+    TResult Function(CollegeChanged value)? collegeChanged,
+    TResult Function(YearChanged value)? yearChanged,
+    TResult Function(RegisterWithEmailAndPasswordPressed value)?
+        registerWithEmailAndPasswordPressed,
+  }) {
+    return emailChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
@@ -297,7 +358,7 @@ class _$EmailChanged with DiagnosticableTreeMixin implements EmailChanged {
 abstract class EmailChanged implements RegisterFormEvent {
   const factory EmailChanged(String emailStr) = _$EmailChanged;
 
-  String get emailStr => throw _privateConstructorUsedError;
+  String get emailStr;
   @JsonKey(ignore: true)
   $EmailChangedCopyWith<EmailChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -336,6 +397,7 @@ class _$PasswordChangedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$PasswordChanged
     with DiagnosticableTreeMixin
     implements PasswordChanged {
@@ -360,15 +422,14 @@ class _$PasswordChanged
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is PasswordChanged &&
+        (other.runtimeType == runtimeType &&
+            other is PasswordChanged &&
             (identical(other.passwordStr, passwordStr) ||
-                const DeepCollectionEquality()
-                    .equals(other.passwordStr, passwordStr)));
+                other.passwordStr == passwordStr));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(passwordStr);
+  int get hashCode => Object.hash(runtimeType, passwordStr);
 
   @JsonKey(ignore: true)
   @override
@@ -389,6 +450,22 @@ class _$PasswordChanged
     required TResult Function() registerWithEmailAndPasswordPressed,
   }) {
     return passwordChanged(passwordStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String branchStr)? branchChanged,
+    TResult Function(String courseStr)? courseChanged,
+    TResult Function(String collegeStr)? collegeChanged,
+    TResult Function(String yearStr)? yearChanged,
+    TResult Function()? registerWithEmailAndPasswordPressed,
+  }) {
+    return passwordChanged?.call(passwordStr);
   }
 
   @override
@@ -430,6 +507,23 @@ class _$PasswordChanged
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(NameChanged value)? nameChanged,
+    TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
+    TResult Function(BranchChanged value)? branchChanged,
+    TResult Function(CourseChanged value)? courseChanged,
+    TResult Function(CollegeChanged value)? collegeChanged,
+    TResult Function(YearChanged value)? yearChanged,
+    TResult Function(RegisterWithEmailAndPasswordPressed value)?
+        registerWithEmailAndPasswordPressed,
+  }) {
+    return passwordChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
@@ -453,7 +547,7 @@ class _$PasswordChanged
 abstract class PasswordChanged implements RegisterFormEvent {
   const factory PasswordChanged(String passwordStr) = _$PasswordChanged;
 
-  String get passwordStr => throw _privateConstructorUsedError;
+  String get passwordStr;
   @JsonKey(ignore: true)
   $PasswordChangedCopyWith<PasswordChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -492,6 +586,7 @@ class _$NameChangedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$NameChanged with DiagnosticableTreeMixin implements NameChanged {
   const _$NameChanged(this.nameStr);
 
@@ -514,14 +609,13 @@ class _$NameChanged with DiagnosticableTreeMixin implements NameChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is NameChanged &&
-            (identical(other.nameStr, nameStr) ||
-                const DeepCollectionEquality().equals(other.nameStr, nameStr)));
+        (other.runtimeType == runtimeType &&
+            other is NameChanged &&
+            (identical(other.nameStr, nameStr) || other.nameStr == nameStr));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(nameStr);
+  int get hashCode => Object.hash(runtimeType, nameStr);
 
   @JsonKey(ignore: true)
   @override
@@ -542,6 +636,22 @@ class _$NameChanged with DiagnosticableTreeMixin implements NameChanged {
     required TResult Function() registerWithEmailAndPasswordPressed,
   }) {
     return nameChanged(nameStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String branchStr)? branchChanged,
+    TResult Function(String courseStr)? courseChanged,
+    TResult Function(String collegeStr)? collegeChanged,
+    TResult Function(String yearStr)? yearChanged,
+    TResult Function()? registerWithEmailAndPasswordPressed,
+  }) {
+    return nameChanged?.call(nameStr);
   }
 
   @override
@@ -583,6 +693,23 @@ class _$NameChanged with DiagnosticableTreeMixin implements NameChanged {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(NameChanged value)? nameChanged,
+    TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
+    TResult Function(BranchChanged value)? branchChanged,
+    TResult Function(CourseChanged value)? courseChanged,
+    TResult Function(CollegeChanged value)? collegeChanged,
+    TResult Function(YearChanged value)? yearChanged,
+    TResult Function(RegisterWithEmailAndPasswordPressed value)?
+        registerWithEmailAndPasswordPressed,
+  }) {
+    return nameChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
@@ -606,7 +733,7 @@ class _$NameChanged with DiagnosticableTreeMixin implements NameChanged {
 abstract class NameChanged implements RegisterFormEvent {
   const factory NameChanged(String nameStr) = _$NameChanged;
 
-  String get nameStr => throw _privateConstructorUsedError;
+  String get nameStr;
   @JsonKey(ignore: true)
   $NameChangedCopyWith<NameChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -645,6 +772,7 @@ class _$PhoneNumberChangedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$PhoneNumberChanged
     with DiagnosticableTreeMixin
     implements PhoneNumberChanged {
@@ -669,16 +797,14 @@ class _$PhoneNumberChanged
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is PhoneNumberChanged &&
+        (other.runtimeType == runtimeType &&
+            other is PhoneNumberChanged &&
             (identical(other.phoneNumberStr, phoneNumberStr) ||
-                const DeepCollectionEquality()
-                    .equals(other.phoneNumberStr, phoneNumberStr)));
+                other.phoneNumberStr == phoneNumberStr));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(phoneNumberStr);
+  int get hashCode => Object.hash(runtimeType, phoneNumberStr);
 
   @JsonKey(ignore: true)
   @override
@@ -699,6 +825,22 @@ class _$PhoneNumberChanged
     required TResult Function() registerWithEmailAndPasswordPressed,
   }) {
     return phoneNumberChanged(phoneNumberStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String branchStr)? branchChanged,
+    TResult Function(String courseStr)? courseChanged,
+    TResult Function(String collegeStr)? collegeChanged,
+    TResult Function(String yearStr)? yearChanged,
+    TResult Function()? registerWithEmailAndPasswordPressed,
+  }) {
+    return phoneNumberChanged?.call(phoneNumberStr);
   }
 
   @override
@@ -740,6 +882,23 @@ class _$PhoneNumberChanged
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(NameChanged value)? nameChanged,
+    TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
+    TResult Function(BranchChanged value)? branchChanged,
+    TResult Function(CourseChanged value)? courseChanged,
+    TResult Function(CollegeChanged value)? collegeChanged,
+    TResult Function(YearChanged value)? yearChanged,
+    TResult Function(RegisterWithEmailAndPasswordPressed value)?
+        registerWithEmailAndPasswordPressed,
+  }) {
+    return phoneNumberChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
@@ -764,7 +923,7 @@ abstract class PhoneNumberChanged implements RegisterFormEvent {
   const factory PhoneNumberChanged(String phoneNumberStr) =
       _$PhoneNumberChanged;
 
-  String get phoneNumberStr => throw _privateConstructorUsedError;
+  String get phoneNumberStr;
   @JsonKey(ignore: true)
   $PhoneNumberChangedCopyWith<PhoneNumberChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -803,6 +962,7 @@ class _$BranchChangedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$BranchChanged with DiagnosticableTreeMixin implements BranchChanged {
   const _$BranchChanged(this.branchStr);
 
@@ -825,15 +985,14 @@ class _$BranchChanged with DiagnosticableTreeMixin implements BranchChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is BranchChanged &&
+        (other.runtimeType == runtimeType &&
+            other is BranchChanged &&
             (identical(other.branchStr, branchStr) ||
-                const DeepCollectionEquality()
-                    .equals(other.branchStr, branchStr)));
+                other.branchStr == branchStr));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(branchStr);
+  int get hashCode => Object.hash(runtimeType, branchStr);
 
   @JsonKey(ignore: true)
   @override
@@ -854,6 +1013,22 @@ class _$BranchChanged with DiagnosticableTreeMixin implements BranchChanged {
     required TResult Function() registerWithEmailAndPasswordPressed,
   }) {
     return branchChanged(branchStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String branchStr)? branchChanged,
+    TResult Function(String courseStr)? courseChanged,
+    TResult Function(String collegeStr)? collegeChanged,
+    TResult Function(String yearStr)? yearChanged,
+    TResult Function()? registerWithEmailAndPasswordPressed,
+  }) {
+    return branchChanged?.call(branchStr);
   }
 
   @override
@@ -895,6 +1070,23 @@ class _$BranchChanged with DiagnosticableTreeMixin implements BranchChanged {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(NameChanged value)? nameChanged,
+    TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
+    TResult Function(BranchChanged value)? branchChanged,
+    TResult Function(CourseChanged value)? courseChanged,
+    TResult Function(CollegeChanged value)? collegeChanged,
+    TResult Function(YearChanged value)? yearChanged,
+    TResult Function(RegisterWithEmailAndPasswordPressed value)?
+        registerWithEmailAndPasswordPressed,
+  }) {
+    return branchChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
@@ -918,7 +1110,7 @@ class _$BranchChanged with DiagnosticableTreeMixin implements BranchChanged {
 abstract class BranchChanged implements RegisterFormEvent {
   const factory BranchChanged(String branchStr) = _$BranchChanged;
 
-  String get branchStr => throw _privateConstructorUsedError;
+  String get branchStr;
   @JsonKey(ignore: true)
   $BranchChangedCopyWith<BranchChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -957,6 +1149,7 @@ class _$CourseChangedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$CourseChanged with DiagnosticableTreeMixin implements CourseChanged {
   const _$CourseChanged(this.courseStr);
 
@@ -979,15 +1172,14 @@ class _$CourseChanged with DiagnosticableTreeMixin implements CourseChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is CourseChanged &&
+        (other.runtimeType == runtimeType &&
+            other is CourseChanged &&
             (identical(other.courseStr, courseStr) ||
-                const DeepCollectionEquality()
-                    .equals(other.courseStr, courseStr)));
+                other.courseStr == courseStr));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(courseStr);
+  int get hashCode => Object.hash(runtimeType, courseStr);
 
   @JsonKey(ignore: true)
   @override
@@ -1008,6 +1200,22 @@ class _$CourseChanged with DiagnosticableTreeMixin implements CourseChanged {
     required TResult Function() registerWithEmailAndPasswordPressed,
   }) {
     return courseChanged(courseStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String branchStr)? branchChanged,
+    TResult Function(String courseStr)? courseChanged,
+    TResult Function(String collegeStr)? collegeChanged,
+    TResult Function(String yearStr)? yearChanged,
+    TResult Function()? registerWithEmailAndPasswordPressed,
+  }) {
+    return courseChanged?.call(courseStr);
   }
 
   @override
@@ -1049,6 +1257,23 @@ class _$CourseChanged with DiagnosticableTreeMixin implements CourseChanged {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(NameChanged value)? nameChanged,
+    TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
+    TResult Function(BranchChanged value)? branchChanged,
+    TResult Function(CourseChanged value)? courseChanged,
+    TResult Function(CollegeChanged value)? collegeChanged,
+    TResult Function(YearChanged value)? yearChanged,
+    TResult Function(RegisterWithEmailAndPasswordPressed value)?
+        registerWithEmailAndPasswordPressed,
+  }) {
+    return courseChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
@@ -1072,7 +1297,7 @@ class _$CourseChanged with DiagnosticableTreeMixin implements CourseChanged {
 abstract class CourseChanged implements RegisterFormEvent {
   const factory CourseChanged(String courseStr) = _$CourseChanged;
 
-  String get courseStr => throw _privateConstructorUsedError;
+  String get courseStr;
   @JsonKey(ignore: true)
   $CourseChangedCopyWith<CourseChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1111,6 +1336,7 @@ class _$CollegeChangedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$CollegeChanged with DiagnosticableTreeMixin implements CollegeChanged {
   const _$CollegeChanged(this.collegeStr);
 
@@ -1133,15 +1359,14 @@ class _$CollegeChanged with DiagnosticableTreeMixin implements CollegeChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is CollegeChanged &&
+        (other.runtimeType == runtimeType &&
+            other is CollegeChanged &&
             (identical(other.collegeStr, collegeStr) ||
-                const DeepCollectionEquality()
-                    .equals(other.collegeStr, collegeStr)));
+                other.collegeStr == collegeStr));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(collegeStr);
+  int get hashCode => Object.hash(runtimeType, collegeStr);
 
   @JsonKey(ignore: true)
   @override
@@ -1162,6 +1387,22 @@ class _$CollegeChanged with DiagnosticableTreeMixin implements CollegeChanged {
     required TResult Function() registerWithEmailAndPasswordPressed,
   }) {
     return collegeChanged(collegeStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String branchStr)? branchChanged,
+    TResult Function(String courseStr)? courseChanged,
+    TResult Function(String collegeStr)? collegeChanged,
+    TResult Function(String yearStr)? yearChanged,
+    TResult Function()? registerWithEmailAndPasswordPressed,
+  }) {
+    return collegeChanged?.call(collegeStr);
   }
 
   @override
@@ -1203,6 +1444,23 @@ class _$CollegeChanged with DiagnosticableTreeMixin implements CollegeChanged {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(NameChanged value)? nameChanged,
+    TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
+    TResult Function(BranchChanged value)? branchChanged,
+    TResult Function(CourseChanged value)? courseChanged,
+    TResult Function(CollegeChanged value)? collegeChanged,
+    TResult Function(YearChanged value)? yearChanged,
+    TResult Function(RegisterWithEmailAndPasswordPressed value)?
+        registerWithEmailAndPasswordPressed,
+  }) {
+    return collegeChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
@@ -1226,7 +1484,7 @@ class _$CollegeChanged with DiagnosticableTreeMixin implements CollegeChanged {
 abstract class CollegeChanged implements RegisterFormEvent {
   const factory CollegeChanged(String collegeStr) = _$CollegeChanged;
 
-  String get collegeStr => throw _privateConstructorUsedError;
+  String get collegeStr;
   @JsonKey(ignore: true)
   $CollegeChangedCopyWith<CollegeChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1265,6 +1523,7 @@ class _$YearChangedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$YearChanged with DiagnosticableTreeMixin implements YearChanged {
   const _$YearChanged(this.yearStr);
 
@@ -1287,14 +1546,13 @@ class _$YearChanged with DiagnosticableTreeMixin implements YearChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is YearChanged &&
-            (identical(other.yearStr, yearStr) ||
-                const DeepCollectionEquality().equals(other.yearStr, yearStr)));
+        (other.runtimeType == runtimeType &&
+            other is YearChanged &&
+            (identical(other.yearStr, yearStr) || other.yearStr == yearStr));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(yearStr);
+  int get hashCode => Object.hash(runtimeType, yearStr);
 
   @JsonKey(ignore: true)
   @override
@@ -1315,6 +1573,22 @@ class _$YearChanged with DiagnosticableTreeMixin implements YearChanged {
     required TResult Function() registerWithEmailAndPasswordPressed,
   }) {
     return yearChanged(yearStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String branchStr)? branchChanged,
+    TResult Function(String courseStr)? courseChanged,
+    TResult Function(String collegeStr)? collegeChanged,
+    TResult Function(String yearStr)? yearChanged,
+    TResult Function()? registerWithEmailAndPasswordPressed,
+  }) {
+    return yearChanged?.call(yearStr);
   }
 
   @override
@@ -1356,6 +1630,23 @@ class _$YearChanged with DiagnosticableTreeMixin implements YearChanged {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(NameChanged value)? nameChanged,
+    TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
+    TResult Function(BranchChanged value)? branchChanged,
+    TResult Function(CourseChanged value)? courseChanged,
+    TResult Function(CollegeChanged value)? collegeChanged,
+    TResult Function(YearChanged value)? yearChanged,
+    TResult Function(RegisterWithEmailAndPasswordPressed value)?
+        registerWithEmailAndPasswordPressed,
+  }) {
+    return yearChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
@@ -1379,7 +1670,7 @@ class _$YearChanged with DiagnosticableTreeMixin implements YearChanged {
 abstract class YearChanged implements RegisterFormEvent {
   const factory YearChanged(String yearStr) = _$YearChanged;
 
-  String get yearStr => throw _privateConstructorUsedError;
+  String get yearStr;
   @JsonKey(ignore: true)
   $YearChangedCopyWith<YearChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1408,6 +1699,7 @@ class _$RegisterWithEmailAndPasswordPressedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$RegisterWithEmailAndPasswordPressed
     with DiagnosticableTreeMixin
     implements RegisterWithEmailAndPasswordPressed {
@@ -1429,7 +1721,8 @@ class _$RegisterWithEmailAndPasswordPressed
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is RegisterWithEmailAndPasswordPressed);
+        (other.runtimeType == runtimeType &&
+            other is RegisterWithEmailAndPasswordPressed);
   }
 
   @override
@@ -1449,6 +1742,22 @@ class _$RegisterWithEmailAndPasswordPressed
     required TResult Function() registerWithEmailAndPasswordPressed,
   }) {
     return registerWithEmailAndPasswordPressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(String phoneNumberStr)? phoneNumberChanged,
+    TResult Function(String branchStr)? branchChanged,
+    TResult Function(String courseStr)? courseChanged,
+    TResult Function(String collegeStr)? collegeChanged,
+    TResult Function(String yearStr)? yearChanged,
+    TResult Function()? registerWithEmailAndPasswordPressed,
+  }) {
+    return registerWithEmailAndPasswordPressed?.call();
   }
 
   @override
@@ -1486,6 +1795,23 @@ class _$RegisterWithEmailAndPasswordPressed
         registerWithEmailAndPasswordPressed,
   }) {
     return registerWithEmailAndPasswordPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(NameChanged value)? nameChanged,
+    TResult Function(PhoneNumberChanged value)? phoneNumberChanged,
+    TResult Function(BranchChanged value)? branchChanged,
+    TResult Function(CourseChanged value)? courseChanged,
+    TResult Function(CollegeChanged value)? collegeChanged,
+    TResult Function(YearChanged value)? yearChanged,
+    TResult Function(RegisterWithEmailAndPasswordPressed value)?
+        registerWithEmailAndPasswordPressed,
+  }) {
+    return registerWithEmailAndPasswordPressed?.call(this);
   }
 
   @override
@@ -1758,6 +2084,7 @@ class __$RegisterFormStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_RegisterFormState
     with DiagnosticableTreeMixin
     implements _RegisterFormState {
@@ -1824,54 +2151,43 @@ class _$_RegisterFormState
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _RegisterFormState &&
+        (other.runtimeType == runtimeType &&
+            other is _RegisterFormState &&
             (identical(other.emailAddress, emailAddress) ||
-                const DeepCollectionEquality()
-                    .equals(other.emailAddress, emailAddress)) &&
+                other.emailAddress == emailAddress) &&
             (identical(other.password, password) ||
-                const DeepCollectionEquality()
-                    .equals(other.password, password)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+                other.password == password) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.phoneNumber, phoneNumber) ||
-                const DeepCollectionEquality()
-                    .equals(other.phoneNumber, phoneNumber)) &&
-            (identical(other.course, course) ||
-                const DeepCollectionEquality().equals(other.course, course)) &&
-            (identical(other.branch, branch) ||
-                const DeepCollectionEquality().equals(other.branch, branch)) &&
-            (identical(other.college, college) ||
-                const DeepCollectionEquality()
-                    .equals(other.college, college)) &&
-            (identical(other.year, year) ||
-                const DeepCollectionEquality().equals(other.year, year)) &&
+                other.phoneNumber == phoneNumber) &&
+            (identical(other.course, course) || other.course == course) &&
+            (identical(other.branch, branch) || other.branch == branch) &&
+            (identical(other.college, college) || other.college == college) &&
+            (identical(other.year, year) || other.year == year) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
+                other.showErrorMessages == showErrorMessages) &&
             (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSubmitting, isSubmitting)) &&
+                other.isSubmitting == isSubmitting) &&
             (identical(other.authFailureOrSuccessOption,
                     authFailureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.authFailureOrSuccessOption,
-                    authFailureOrSuccessOption)));
+                other.authFailureOrSuccessOption ==
+                    authFailureOrSuccessOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(emailAddress) ^
-      const DeepCollectionEquality().hash(password) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(phoneNumber) ^
-      const DeepCollectionEquality().hash(course) ^
-      const DeepCollectionEquality().hash(branch) ^
-      const DeepCollectionEquality().hash(college) ^
-      const DeepCollectionEquality().hash(year) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(isSubmitting) ^
-      const DeepCollectionEquality().hash(authFailureOrSuccessOption);
+  int get hashCode => Object.hash(
+      runtimeType,
+      emailAddress,
+      password,
+      name,
+      phoneNumber,
+      course,
+      branch,
+      college,
+      year,
+      showErrorMessages,
+      isSubmitting,
+      authFailureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
@@ -1895,28 +2211,27 @@ abstract class _RegisterFormState implements RegisterFormState {
           authFailureOrSuccessOption}) = _$_RegisterFormState;
 
   @override
-  EmailAddress get emailAddress => throw _privateConstructorUsedError;
+  EmailAddress get emailAddress;
   @override
-  Password get password => throw _privateConstructorUsedError;
+  Password get password;
   @override
-  Name get name => throw _privateConstructorUsedError;
+  Name get name;
   @override
-  PhoneNumber get phoneNumber => throw _privateConstructorUsedError;
+  PhoneNumber get phoneNumber;
   @override
-  Course get course => throw _privateConstructorUsedError;
+  Course get course;
   @override
-  Branch get branch => throw _privateConstructorUsedError;
+  Branch get branch;
   @override
-  College get college => throw _privateConstructorUsedError;
+  College get college;
   @override
-  Year get year => throw _privateConstructorUsedError;
+  Year get year;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$RegisterFormStateCopyWith<_RegisterFormState> get copyWith =>

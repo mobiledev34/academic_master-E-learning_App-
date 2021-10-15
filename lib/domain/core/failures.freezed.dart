@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'failures.dart';
 
@@ -108,6 +109,21 @@ mixin _$ValueFailure<T> {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue, int max)? exceedingLength,
+    TResult Function(T failedValue, int max)? listTooLong,
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidBtechBranch,
+    TResult Function(T failedValue)? invalidCourse,
+    TResult Function(T failedValue)? invalidCollege,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invaliDpharmaYear,
+    TResult Function(T failedValue)? invalidPhoneNumber,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
@@ -136,6 +152,21 @@ mixin _$ValueFailure<T> {
     required TResult Function(InvalidYear<T> value) invalidYear,
     required TResult Function(InvalidDpharmaYear<T> value) invaliDpharmaYear,
     required TResult Function(InvalidPhoneNumber<T> value) invalidPhoneNumber,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(ListTooLong<T> value)? listTooLong,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidBtechBranch<T> value)? invalidBtechBranch,
+    TResult Function(InvalidCourse<T> value)? invalidCourse,
+    TResult Function(InvalidCollege<T> value)? invalidCollege,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidDpharmaYear<T> value)? invaliDpharmaYear,
+    TResult Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -225,6 +256,7 @@ class _$InvalidEmailCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$InvalidEmail<T>
     with DiagnosticableTreeMixin
     implements InvalidEmail<T> {
@@ -249,15 +281,15 @@ class _$InvalidEmail<T>
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InvalidEmail<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+        (other.runtimeType == runtimeType &&
+            other is InvalidEmail<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
 
   @JsonKey(ignore: true)
   @override
@@ -280,6 +312,24 @@ class _$InvalidEmail<T>
     required TResult Function(T failedValue) invalidPhoneNumber,
   }) {
     return invalidEmail(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue, int max)? exceedingLength,
+    TResult Function(T failedValue, int max)? listTooLong,
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidBtechBranch,
+    TResult Function(T failedValue)? invalidCourse,
+    TResult Function(T failedValue)? invalidCollege,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invaliDpharmaYear,
+    TResult Function(T failedValue)? invalidPhoneNumber,
+  }) {
+    return invalidEmail?.call(failedValue);
   }
 
   @override
@@ -324,6 +374,24 @@ class _$InvalidEmail<T>
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(ListTooLong<T> value)? listTooLong,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidBtechBranch<T> value)? invalidBtechBranch,
+    TResult Function(InvalidCourse<T> value)? invalidCourse,
+    TResult Function(InvalidCollege<T> value)? invalidCollege,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidDpharmaYear<T> value)? invaliDpharmaYear,
+    TResult Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+  }) {
+    return invalidEmail?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
@@ -349,7 +417,7 @@ abstract class InvalidEmail<T> implements ValueFailure<T> {
   const factory InvalidEmail(T failedValue) = _$InvalidEmail<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @override
   @JsonKey(ignore: true)
   $InvalidEmailCopyWith<T, InvalidEmail<T>> get copyWith =>
@@ -391,6 +459,7 @@ class _$ShortPasswordCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$ShortPassword<T>
     with DiagnosticableTreeMixin
     implements ShortPassword<T> {
@@ -415,15 +484,15 @@ class _$ShortPassword<T>
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ShortPassword<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+        (other.runtimeType == runtimeType &&
+            other is ShortPassword<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
 
   @JsonKey(ignore: true)
   @override
@@ -446,6 +515,24 @@ class _$ShortPassword<T>
     required TResult Function(T failedValue) invalidPhoneNumber,
   }) {
     return shortPassword(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue, int max)? exceedingLength,
+    TResult Function(T failedValue, int max)? listTooLong,
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidBtechBranch,
+    TResult Function(T failedValue)? invalidCourse,
+    TResult Function(T failedValue)? invalidCollege,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invaliDpharmaYear,
+    TResult Function(T failedValue)? invalidPhoneNumber,
+  }) {
+    return shortPassword?.call(failedValue);
   }
 
   @override
@@ -490,6 +577,24 @@ class _$ShortPassword<T>
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(ListTooLong<T> value)? listTooLong,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidBtechBranch<T> value)? invalidBtechBranch,
+    TResult Function(InvalidCourse<T> value)? invalidCourse,
+    TResult Function(InvalidCollege<T> value)? invalidCollege,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidDpharmaYear<T> value)? invaliDpharmaYear,
+    TResult Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+  }) {
+    return shortPassword?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
@@ -515,7 +620,7 @@ abstract class ShortPassword<T> implements ValueFailure<T> {
   const factory ShortPassword(T failedValue) = _$ShortPassword<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @override
   @JsonKey(ignore: true)
   $ShortPasswordCopyWith<T, ShortPassword<T>> get copyWith =>
@@ -562,6 +667,7 @@ class _$ExceedingLengthCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$ExceedingLength<T>
     with DiagnosticableTreeMixin
     implements ExceedingLength<T> {
@@ -589,19 +695,16 @@ class _$ExceedingLength<T>
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ExceedingLength<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)) &&
-            (identical(other.max, max) ||
-                const DeepCollectionEquality().equals(other.max, max)));
+        (other.runtimeType == runtimeType &&
+            other is ExceedingLength<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue) &&
+            (identical(other.max, max) || other.max == max));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(failedValue) ^
-      const DeepCollectionEquality().hash(max);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue), max);
 
   @JsonKey(ignore: true)
   @override
@@ -624,6 +727,24 @@ class _$ExceedingLength<T>
     required TResult Function(T failedValue) invalidPhoneNumber,
   }) {
     return exceedingLength(failedValue, max);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue, int max)? exceedingLength,
+    TResult Function(T failedValue, int max)? listTooLong,
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidBtechBranch,
+    TResult Function(T failedValue)? invalidCourse,
+    TResult Function(T failedValue)? invalidCollege,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invaliDpharmaYear,
+    TResult Function(T failedValue)? invalidPhoneNumber,
+  }) {
+    return exceedingLength?.call(failedValue, max);
   }
 
   @override
@@ -668,6 +789,24 @@ class _$ExceedingLength<T>
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(ListTooLong<T> value)? listTooLong,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidBtechBranch<T> value)? invalidBtechBranch,
+    TResult Function(InvalidCourse<T> value)? invalidCourse,
+    TResult Function(InvalidCollege<T> value)? invalidCollege,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidDpharmaYear<T> value)? invaliDpharmaYear,
+    TResult Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+  }) {
+    return exceedingLength?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
@@ -693,8 +832,8 @@ abstract class ExceedingLength<T> implements ValueFailure<T> {
   const factory ExceedingLength(T failedValue, int max) = _$ExceedingLength<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
-  int get max => throw _privateConstructorUsedError;
+  T get failedValue;
+  int get max;
   @override
   @JsonKey(ignore: true)
   $ExceedingLengthCopyWith<T, ExceedingLength<T>> get copyWith =>
@@ -741,6 +880,7 @@ class _$ListTooLongCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$ListTooLong<T> with DiagnosticableTreeMixin implements ListTooLong<T> {
   const _$ListTooLong({required this.failedValue, required this.max});
 
@@ -766,19 +906,16 @@ class _$ListTooLong<T> with DiagnosticableTreeMixin implements ListTooLong<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ListTooLong<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)) &&
-            (identical(other.max, max) ||
-                const DeepCollectionEquality().equals(other.max, max)));
+        (other.runtimeType == runtimeType &&
+            other is ListTooLong<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue) &&
+            (identical(other.max, max) || other.max == max));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(failedValue) ^
-      const DeepCollectionEquality().hash(max);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue), max);
 
   @JsonKey(ignore: true)
   @override
@@ -801,6 +938,24 @@ class _$ListTooLong<T> with DiagnosticableTreeMixin implements ListTooLong<T> {
     required TResult Function(T failedValue) invalidPhoneNumber,
   }) {
     return listTooLong(failedValue, max);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue, int max)? exceedingLength,
+    TResult Function(T failedValue, int max)? listTooLong,
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidBtechBranch,
+    TResult Function(T failedValue)? invalidCourse,
+    TResult Function(T failedValue)? invalidCollege,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invaliDpharmaYear,
+    TResult Function(T failedValue)? invalidPhoneNumber,
+  }) {
+    return listTooLong?.call(failedValue, max);
   }
 
   @override
@@ -845,6 +1000,24 @@ class _$ListTooLong<T> with DiagnosticableTreeMixin implements ListTooLong<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(ListTooLong<T> value)? listTooLong,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidBtechBranch<T> value)? invalidBtechBranch,
+    TResult Function(InvalidCourse<T> value)? invalidCourse,
+    TResult Function(InvalidCollege<T> value)? invalidCollege,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidDpharmaYear<T> value)? invaliDpharmaYear,
+    TResult Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+  }) {
+    return listTooLong?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
@@ -871,8 +1044,8 @@ abstract class ListTooLong<T> implements ValueFailure<T> {
       _$ListTooLong<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
-  int get max => throw _privateConstructorUsedError;
+  T get failedValue;
+  int get max;
   @override
   @JsonKey(ignore: true)
   $ListTooLongCopyWith<T, ListTooLong<T>> get copyWith =>
@@ -911,6 +1084,7 @@ class _$EmptyCopyWithImpl<T, $Res> extends _$ValueFailureCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
   const _$Empty(this.failedValue);
 
@@ -933,15 +1107,15 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is Empty<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+        (other.runtimeType == runtimeType &&
+            other is Empty<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
 
   @JsonKey(ignore: true)
   @override
@@ -964,6 +1138,24 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
     required TResult Function(T failedValue) invalidPhoneNumber,
   }) {
     return empty(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue, int max)? exceedingLength,
+    TResult Function(T failedValue, int max)? listTooLong,
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidBtechBranch,
+    TResult Function(T failedValue)? invalidCourse,
+    TResult Function(T failedValue)? invalidCollege,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invaliDpharmaYear,
+    TResult Function(T failedValue)? invalidPhoneNumber,
+  }) {
+    return empty?.call(failedValue);
   }
 
   @override
@@ -1008,6 +1200,24 @@ class _$Empty<T> with DiagnosticableTreeMixin implements Empty<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(ListTooLong<T> value)? listTooLong,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidBtechBranch<T> value)? invalidBtechBranch,
+    TResult Function(InvalidCourse<T> value)? invalidCourse,
+    TResult Function(InvalidCollege<T> value)? invalidCollege,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidDpharmaYear<T> value)? invaliDpharmaYear,
+    TResult Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+  }) {
+    return empty?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
@@ -1033,7 +1243,7 @@ abstract class Empty<T> implements ValueFailure<T> {
   const factory Empty(T failedValue) = _$Empty<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @override
   @JsonKey(ignore: true)
   $EmptyCopyWith<T, Empty<T>> get copyWith =>
@@ -1075,6 +1285,7 @@ class _$InvalidBtechBranchCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$InvalidBtechBranch<T>
     with DiagnosticableTreeMixin
     implements InvalidBtechBranch<T> {
@@ -1099,15 +1310,15 @@ class _$InvalidBtechBranch<T>
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InvalidBtechBranch<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+        (other.runtimeType == runtimeType &&
+            other is InvalidBtechBranch<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
 
   @JsonKey(ignore: true)
   @override
@@ -1131,6 +1342,24 @@ class _$InvalidBtechBranch<T>
     required TResult Function(T failedValue) invalidPhoneNumber,
   }) {
     return invalidBtechBranch(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue, int max)? exceedingLength,
+    TResult Function(T failedValue, int max)? listTooLong,
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidBtechBranch,
+    TResult Function(T failedValue)? invalidCourse,
+    TResult Function(T failedValue)? invalidCollege,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invaliDpharmaYear,
+    TResult Function(T failedValue)? invalidPhoneNumber,
+  }) {
+    return invalidBtechBranch?.call(failedValue);
   }
 
   @override
@@ -1175,6 +1404,24 @@ class _$InvalidBtechBranch<T>
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(ListTooLong<T> value)? listTooLong,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidBtechBranch<T> value)? invalidBtechBranch,
+    TResult Function(InvalidCourse<T> value)? invalidCourse,
+    TResult Function(InvalidCollege<T> value)? invalidCollege,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidDpharmaYear<T> value)? invaliDpharmaYear,
+    TResult Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+  }) {
+    return invalidBtechBranch?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
@@ -1200,7 +1447,7 @@ abstract class InvalidBtechBranch<T> implements ValueFailure<T> {
   const factory InvalidBtechBranch(T failedValue) = _$InvalidBtechBranch<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @override
   @JsonKey(ignore: true)
   $InvalidBtechBranchCopyWith<T, InvalidBtechBranch<T>> get copyWith =>
@@ -1242,6 +1489,7 @@ class _$InvalidCourseCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$InvalidCourse<T>
     with DiagnosticableTreeMixin
     implements InvalidCourse<T> {
@@ -1266,15 +1514,15 @@ class _$InvalidCourse<T>
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InvalidCourse<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+        (other.runtimeType == runtimeType &&
+            other is InvalidCourse<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
 
   @JsonKey(ignore: true)
   @override
@@ -1297,6 +1545,24 @@ class _$InvalidCourse<T>
     required TResult Function(T failedValue) invalidPhoneNumber,
   }) {
     return invalidCourse(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue, int max)? exceedingLength,
+    TResult Function(T failedValue, int max)? listTooLong,
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidBtechBranch,
+    TResult Function(T failedValue)? invalidCourse,
+    TResult Function(T failedValue)? invalidCollege,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invaliDpharmaYear,
+    TResult Function(T failedValue)? invalidPhoneNumber,
+  }) {
+    return invalidCourse?.call(failedValue);
   }
 
   @override
@@ -1341,6 +1607,24 @@ class _$InvalidCourse<T>
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(ListTooLong<T> value)? listTooLong,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidBtechBranch<T> value)? invalidBtechBranch,
+    TResult Function(InvalidCourse<T> value)? invalidCourse,
+    TResult Function(InvalidCollege<T> value)? invalidCollege,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidDpharmaYear<T> value)? invaliDpharmaYear,
+    TResult Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+  }) {
+    return invalidCourse?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
@@ -1366,7 +1650,7 @@ abstract class InvalidCourse<T> implements ValueFailure<T> {
   const factory InvalidCourse(T failedValue) = _$InvalidCourse<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @override
   @JsonKey(ignore: true)
   $InvalidCourseCopyWith<T, InvalidCourse<T>> get copyWith =>
@@ -1408,6 +1692,7 @@ class _$InvalidCollegeCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$InvalidCollege<T>
     with DiagnosticableTreeMixin
     implements InvalidCollege<T> {
@@ -1432,15 +1717,15 @@ class _$InvalidCollege<T>
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InvalidCollege<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+        (other.runtimeType == runtimeType &&
+            other is InvalidCollege<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
 
   @JsonKey(ignore: true)
   @override
@@ -1463,6 +1748,24 @@ class _$InvalidCollege<T>
     required TResult Function(T failedValue) invalidPhoneNumber,
   }) {
     return invalidCollege(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue, int max)? exceedingLength,
+    TResult Function(T failedValue, int max)? listTooLong,
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidBtechBranch,
+    TResult Function(T failedValue)? invalidCourse,
+    TResult Function(T failedValue)? invalidCollege,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invaliDpharmaYear,
+    TResult Function(T failedValue)? invalidPhoneNumber,
+  }) {
+    return invalidCollege?.call(failedValue);
   }
 
   @override
@@ -1507,6 +1810,24 @@ class _$InvalidCollege<T>
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(ListTooLong<T> value)? listTooLong,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidBtechBranch<T> value)? invalidBtechBranch,
+    TResult Function(InvalidCourse<T> value)? invalidCourse,
+    TResult Function(InvalidCollege<T> value)? invalidCollege,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidDpharmaYear<T> value)? invaliDpharmaYear,
+    TResult Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+  }) {
+    return invalidCollege?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
@@ -1532,7 +1853,7 @@ abstract class InvalidCollege<T> implements ValueFailure<T> {
   const factory InvalidCollege(T failedValue) = _$InvalidCollege<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @override
   @JsonKey(ignore: true)
   $InvalidCollegeCopyWith<T, InvalidCollege<T>> get copyWith =>
@@ -1574,6 +1895,7 @@ class _$InvalidYearCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$InvalidYear<T> with DiagnosticableTreeMixin implements InvalidYear<T> {
   const _$InvalidYear(this.failedValue);
 
@@ -1596,15 +1918,15 @@ class _$InvalidYear<T> with DiagnosticableTreeMixin implements InvalidYear<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InvalidYear<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+        (other.runtimeType == runtimeType &&
+            other is InvalidYear<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
 
   @JsonKey(ignore: true)
   @override
@@ -1627,6 +1949,24 @@ class _$InvalidYear<T> with DiagnosticableTreeMixin implements InvalidYear<T> {
     required TResult Function(T failedValue) invalidPhoneNumber,
   }) {
     return invalidYear(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue, int max)? exceedingLength,
+    TResult Function(T failedValue, int max)? listTooLong,
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidBtechBranch,
+    TResult Function(T failedValue)? invalidCourse,
+    TResult Function(T failedValue)? invalidCollege,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invaliDpharmaYear,
+    TResult Function(T failedValue)? invalidPhoneNumber,
+  }) {
+    return invalidYear?.call(failedValue);
   }
 
   @override
@@ -1671,6 +2011,24 @@ class _$InvalidYear<T> with DiagnosticableTreeMixin implements InvalidYear<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(ListTooLong<T> value)? listTooLong,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidBtechBranch<T> value)? invalidBtechBranch,
+    TResult Function(InvalidCourse<T> value)? invalidCourse,
+    TResult Function(InvalidCollege<T> value)? invalidCollege,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidDpharmaYear<T> value)? invaliDpharmaYear,
+    TResult Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+  }) {
+    return invalidYear?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
@@ -1696,7 +2054,7 @@ abstract class InvalidYear<T> implements ValueFailure<T> {
   const factory InvalidYear(T failedValue) = _$InvalidYear<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @override
   @JsonKey(ignore: true)
   $InvalidYearCopyWith<T, InvalidYear<T>> get copyWith =>
@@ -1738,6 +2096,7 @@ class _$InvalidDpharmaYearCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$InvalidDpharmaYear<T>
     with DiagnosticableTreeMixin
     implements InvalidDpharmaYear<T> {
@@ -1762,15 +2121,15 @@ class _$InvalidDpharmaYear<T>
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InvalidDpharmaYear<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+        (other.runtimeType == runtimeType &&
+            other is InvalidDpharmaYear<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
 
   @JsonKey(ignore: true)
   @override
@@ -1794,6 +2153,24 @@ class _$InvalidDpharmaYear<T>
     required TResult Function(T failedValue) invalidPhoneNumber,
   }) {
     return invaliDpharmaYear(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue, int max)? exceedingLength,
+    TResult Function(T failedValue, int max)? listTooLong,
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidBtechBranch,
+    TResult Function(T failedValue)? invalidCourse,
+    TResult Function(T failedValue)? invalidCollege,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invaliDpharmaYear,
+    TResult Function(T failedValue)? invalidPhoneNumber,
+  }) {
+    return invaliDpharmaYear?.call(failedValue);
   }
 
   @override
@@ -1838,6 +2215,24 @@ class _$InvalidDpharmaYear<T>
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(ListTooLong<T> value)? listTooLong,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidBtechBranch<T> value)? invalidBtechBranch,
+    TResult Function(InvalidCourse<T> value)? invalidCourse,
+    TResult Function(InvalidCollege<T> value)? invalidCollege,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidDpharmaYear<T> value)? invaliDpharmaYear,
+    TResult Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+  }) {
+    return invaliDpharmaYear?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
@@ -1863,7 +2258,7 @@ abstract class InvalidDpharmaYear<T> implements ValueFailure<T> {
   const factory InvalidDpharmaYear(T failedValue) = _$InvalidDpharmaYear<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @override
   @JsonKey(ignore: true)
   $InvalidDpharmaYearCopyWith<T, InvalidDpharmaYear<T>> get copyWith =>
@@ -1905,6 +2300,7 @@ class _$InvalidPhoneNumberCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
+
 class _$InvalidPhoneNumber<T>
     with DiagnosticableTreeMixin
     implements InvalidPhoneNumber<T> {
@@ -1929,15 +2325,15 @@ class _$InvalidPhoneNumber<T>
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InvalidPhoneNumber<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+        (other.runtimeType == runtimeType &&
+            other is InvalidPhoneNumber<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
 
   @JsonKey(ignore: true)
   @override
@@ -1961,6 +2357,24 @@ class _$InvalidPhoneNumber<T>
     required TResult Function(T failedValue) invalidPhoneNumber,
   }) {
     return invalidPhoneNumber(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue, int max)? exceedingLength,
+    TResult Function(T failedValue, int max)? listTooLong,
+    TResult Function(T failedValue)? empty,
+    TResult Function(T failedValue)? invalidBtechBranch,
+    TResult Function(T failedValue)? invalidCourse,
+    TResult Function(T failedValue)? invalidCollege,
+    TResult Function(T failedValue)? invalidYear,
+    TResult Function(T failedValue)? invaliDpharmaYear,
+    TResult Function(T failedValue)? invalidPhoneNumber,
+  }) {
+    return invalidPhoneNumber?.call(failedValue);
   }
 
   @override
@@ -2005,6 +2419,24 @@ class _$InvalidPhoneNumber<T>
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(ListTooLong<T> value)? listTooLong,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidBtechBranch<T> value)? invalidBtechBranch,
+    TResult Function(InvalidCourse<T> value)? invalidCourse,
+    TResult Function(InvalidCollege<T> value)? invalidCollege,
+    TResult Function(InvalidYear<T> value)? invalidYear,
+    TResult Function(InvalidDpharmaYear<T> value)? invaliDpharmaYear,
+    TResult Function(InvalidPhoneNumber<T> value)? invalidPhoneNumber,
+  }) {
+    return invalidPhoneNumber?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
@@ -2030,7 +2462,7 @@ abstract class InvalidPhoneNumber<T> implements ValueFailure<T> {
   const factory InvalidPhoneNumber(T failedValue) = _$InvalidPhoneNumber<T>;
 
   @override
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @override
   @JsonKey(ignore: true)
   $InvalidPhoneNumberCopyWith<T, InvalidPhoneNumber<T>> get copyWith =>

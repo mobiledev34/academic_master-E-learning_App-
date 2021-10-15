@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'add_question_form_bloc.dart';
 
@@ -47,6 +48,13 @@ mixin _$AddQuestionFormEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String description)? questionDescriptionChanged,
+    TResult Function()? pickImage,
+    TResult Function(File? file, Question question)? addQuestionPressed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String description)? questionDescriptionChanged,
     TResult Function()? pickImage,
@@ -60,6 +68,14 @@ mixin _$AddQuestionFormEvent {
         questionDescriptionChanged,
     required TResult Function(_PickImage value) pickImage,
     required TResult Function(_AddQuestionpressed value) addQuestionPressed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_QuestionDescriptionChanged value)?
+        questionDescriptionChanged,
+    TResult Function(_PickImage value)? pickImage,
+    TResult Function(_AddQuestionpressed value)? addQuestionPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -125,6 +141,7 @@ class __$QuestionDescriptionChangedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_QuestionDescriptionChanged
     with DiagnosticableTreeMixin
     implements _QuestionDescriptionChanged {
@@ -150,15 +167,14 @@ class _$_QuestionDescriptionChanged
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _QuestionDescriptionChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _QuestionDescriptionChanged &&
             (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)));
+                other.description == description));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(description);
+  int get hashCode => Object.hash(runtimeType, description);
 
   @JsonKey(ignore: true)
   @override
@@ -174,6 +190,16 @@ class _$_QuestionDescriptionChanged
     required TResult Function(File? file, Question question) addQuestionPressed,
   }) {
     return questionDescriptionChanged(description);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String description)? questionDescriptionChanged,
+    TResult Function()? pickImage,
+    TResult Function(File? file, Question question)? addQuestionPressed,
+  }) {
+    return questionDescriptionChanged?.call(description);
   }
 
   @override
@@ -203,6 +229,17 @@ class _$_QuestionDescriptionChanged
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_QuestionDescriptionChanged value)?
+        questionDescriptionChanged,
+    TResult Function(_PickImage value)? pickImage,
+    TResult Function(_AddQuestionpressed value)? addQuestionPressed,
+  }) {
+    return questionDescriptionChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_QuestionDescriptionChanged value)?
         questionDescriptionChanged,
@@ -221,7 +258,7 @@ abstract class _QuestionDescriptionChanged implements AddQuestionFormEvent {
   const factory _QuestionDescriptionChanged(String description) =
       _$_QuestionDescriptionChanged;
 
-  String get description => throw _privateConstructorUsedError;
+  String get description;
   @JsonKey(ignore: true)
   _$QuestionDescriptionChangedCopyWith<_QuestionDescriptionChanged>
       get copyWith => throw _privateConstructorUsedError;
@@ -246,6 +283,7 @@ class __$PickImageCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_PickImage with DiagnosticableTreeMixin implements _PickImage {
   const _$_PickImage();
 
@@ -263,7 +301,8 @@ class _$_PickImage with DiagnosticableTreeMixin implements _PickImage {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _PickImage);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _PickImage);
   }
 
   @override
@@ -277,6 +316,16 @@ class _$_PickImage with DiagnosticableTreeMixin implements _PickImage {
     required TResult Function(File? file, Question question) addQuestionPressed,
   }) {
     return pickImage();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String description)? questionDescriptionChanged,
+    TResult Function()? pickImage,
+    TResult Function(File? file, Question question)? addQuestionPressed,
+  }) {
+    return pickImage?.call();
   }
 
   @override
@@ -302,6 +351,17 @@ class _$_PickImage with DiagnosticableTreeMixin implements _PickImage {
     required TResult Function(_AddQuestionpressed value) addQuestionPressed,
   }) {
     return pickImage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_QuestionDescriptionChanged value)?
+        questionDescriptionChanged,
+    TResult Function(_PickImage value)? pickImage,
+    TResult Function(_AddQuestionpressed value)? addQuestionPressed,
+  }) {
+    return pickImage?.call(this);
   }
 
   @override
@@ -371,6 +431,7 @@ class __$AddQuestionpressedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_AddQuestionpressed
     with DiagnosticableTreeMixin
     implements _AddQuestionpressed {
@@ -399,19 +460,15 @@ class _$_AddQuestionpressed
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AddQuestionpressed &&
-            (identical(other.file, file) ||
-                const DeepCollectionEquality().equals(other.file, file)) &&
+        (other.runtimeType == runtimeType &&
+            other is _AddQuestionpressed &&
+            (identical(other.file, file) || other.file == file) &&
             (identical(other.question, question) ||
-                const DeepCollectionEquality()
-                    .equals(other.question, question)));
+                other.question == question));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(file) ^
-      const DeepCollectionEquality().hash(question);
+  int get hashCode => Object.hash(runtimeType, file, question);
 
   @JsonKey(ignore: true)
   @override
@@ -426,6 +483,16 @@ class _$_AddQuestionpressed
     required TResult Function(File? file, Question question) addQuestionPressed,
   }) {
     return addQuestionPressed(file, question);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String description)? questionDescriptionChanged,
+    TResult Function()? pickImage,
+    TResult Function(File? file, Question question)? addQuestionPressed,
+  }) {
+    return addQuestionPressed?.call(file, question);
   }
 
   @override
@@ -455,6 +522,17 @@ class _$_AddQuestionpressed
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_QuestionDescriptionChanged value)?
+        questionDescriptionChanged,
+    TResult Function(_PickImage value)? pickImage,
+    TResult Function(_AddQuestionpressed value)? addQuestionPressed,
+  }) {
+    return addQuestionPressed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_QuestionDescriptionChanged value)?
         questionDescriptionChanged,
@@ -473,8 +551,8 @@ abstract class _AddQuestionpressed implements AddQuestionFormEvent {
   const factory _AddQuestionpressed(File? file, Question question) =
       _$_AddQuestionpressed;
 
-  File? get file => throw _privateConstructorUsedError;
-  Question get question => throw _privateConstructorUsedError;
+  File? get file;
+  Question get question;
   @JsonKey(ignore: true)
   _$AddQuestionpressedCopyWith<_AddQuestionpressed> get copyWith =>
       throw _privateConstructorUsedError;
@@ -645,6 +723,7 @@ class __$AddQuestionFormStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_AddQuestionFormState
     with DiagnosticableTreeMixin
     implements _AddQuestionFormState {
@@ -687,34 +766,25 @@ class _$_AddQuestionFormState
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AddQuestionFormState &&
+        (other.runtimeType == runtimeType &&
+            other is _AddQuestionFormState &&
             (identical(other.question, question) ||
-                const DeepCollectionEquality()
-                    .equals(other.question, question)) &&
+                other.question == question) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
+                other.showErrorMessages == showErrorMessages) &&
             (identical(other.isSaving, isSaving) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSaving, isSaving)) &&
+                other.isSaving == isSaving) &&
             (identical(other.isEditing, isEditing) ||
-                const DeepCollectionEquality()
-                    .equals(other.isEditing, isEditing)) &&
+                other.isEditing == isEditing) &&
             (identical(other.saveFailureOrSuccessOption,
                     saveFailureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.saveFailureOrSuccessOption,
-                    saveFailureOrSuccessOption)));
+                other.saveFailureOrSuccessOption ==
+                    saveFailureOrSuccessOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(question) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(isSaving) ^
-      const DeepCollectionEquality().hash(isEditing) ^
-      const DeepCollectionEquality().hash(saveFailureOrSuccessOption);
+  int get hashCode => Object.hash(runtimeType, question, showErrorMessages,
+      isSaving, isEditing, saveFailureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
@@ -733,16 +803,15 @@ abstract class _AddQuestionFormState implements AddQuestionFormState {
           saveFailureOrSuccessOption}) = _$_AddQuestionFormState;
 
   @override
-  Question get question => throw _privateConstructorUsedError;
+  Question get question;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSaving => throw _privateConstructorUsedError;
+  bool get isSaving;
   @override
-  bool get isEditing => throw _privateConstructorUsedError;
+  bool get isEditing;
   @override
-  Option<Either<FirebaseFailure, Unit>> get saveFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<FirebaseFailure, Unit>> get saveFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$AddQuestionFormStateCopyWith<_AddQuestionFormState> get copyWith =>

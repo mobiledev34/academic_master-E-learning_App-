@@ -3,6 +3,7 @@ import 'package:academic_master/presentation/auth/provider/auth_tab_provider.dar
 import 'package:academic_master/presentation/core/loading.dart';
 
 import 'package:academic_master/presentation/routes/router.gr.dart';
+import 'package:academic_master/presentation/utils/constants.dart';
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:auto_route/auto_route.dart';
 
@@ -27,7 +28,6 @@ class SignInForm extends StatelessWidget {
       BoxConstraints(
           maxWidth: MediaQuery.of(context).size.width,
           maxHeight: MediaQuery.of(context).size.height),
-      allowFontScaling: true,
     );
 
     return BlocConsumer<SignInFormBloc, SignInFormState>(
@@ -66,10 +66,11 @@ class SignInForm extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(
                   top: 20.h,
+                  left: leftPadding - 13,
                 ),
                 child: Text("Login",
                     textAlign: TextAlign.start,
-                    style: Apptheme(context).thinText.copyWith(
+                    style: Apptheme(context).normalText.copyWith(
                           fontSize: 50.sp,
                         )),
               ),
@@ -146,7 +147,7 @@ class SignInForm extends StatelessWidget {
               SizedBox(height: 26.w),
               Center(
                   child: Text("OR",
-                      style: Apptheme(context).thinText.copyWith(
+                      style: Apptheme(context).normalText.copyWith(
                             fontSize: 30.h,
                           ))),
               Padding(

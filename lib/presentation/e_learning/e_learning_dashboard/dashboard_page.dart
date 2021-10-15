@@ -1,6 +1,6 @@
 import 'package:academic_master/presentation/e_learning/e_learning_dashboard/widgets/dashboard_appbar.dart';
 import 'package:academic_master/presentation/e_learning/e_learning_dashboard/widgets/group_and_ask_question_tile.dart';
-import 'package:academic_master/presentation/e_learning/e_learning_dashboard/widgets/users_questions.dart';
+import 'package:academic_master/presentation/e_learning/e_learning_dashboard/question_and_comments/users_questions.dart';
 import 'package:academic_master/presentation/theme/theme.dart';
 
 import 'package:flutter/material.dart';

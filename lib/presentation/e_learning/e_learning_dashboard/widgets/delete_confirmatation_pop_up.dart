@@ -4,12 +4,12 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-// import 'package:shedistrict/ui/theme/apptheme.dart';
-// import 'package:shedistrict/utlis/constants/asset_path.dart';
-
+// ignore: must_be_immutable
 class PostDeleteConfirmatationPopup extends StatelessWidget {
+  String message;
   PostDeleteConfirmatationPopup({
     Key? key,
+    required this.message,
   }) : super(key: key);
 
   @override
@@ -17,17 +17,16 @@ class PostDeleteConfirmatationPopup extends StatelessWidget {
     BuildContext context,
   ) {
     return Align(
-      alignment: Alignment.center,
       child: Container(
         height: 150,
         // width: 320,
+        // ignore: sort_child_properties_last
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Padding(
-              padding: EdgeInsets.only(
+              padding: const EdgeInsets.only(
                 right: 15,
               ),
               child: GestureDetector(
@@ -44,11 +43,11 @@ class PostDeleteConfirmatationPopup extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Center(
-              child: Text("Post deleted",
+              child: Text(message,
                   textAlign: TextAlign.center,
                   style: Apptheme(context).boldText.copyWith(
                         color: Apptheme.primaryColor,
@@ -56,10 +55,10 @@ class PostDeleteConfirmatationPopup extends StatelessWidget {
                         decoration: TextDecoration.none,
                       )),
             ),
-            SizedBox(width: 150),
+            const SizedBox(width: 150),
           ],
         ),
-        margin: EdgeInsets.only(bottom: 50, left: 12, right: 12),
+        margin: const EdgeInsets.only(bottom: 50, left: 12, right: 12),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(20),

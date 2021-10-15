@@ -9,6 +9,7 @@ class Apptheme {
 
   static const backgroundColor = Color(0xffffffff);
   static const primaryColor = Color(0xff2BB5F3);
+  static const lightCardColor = Color(0xffF3F3F3);
 
   static const secondaryColor = Color(0xffD8EAF2);
   static const assentColor = Color(0xff253157);
@@ -25,10 +26,9 @@ class Apptheme {
     color: assentColor,
     fontWeight: FontWeight.w500,
   );
-  TextStyle thinText = const TextStyle(
+  TextStyle thinText = GoogleFonts.poppins(
     color: assentColor,
     fontWeight: FontWeight.w100,
-    //fontFamily: "Circular_Bold",
   );
   TextStyle normalText = GoogleFonts.poppins(
     color: assentColor,

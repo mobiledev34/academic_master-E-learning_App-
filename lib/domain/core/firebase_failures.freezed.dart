@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'firebase_failures.dart';
 
@@ -42,6 +43,13 @@ mixin _$FirebaseFailure {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? insufficientPermission,
+    TResult Function()? unableToUpdate,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
     TResult Function()? insufficientPermission,
@@ -55,6 +63,13 @@ mixin _$FirebaseFailure {
     required TResult Function(_InsufficientPermission value)
         insufficientPermission,
     required TResult Function(_UnableToUpdate value) unableToUpdate,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -104,6 +119,7 @@ class __$UnexpectedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Unexpected implements _Unexpected {
   const _$_Unexpected();
 
@@ -114,7 +130,8 @@ class _$_Unexpected implements _Unexpected {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Unexpected);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Unexpected);
   }
 
   @override
@@ -128,6 +145,16 @@ class _$_Unexpected implements _Unexpected {
     required TResult Function() unableToUpdate,
   }) {
     return unexpected();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? insufficientPermission,
+    TResult Function()? unableToUpdate,
+  }) {
+    return unexpected?.call();
   }
 
   @override
@@ -153,6 +180,16 @@ class _$_Unexpected implements _Unexpected {
     required TResult Function(_UnableToUpdate value) unableToUpdate,
   }) {
     return unexpected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+  }) {
+    return unexpected?.call(this);
   }
 
   @override
@@ -194,6 +231,7 @@ class __$InsufficientPermissionCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_InsufficientPermission implements _InsufficientPermission {
   const _$_InsufficientPermission();
 
@@ -204,7 +242,8 @@ class _$_InsufficientPermission implements _InsufficientPermission {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _InsufficientPermission);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _InsufficientPermission);
   }
 
   @override
@@ -218,6 +257,16 @@ class _$_InsufficientPermission implements _InsufficientPermission {
     required TResult Function() unableToUpdate,
   }) {
     return insufficientPermission();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? insufficientPermission,
+    TResult Function()? unableToUpdate,
+  }) {
+    return insufficientPermission?.call();
   }
 
   @override
@@ -243,6 +292,16 @@ class _$_InsufficientPermission implements _InsufficientPermission {
     required TResult Function(_UnableToUpdate value) unableToUpdate,
   }) {
     return insufficientPermission(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+  }) {
+    return insufficientPermission?.call(this);
   }
 
   @override
@@ -284,6 +343,7 @@ class __$UnableToUpdateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_UnableToUpdate implements _UnableToUpdate {
   const _$_UnableToUpdate();
 
@@ -294,7 +354,8 @@ class _$_UnableToUpdate implements _UnableToUpdate {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _UnableToUpdate);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _UnableToUpdate);
   }
 
   @override
@@ -308,6 +369,16 @@ class _$_UnableToUpdate implements _UnableToUpdate {
     required TResult Function() unableToUpdate,
   }) {
     return unableToUpdate();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? insufficientPermission,
+    TResult Function()? unableToUpdate,
+  }) {
+    return unableToUpdate?.call();
   }
 
   @override
@@ -333,6 +404,16 @@ class _$_UnableToUpdate implements _UnableToUpdate {
     required TResult Function(_UnableToUpdate value) unableToUpdate,
   }) {
     return unableToUpdate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_InsufficientPermission value)? insufficientPermission,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+  }) {
+    return unableToUpdate?.call(this);
   }
 
   @override

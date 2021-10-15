@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'subject_material.dart';
 
@@ -193,6 +194,7 @@ class __$StudyMaterialCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_StudyMaterial extends _StudyMaterial {
   const _$_StudyMaterial(
       {required this.id,
@@ -227,39 +229,26 @@ class _$_StudyMaterial extends _StudyMaterial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _StudyMaterial &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
+        (other.runtimeType == runtimeType &&
+            other is _StudyMaterial &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.subjectName, subjectName) ||
-                const DeepCollectionEquality()
-                    .equals(other.subjectName, subjectName)) &&
+                other.subjectName == subjectName) &&
             (identical(other.subjectIcon, subjectIcon) ||
-                const DeepCollectionEquality()
-                    .equals(other.subjectIcon, subjectIcon)) &&
+                other.subjectIcon == subjectIcon) &&
             (identical(other.subjectNote, subjectNote) ||
-                const DeepCollectionEquality()
-                    .equals(other.subjectNote, subjectNote)) &&
+                other.subjectNote == subjectNote) &&
             (identical(other.subjectPaper, subjectPaper) ||
-                const DeepCollectionEquality()
-                    .equals(other.subjectPaper, subjectPaper)) &&
+                other.subjectPaper == subjectPaper) &&
             (identical(other.subjectSyllaybus, subjectSyllaybus) ||
-                const DeepCollectionEquality()
-                    .equals(other.subjectSyllaybus, subjectSyllaybus)) &&
+                other.subjectSyllaybus == subjectSyllaybus) &&
             (identical(other.subjectColor, subjectColor) ||
-                const DeepCollectionEquality()
-                    .equals(other.subjectColor, subjectColor)));
+                other.subjectColor == subjectColor));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(subjectName) ^
-      const DeepCollectionEquality().hash(subjectIcon) ^
-      const DeepCollectionEquality().hash(subjectNote) ^
-      const DeepCollectionEquality().hash(subjectPaper) ^
-      const DeepCollectionEquality().hash(subjectSyllaybus) ^
-      const DeepCollectionEquality().hash(subjectColor);
+  int get hashCode => Object.hash(runtimeType, id, subjectName, subjectIcon,
+      subjectNote, subjectPaper, subjectSyllaybus, subjectColor);
 
   @JsonKey(ignore: true)
   @override
@@ -279,19 +268,19 @@ abstract class _StudyMaterial extends StudyMaterial {
   const _StudyMaterial._() : super._();
 
   @override
-  UniqueId get id => throw _privateConstructorUsedError;
+  UniqueId get id;
   @override
-  SubjectName get subjectName => throw _privateConstructorUsedError;
+  SubjectName get subjectName;
   @override
-  SubjectIcon get subjectIcon => throw _privateConstructorUsedError;
+  SubjectIcon get subjectIcon;
   @override
-  SubjectNote get subjectNote => throw _privateConstructorUsedError;
+  SubjectNote get subjectNote;
   @override
-  SubjectPaper get subjectPaper => throw _privateConstructorUsedError;
+  SubjectPaper get subjectPaper;
   @override
-  SubjectSyllaybus get subjectSyllaybus => throw _privateConstructorUsedError;
+  SubjectSyllaybus get subjectSyllaybus;
   @override
-  SubjectColor get subjectColor => throw _privateConstructorUsedError;
+  SubjectColor get subjectColor;
   @override
   @JsonKey(ignore: true)
   _$StudyMaterialCopyWith<_StudyMaterial> get copyWith =>
