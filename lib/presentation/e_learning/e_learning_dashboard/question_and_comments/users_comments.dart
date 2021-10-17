@@ -76,6 +76,7 @@ class _UsersCommentsState extends State<UsersComments> {
                                   loadSuccess: (value) {
                                     return ListView.builder(
                                         shrinkWrap: true,
+                                        reverse: true,
                                         itemCount: value.comments.size,
                                         padding: EdgeInsets.zero,
                                         itemBuilder: (context, index) {

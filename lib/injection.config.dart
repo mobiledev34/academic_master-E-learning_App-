@@ -22,6 +22,8 @@ import 'application/e_learning/add_user_comment/add_user_comment_bloc.dart'
     as _i22;
 import 'application/e_learning/chats_and_friends/add_group_chat_message/add_group_chat_message_bloc.dart'
     as _i20;
+import 'application/e_learning/chats_and_friends/group_chat_message_watcher/group_chat_message_watcher_bloc.dart'
+    as _i26;
 import 'application/e_learning/chats_and_friends/watch_all_users_in_our_class/watch_all_users_in_our_class_bloc.dart'
     as _i19;
 import 'application/e_learning/comments_watcher/comments_watcher_bloc.dart'
@@ -37,7 +39,7 @@ import 'domain/e_learning/chats_and_friends/i_chats_and_friends_repository.dart'
     as _i9;
 import 'domain/e_learning/i_e_learning_repository.dart' as _i11;
 import 'infrastructure/auth/firebase_auth_facade.dart' as _i8;
-import 'infrastructure/core/firebase_injectable_module.dart' as _i26;
+import 'infrastructure/core/firebase_injectable_module.dart' as _i27;
 import 'infrastructure/e_learning/chats_and_friends/chats_and_friends_repository.dart'
     as _i10;
 import 'infrastructure/e_learning/e_learning_repository.dart'
@@ -91,7 +93,9 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i24.CommentsWatcherBloc(get<_i11.IElearningRepository>()));
   gh.factory<_i25.ForgotPasswordBloc>(
       () => _i25.ForgotPasswordBloc(get<_i7.IAuthFacade>()));
+  gh.factory<_i26.GroupChatMessageWatcherBloc>(() =>
+      _i26.GroupChatMessageWatcherBloc(get<_i9.IChatsAndFriendsRepository>()));
   return get;
 }
 
-class _$FirebaseInjectableModule extends _i26.FirebaseInjectableModule {}
+class _$FirebaseInjectableModule extends _i27.FirebaseInjectableModule {}

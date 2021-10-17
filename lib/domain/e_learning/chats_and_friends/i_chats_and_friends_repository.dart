@@ -2,6 +2,7 @@ import 'package:academic_master/domain/auth/user.dart';
 import 'package:academic_master/domain/core/firebase_failures.dart';
 import 'package:academic_master/domain/e_learning/chats_and_friends/message.dart';
 import 'package:dartz/dartz.dart';
+import 'package:kt_dart/kt.dart';
 
 // we will define this abstract class in domain level  here we will do all the things which are
 // related to students chats .
@@ -15,4 +16,6 @@ abstract class IChatsAndFriendsRepository {
 
 //create group message to disscuss their doubts in same class ;
   Future<Either<FirebaseFailure, Unit>> createGroupMessage(Message message);
+
+  Stream<Either<FirebaseFailure, KtList<Message>>> watchGroupChatMessages();
 }

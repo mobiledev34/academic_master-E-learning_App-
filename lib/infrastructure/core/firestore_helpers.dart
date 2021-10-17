@@ -57,7 +57,6 @@ extension FirestoreX on FirebaseFirestore {
 
   Future<CollectionReference> groupChatCollection(
     User user,
-    String messageId,
   ) async {
     return FirebaseFirestore.instance
         .collection('courses')
@@ -67,7 +66,5 @@ extension FirestoreX on FirebaseFirestore {
         .collection(user.year.getorCrash())
         .doc("chats")
         .collection("groupChats");
-    // .doc(messageId)
-    // .collection("comment");
   }
 }

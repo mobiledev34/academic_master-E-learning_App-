@@ -192,9 +192,9 @@ class _$GroupChatMessageWatcherStateTearOff {
     return const _LoadInProgress();
   }
 
-  _LoadSuccess loadSuccess(KtList<Message> comments) {
+  _LoadSuccess loadSuccess(KtList<Message> message) {
     return _LoadSuccess(
-      comments,
+      message,
     );
   }
 
@@ -218,7 +218,7 @@ mixin _$GroupChatMessageWatcherState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(KtList<Message> comments) loadSuccess,
+    required TResult Function(KtList<Message> message) loadSuccess,
     required TResult Function(FirebaseFailure firebaseFailure) loadFailure,
     required TResult Function() empty,
   }) =>
@@ -227,7 +227,7 @@ mixin _$GroupChatMessageWatcherState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<Message> comments)? loadSuccess,
+    TResult Function(KtList<Message> message)? loadSuccess,
     TResult Function(FirebaseFailure firebaseFailure)? loadFailure,
     TResult Function()? empty,
   }) =>
@@ -236,7 +236,7 @@ mixin _$GroupChatMessageWatcherState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<Message> comments)? loadSuccess,
+    TResult Function(KtList<Message> message)? loadSuccess,
     TResult Function(FirebaseFailure firebaseFailure)? loadFailure,
     TResult Function()? empty,
     required TResult orElse(),
@@ -331,7 +331,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(KtList<Message> comments) loadSuccess,
+    required TResult Function(KtList<Message> message) loadSuccess,
     required TResult Function(FirebaseFailure firebaseFailure) loadFailure,
     required TResult Function() empty,
   }) {
@@ -343,7 +343,7 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<Message> comments)? loadSuccess,
+    TResult Function(KtList<Message> message)? loadSuccess,
     TResult Function(FirebaseFailure firebaseFailure)? loadFailure,
     TResult Function()? empty,
   }) {
@@ -355,7 +355,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<Message> comments)? loadSuccess,
+    TResult Function(KtList<Message> message)? loadSuccess,
     TResult Function(FirebaseFailure firebaseFailure)? loadFailure,
     TResult Function()? empty,
     required TResult orElse(),
@@ -454,7 +454,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(KtList<Message> comments) loadSuccess,
+    required TResult Function(KtList<Message> message) loadSuccess,
     required TResult Function(FirebaseFailure firebaseFailure) loadFailure,
     required TResult Function() empty,
   }) {
@@ -466,7 +466,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<Message> comments)? loadSuccess,
+    TResult Function(KtList<Message> message)? loadSuccess,
     TResult Function(FirebaseFailure firebaseFailure)? loadFailure,
     TResult Function()? empty,
   }) {
@@ -478,7 +478,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<Message> comments)? loadSuccess,
+    TResult Function(KtList<Message> message)? loadSuccess,
     TResult Function(FirebaseFailure firebaseFailure)? loadFailure,
     TResult Function()? empty,
     required TResult orElse(),
@@ -539,7 +539,7 @@ abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(
           _LoadSuccess value, $Res Function(_LoadSuccess) then) =
       __$LoadSuccessCopyWithImpl<$Res>;
-  $Res call({KtList<Message> comments});
+  $Res call({KtList<Message> message});
 }
 
 /// @nodoc
@@ -555,12 +555,12 @@ class __$LoadSuccessCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? comments = freezed,
+    Object? message = freezed,
   }) {
     return _then(_LoadSuccess(
-      comments == freezed
-          ? _value.comments
-          : comments // ignore: cast_nullable_to_non_nullable
+      message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
               as KtList<Message>,
     ));
   }
@@ -569,14 +569,14 @@ class __$LoadSuccessCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_LoadSuccess implements _LoadSuccess {
-  const _$_LoadSuccess(this.comments);
+  const _$_LoadSuccess(this.message);
 
   @override
-  final KtList<Message> comments;
+  final KtList<Message> message;
 
   @override
   String toString() {
-    return 'GroupChatMessageWatcherState.loadSuccess(comments: $comments)';
+    return 'GroupChatMessageWatcherState.loadSuccess(message: $message)';
   }
 
   @override
@@ -584,12 +584,11 @@ class _$_LoadSuccess implements _LoadSuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _LoadSuccess &&
-            (identical(other.comments, comments) ||
-                other.comments == comments));
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, comments);
+  int get hashCode => Object.hash(runtimeType, message);
 
   @JsonKey(ignore: true)
   @override
@@ -601,11 +600,11 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(KtList<Message> comments) loadSuccess,
+    required TResult Function(KtList<Message> message) loadSuccess,
     required TResult Function(FirebaseFailure firebaseFailure) loadFailure,
     required TResult Function() empty,
   }) {
-    return loadSuccess(comments);
+    return loadSuccess(message);
   }
 
   @override
@@ -613,11 +612,11 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<Message> comments)? loadSuccess,
+    TResult Function(KtList<Message> message)? loadSuccess,
     TResult Function(FirebaseFailure firebaseFailure)? loadFailure,
     TResult Function()? empty,
   }) {
-    return loadSuccess?.call(comments);
+    return loadSuccess?.call(message);
   }
 
   @override
@@ -625,13 +624,13 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<Message> comments)? loadSuccess,
+    TResult Function(KtList<Message> message)? loadSuccess,
     TResult Function(FirebaseFailure firebaseFailure)? loadFailure,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
-      return loadSuccess(comments);
+      return loadSuccess(message);
     }
     return orElse();
   }
@@ -678,9 +677,9 @@ class _$_LoadSuccess implements _LoadSuccess {
 }
 
 abstract class _LoadSuccess implements GroupChatMessageWatcherState {
-  const factory _LoadSuccess(KtList<Message> comments) = _$_LoadSuccess;
+  const factory _LoadSuccess(KtList<Message> message) = _$_LoadSuccess;
 
-  KtList<Message> get comments;
+  KtList<Message> get message;
   @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -762,7 +761,7 @@ class _$_LoadFailure implements _LoadFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(KtList<Message> comments) loadSuccess,
+    required TResult Function(KtList<Message> message) loadSuccess,
     required TResult Function(FirebaseFailure firebaseFailure) loadFailure,
     required TResult Function() empty,
   }) {
@@ -774,7 +773,7 @@ class _$_LoadFailure implements _LoadFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<Message> comments)? loadSuccess,
+    TResult Function(KtList<Message> message)? loadSuccess,
     TResult Function(FirebaseFailure firebaseFailure)? loadFailure,
     TResult Function()? empty,
   }) {
@@ -786,7 +785,7 @@ class _$_LoadFailure implements _LoadFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<Message> comments)? loadSuccess,
+    TResult Function(KtList<Message> message)? loadSuccess,
     TResult Function(FirebaseFailure firebaseFailure)? loadFailure,
     TResult Function()? empty,
     required TResult orElse(),
@@ -888,7 +887,7 @@ class _$_Empty implements _Empty {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(KtList<Message> comments) loadSuccess,
+    required TResult Function(KtList<Message> message) loadSuccess,
     required TResult Function(FirebaseFailure firebaseFailure) loadFailure,
     required TResult Function() empty,
   }) {
@@ -900,7 +899,7 @@ class _$_Empty implements _Empty {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<Message> comments)? loadSuccess,
+    TResult Function(KtList<Message> message)? loadSuccess,
     TResult Function(FirebaseFailure firebaseFailure)? loadFailure,
     TResult Function()? empty,
   }) {
@@ -912,7 +911,7 @@ class _$_Empty implements _Empty {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<Message> comments)? loadSuccess,
+    TResult Function(KtList<Message> message)? loadSuccess,
     TResult Function(FirebaseFailure firebaseFailure)? loadFailure,
     TResult Function()? empty,
     required TResult orElse(),

@@ -28,8 +28,9 @@ class _MessageInputFieldState extends State<MessageInputField> {
         builder: (context, initialGroupChatMessageState) {
           return Padding(
             padding: EdgeInsets.only(
-              bottom: bottomPadding,
-            ),
+                bottom: bottomPadding,
+                left: leftPadding / 2,
+                right: rightpadding / 2),
             child: InputField(
               backgroundColor: Apptheme.backgroundColor,
               controller: messageController,

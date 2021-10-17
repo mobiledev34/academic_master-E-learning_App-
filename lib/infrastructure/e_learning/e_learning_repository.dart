@@ -139,7 +139,7 @@ class ElearningRepository implements IElearningRepository {
     yield* commentCollection
         .orderBy(
           "commentAt",
-          descending: false,
+          descending: true,
         )
         .snapshots()
         .map(

@@ -1,10 +1,5 @@
 part of 'group_chat_message_watcher_bloc.dart';
 
-// @immutable
-// abstract class GroupChatMessageWatcherState {}
-
-// class GroupChatMessageWatcherInitial extends GroupChatMessageWatcherState {}
-
 @freezed
 abstract class GroupChatMessageWatcherState
     with _$GroupChatMessageWatcherState {
@@ -12,7 +7,7 @@ abstract class GroupChatMessageWatcherState
   const factory GroupChatMessageWatcherState.loadInProgress() = _LoadInProgress;
 
   const factory GroupChatMessageWatcherState.loadSuccess(
-      KtList<Message> comments) = _LoadSuccess;
+      KtList<Message> message) = _LoadSuccess;
 
   const factory GroupChatMessageWatcherState.loadFailure(
       FirebaseFailure firebaseFailure) = _LoadFailure;

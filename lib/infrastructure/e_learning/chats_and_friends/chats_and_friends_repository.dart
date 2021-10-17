@@ -10,6 +10,7 @@ import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' as fbauth;
 import 'package:flutter/cupertino.dart';
 import 'package:injectable/injectable.dart';
+import 'package:kt_dart/kt.dart';
 
 import 'message_dtos.dart';
 
@@ -60,9 +61,7 @@ class ChatsAndFriendsRepository implements IChatsAndFriendsRepository {
       );
 
       final groupChatCollection = await _firestore.groupChatCollection(
-        // Get the GroupMessage collection:
         user!,
-        message.messageId.getorCrash(),
       );
 
       debugPrint("i m at groupChatcollection $groupChatCollection");
@@ -84,5 +83,42 @@ class ChatsAndFriendsRepository implements IChatsAndFriendsRepository {
         return left(const FirebaseFailure.unexpected());
       }
     }
+  }
+
+  @override
+  Stream<Either<FirebaseFailure, KtList<Message>>>
+      watchGroupChatMessages() async* {
+    final userDoc = await _firestore.usersCollection();
+    final currentUser = _firebaseAuth.currentUser!.uid;
+    User? user;
+    await userDoc.doc(currentUser).get().then((value) {
+      user = UserDto.fromJson(value.data()! as Map<String, dynamic>).toDomain();
+    });
+
+    final groupChatCollection = await _firestore.groupChatCollection(
+      user!,
+    );
+
+    yield* groupChatCollection
+        .orderBy(
+          "messageAt",
+          descending: true,
+        )
+        .snapshots()
+        .map(
+          (snapshot) => right<FirebaseFailure, KtList<Message>>(
+            snapshot.docs
+                .map((doc) => MessageDto.fromFirestore(doc).toDomain())
+                .toImmutableList(),
+          ),
+        )
+        .handleError((e) {
+      debugPrint("i m error  question sections .......................   $e");
+      if (e is FirebaseException && e.message!.contains('PERMISSION_DENIED')) {
+        return left(const FirebaseFailure.insufficientPermission());
+      } else {
+        return left(const FirebaseFailure.unexpected());
+      }
+    });
   }
 }
