@@ -8,6 +8,8 @@ import 'package:academic_master/presentation/core/custum_textfield.dart';
 import 'package:academic_master/presentation/routes/router.gr.dart';
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:dartz/dartz.dart' as dartz;
+
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +29,12 @@ class QuestionFormPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => getIt<AddQuestionFormBloc>(),
+      create: (context) => getIt<AddQuestionFormBloc>()
+        ..add(
+          AddQuestionFormEvent.initialized(
+            dartz.optionOf(editedQuestion),
+          ),
+        ),
       child: BlocConsumer<AddQuestionFormBloc, AddQuestionFormState>(
         listenWhen: (p, c) =>
             p.saveFailureOrSuccessOption != c.saveFailureOrSuccessOption,
@@ -179,7 +186,20 @@ class _QuestionFormPageScaffoldState extends State<QuestionFormPageScaffold> {
                           ));
                     },
                     //colorBrightness: Brightness.dark,
-                    child: const Text('Raise Your Doubt'),
+                    child:
+                        BlocBuilder<AddQuestionFormBloc, AddQuestionFormState>(
+                      buildWhen: (p, c) => p.isEditing != c.isEditing,
+                      builder: (context, state) {
+                        return Text(
+                            state.isEditing
+                                ? "Done   (you can't edit image)"
+                                : 'Raise Your Doubt',
+                            style: Theme.of(context)
+                                .textTheme
+                                .headline6!
+                                .copyWith(color: Colors.black));
+                      },
+                    ),
                   ),
                   const SizedBox(height: 16),
                 ],

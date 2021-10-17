@@ -159,6 +159,7 @@ class ElearningRepository implements IElearningRepository {
     });
   }
 
+//**  Defin method for user comments */
   @override
   Future<Either<FirebaseFailure, Unit>> createComment(
     UserComment comment,
@@ -166,7 +167,8 @@ class ElearningRepository implements IElearningRepository {
   ) async {
     try {
       final userDoc = await _firestore.usersCollection();
-      final currentUser = _firebaseAuth.currentUser!.uid;
+      final currentUser =
+          _firebaseAuth.currentUser!.uid; //Get the current login user in app.
       User? user;
 
       await userDoc.doc(currentUser).get().then(
@@ -177,6 +179,7 @@ class ElearningRepository implements IElearningRepository {
       );
 
       final commentCollection = await _firestore.commentCollection(
+        // Get the comment collection:
         user!,
         questionId,
       );

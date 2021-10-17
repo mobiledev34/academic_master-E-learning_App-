@@ -1,4 +1,5 @@
 import 'package:academic_master/application/e_learning/users_watcher/users_watcher_bloc.dart';
+import 'package:academic_master/injection.dart';
 import 'package:academic_master/presentation/theme/theme.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
@@ -7,10 +8,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
+// ignore: must_be_immutable
 class Userdp extends StatelessWidget {
-  const Userdp({
-    Key? key,
-  }) : super(key: key);
+  String? userName;
+  Userdp({Key? key, this.userName}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +45,9 @@ class Userdp extends StatelessWidget {
                   loadInProgress: (value) => const SizedBox(),
                   loadSuccess: (value) {
                     return Text(
-                      value.users.first.name.getorCrash().substring(0, 1),
+                      (userName != null)
+                          ? userName!.substring(0, 1)
+                          : value.users.first.name.getorCrash().substring(0, 1),
                       style: Apptheme(context).boldText.copyWith(
                             color: Apptheme.primaryColor,
                             fontSize: 20.sp,

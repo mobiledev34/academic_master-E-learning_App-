@@ -31,14 +31,15 @@ class AddQuestionFormBloc
     AddQuestionFormEvent event,
   ) async* {
     yield* event.map(
-      // initialized: (e) async* {
-      //   yield e.intialQuestionOption.fold(
-      //       () => state,
-      //       (intialQuestion) => state.copyWith(
-      //             question: intialQuestion,
-      //             isEditing: true,
-      //           ));
-      // },
+      initialized: (e) async* {
+        yield e.initialQuestionOption.fold(
+          () => state,
+          (intialQuestion) => state.copyWith(
+            question: intialQuestion,
+            isEditing: true,
+          ),
+        );
+      },
       questionDescriptionChanged: (e) async* {
         yield state.copyWith(
           question: state.question.copyWith(
@@ -60,10 +61,10 @@ class AddQuestionFormBloc
               "ok nbro i m in application layer ....... ${e.file} ${state.question}");
           failureOrSuccess = await _iElearningRepository.createQuestion(
               e.file, state.question);
-          //state.isEditing
-          // ? await _iElearningRepository.updateQuestion(state.question)
-          // : await _iElearningRepository.createQuestion(
-          //     e.file, state.question);
+          state.isEditing
+              ? await _iElearningRepository.updateQuestion(state.question)
+              : await _iElearningRepository.createQuestion(
+                  e.file, state.question);
         }
 
         yield state.copyWith(

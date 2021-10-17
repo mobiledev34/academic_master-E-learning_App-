@@ -4,8 +4,10 @@ import 'package:academic_master/injection.dart';
 import 'package:academic_master/presentation/core/critical_failure.dart';
 import 'package:academic_master/presentation/core/empty.dart';
 import 'package:academic_master/presentation/core/user_dp.dart';
+import 'package:academic_master/presentation/routes/router.gr.dart';
 import 'package:academic_master/presentation/theme/theme.dart';
 import 'package:academic_master/presentation/utils/constants.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -64,12 +66,10 @@ class UsersQuestions extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(children: [
-                          const Userdp(),
+                          Userdp(),
                           SizedBox(
                             width: 10.w,
                           ),
-
-                          //here i have to use and show the user name
                           Wrap(
                             direction: Axis.vertical,
                             children: [

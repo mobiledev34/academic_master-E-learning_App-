@@ -20,6 +20,3 @@ class AddUserCommentState with _$AddUserCommentState {
         saveFailureOrSuccessOption: none(),
       );
 }
-
-
-// flutter pub run build_runner watch --delete-conflicting-outputs

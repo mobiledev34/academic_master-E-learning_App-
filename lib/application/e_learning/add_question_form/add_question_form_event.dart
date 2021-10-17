@@ -2,6 +2,9 @@ part of 'add_question_form_bloc.dart';
 
 @freezed
 class AddQuestionFormEvent with _$AddQuestionFormEvent {
+  const factory AddQuestionFormEvent.initialized(
+      Option<Question> initialQuestionOption) = _Initialized;
+
   const factory AddQuestionFormEvent.questionDescriptionChanged(
     String description,
   ) = _QuestionDescriptionChanged;

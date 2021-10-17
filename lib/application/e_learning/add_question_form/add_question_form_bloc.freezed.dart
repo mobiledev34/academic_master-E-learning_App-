@@ -17,6 +17,12 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$AddQuestionFormEventTearOff {
   const _$AddQuestionFormEventTearOff();
 
+  _Initialized initialized(Option<Question> initialQuestionOption) {
+    return _Initialized(
+      initialQuestionOption,
+    );
+  }
+
   _QuestionDescriptionChanged questionDescriptionChanged(String description) {
     return _QuestionDescriptionChanged(
       description,
@@ -42,6 +48,8 @@ const $AddQuestionFormEvent = _$AddQuestionFormEventTearOff();
 mixin _$AddQuestionFormEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(Option<Question> initialQuestionOption)
+        initialized,
     required TResult Function(String description) questionDescriptionChanged,
     required TResult Function() pickImage,
     required TResult Function(File? file, Question question) addQuestionPressed,
@@ -49,6 +57,7 @@ mixin _$AddQuestionFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Question> initialQuestionOption)? initialized,
     TResult Function(String description)? questionDescriptionChanged,
     TResult Function()? pickImage,
     TResult Function(File? file, Question question)? addQuestionPressed,
@@ -56,6 +65,7 @@ mixin _$AddQuestionFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Question> initialQuestionOption)? initialized,
     TResult Function(String description)? questionDescriptionChanged,
     TResult Function()? pickImage,
     TResult Function(File? file, Question question)? addQuestionPressed,
@@ -64,6 +74,7 @@ mixin _$AddQuestionFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
     required TResult Function(_QuestionDescriptionChanged value)
         questionDescriptionChanged,
     required TResult Function(_PickImage value) pickImage,
@@ -72,6 +83,7 @@ mixin _$AddQuestionFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_QuestionDescriptionChanged value)?
         questionDescriptionChanged,
     TResult Function(_PickImage value)? pickImage,
@@ -80,6 +92,7 @@ mixin _$AddQuestionFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_QuestionDescriptionChanged value)?
         questionDescriptionChanged,
     TResult Function(_PickImage value)? pickImage,
@@ -104,6 +117,166 @@ class _$AddQuestionFormEventCopyWithImpl<$Res>
   final AddQuestionFormEvent _value;
   // ignore: unused_field
   final $Res Function(AddQuestionFormEvent) _then;
+}
+
+/// @nodoc
+abstract class _$InitializedCopyWith<$Res> {
+  factory _$InitializedCopyWith(
+          _Initialized value, $Res Function(_Initialized) then) =
+      __$InitializedCopyWithImpl<$Res>;
+  $Res call({Option<Question> initialQuestionOption});
+}
+
+/// @nodoc
+class __$InitializedCopyWithImpl<$Res>
+    extends _$AddQuestionFormEventCopyWithImpl<$Res>
+    implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(
+      _Initialized _value, $Res Function(_Initialized) _then)
+      : super(_value, (v) => _then(v as _Initialized));
+
+  @override
+  _Initialized get _value => super._value as _Initialized;
+
+  @override
+  $Res call({
+    Object? initialQuestionOption = freezed,
+  }) {
+    return _then(_Initialized(
+      initialQuestionOption == freezed
+          ? _value.initialQuestionOption
+          : initialQuestionOption // ignore: cast_nullable_to_non_nullable
+              as Option<Question>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_Initialized with DiagnosticableTreeMixin implements _Initialized {
+  const _$_Initialized(this.initialQuestionOption);
+
+  @override
+  final Option<Question> initialQuestionOption;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AddQuestionFormEvent.initialized(initialQuestionOption: $initialQuestionOption)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'AddQuestionFormEvent.initialized'))
+      ..add(
+          DiagnosticsProperty('initialQuestionOption', initialQuestionOption));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _Initialized &&
+            (identical(other.initialQuestionOption, initialQuestionOption) ||
+                other.initialQuestionOption == initialQuestionOption));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, initialQuestionOption);
+
+  @JsonKey(ignore: true)
+  @override
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Option<Question> initialQuestionOption)
+        initialized,
+    required TResult Function(String description) questionDescriptionChanged,
+    required TResult Function() pickImage,
+    required TResult Function(File? file, Question question) addQuestionPressed,
+  }) {
+    return initialized(initialQuestionOption);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Question> initialQuestionOption)? initialized,
+    TResult Function(String description)? questionDescriptionChanged,
+    TResult Function()? pickImage,
+    TResult Function(File? file, Question question)? addQuestionPressed,
+  }) {
+    return initialized?.call(initialQuestionOption);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Question> initialQuestionOption)? initialized,
+    TResult Function(String description)? questionDescriptionChanged,
+    TResult Function()? pickImage,
+    TResult Function(File? file, Question question)? addQuestionPressed,
+    required TResult orElse(),
+  }) {
+    if (initialized != null) {
+      return initialized(initialQuestionOption);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_QuestionDescriptionChanged value)
+        questionDescriptionChanged,
+    required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_AddQuestionpressed value) addQuestionPressed,
+  }) {
+    return initialized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_QuestionDescriptionChanged value)?
+        questionDescriptionChanged,
+    TResult Function(_PickImage value)? pickImage,
+    TResult Function(_AddQuestionpressed value)? addQuestionPressed,
+  }) {
+    return initialized?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_QuestionDescriptionChanged value)?
+        questionDescriptionChanged,
+    TResult Function(_PickImage value)? pickImage,
+    TResult Function(_AddQuestionpressed value)? addQuestionPressed,
+    required TResult orElse(),
+  }) {
+    if (initialized != null) {
+      return initialized(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Initialized implements AddQuestionFormEvent {
+  const factory _Initialized(Option<Question> initialQuestionOption) =
+      _$_Initialized;
+
+  Option<Question> get initialQuestionOption;
+  @JsonKey(ignore: true)
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -185,6 +358,8 @@ class _$_QuestionDescriptionChanged
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(Option<Question> initialQuestionOption)
+        initialized,
     required TResult Function(String description) questionDescriptionChanged,
     required TResult Function() pickImage,
     required TResult Function(File? file, Question question) addQuestionPressed,
@@ -195,6 +370,7 @@ class _$_QuestionDescriptionChanged
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Question> initialQuestionOption)? initialized,
     TResult Function(String description)? questionDescriptionChanged,
     TResult Function()? pickImage,
     TResult Function(File? file, Question question)? addQuestionPressed,
@@ -205,6 +381,7 @@ class _$_QuestionDescriptionChanged
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Question> initialQuestionOption)? initialized,
     TResult Function(String description)? questionDescriptionChanged,
     TResult Function()? pickImage,
     TResult Function(File? file, Question question)? addQuestionPressed,
@@ -219,6 +396,7 @@ class _$_QuestionDescriptionChanged
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
     required TResult Function(_QuestionDescriptionChanged value)
         questionDescriptionChanged,
     required TResult Function(_PickImage value) pickImage,
@@ -230,6 +408,7 @@ class _$_QuestionDescriptionChanged
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_QuestionDescriptionChanged value)?
         questionDescriptionChanged,
     TResult Function(_PickImage value)? pickImage,
@@ -241,6 +420,7 @@ class _$_QuestionDescriptionChanged
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_QuestionDescriptionChanged value)?
         questionDescriptionChanged,
     TResult Function(_PickImage value)? pickImage,
@@ -311,6 +491,8 @@ class _$_PickImage with DiagnosticableTreeMixin implements _PickImage {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(Option<Question> initialQuestionOption)
+        initialized,
     required TResult Function(String description) questionDescriptionChanged,
     required TResult Function() pickImage,
     required TResult Function(File? file, Question question) addQuestionPressed,
@@ -321,6 +503,7 @@ class _$_PickImage with DiagnosticableTreeMixin implements _PickImage {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Question> initialQuestionOption)? initialized,
     TResult Function(String description)? questionDescriptionChanged,
     TResult Function()? pickImage,
     TResult Function(File? file, Question question)? addQuestionPressed,
@@ -331,6 +514,7 @@ class _$_PickImage with DiagnosticableTreeMixin implements _PickImage {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Question> initialQuestionOption)? initialized,
     TResult Function(String description)? questionDescriptionChanged,
     TResult Function()? pickImage,
     TResult Function(File? file, Question question)? addQuestionPressed,
@@ -345,6 +529,7 @@ class _$_PickImage with DiagnosticableTreeMixin implements _PickImage {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
     required TResult Function(_QuestionDescriptionChanged value)
         questionDescriptionChanged,
     required TResult Function(_PickImage value) pickImage,
@@ -356,6 +541,7 @@ class _$_PickImage with DiagnosticableTreeMixin implements _PickImage {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_QuestionDescriptionChanged value)?
         questionDescriptionChanged,
     TResult Function(_PickImage value)? pickImage,
@@ -367,6 +553,7 @@ class _$_PickImage with DiagnosticableTreeMixin implements _PickImage {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_QuestionDescriptionChanged value)?
         questionDescriptionChanged,
     TResult Function(_PickImage value)? pickImage,
@@ -478,6 +665,8 @@ class _$_AddQuestionpressed
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(Option<Question> initialQuestionOption)
+        initialized,
     required TResult Function(String description) questionDescriptionChanged,
     required TResult Function() pickImage,
     required TResult Function(File? file, Question question) addQuestionPressed,
@@ -488,6 +677,7 @@ class _$_AddQuestionpressed
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Option<Question> initialQuestionOption)? initialized,
     TResult Function(String description)? questionDescriptionChanged,
     TResult Function()? pickImage,
     TResult Function(File? file, Question question)? addQuestionPressed,
@@ -498,6 +688,7 @@ class _$_AddQuestionpressed
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Option<Question> initialQuestionOption)? initialized,
     TResult Function(String description)? questionDescriptionChanged,
     TResult Function()? pickImage,
     TResult Function(File? file, Question question)? addQuestionPressed,
@@ -512,6 +703,7 @@ class _$_AddQuestionpressed
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
     required TResult Function(_QuestionDescriptionChanged value)
         questionDescriptionChanged,
     required TResult Function(_PickImage value) pickImage,
@@ -523,6 +715,7 @@ class _$_AddQuestionpressed
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_QuestionDescriptionChanged value)?
         questionDescriptionChanged,
     TResult Function(_PickImage value)? pickImage,
@@ -534,6 +727,7 @@ class _$_AddQuestionpressed
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_QuestionDescriptionChanged value)?
         questionDescriptionChanged,
     TResult Function(_PickImage value)? pickImage,

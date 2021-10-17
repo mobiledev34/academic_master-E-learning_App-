@@ -15,7 +15,10 @@ class UsersWatcherBloc extends Bloc<UsersWatcherEvent, UsersWatcherState> {
   final IElearningRepository _iElearningRepository;
 
   UsersWatcherBloc(this._iElearningRepository)
-      : super(const UsersWatcherState.initial());
+      : super(
+          const UsersWatcherState.initial(),
+        );
+
   @override
   Stream<UsersWatcherState> mapEventToState(
     UsersWatcherEvent event,

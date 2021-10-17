@@ -42,8 +42,8 @@ class Sujectile extends StatelessWidget {
                 padding: EdgeInsets.only(left: 10.h, top: 10.h, bottom: 10.h),
                 child: Text(
                   title,
-                  style: Apptheme(context).thinText.copyWith(
-                        fontSize: 15.sp,
+                  style: Apptheme(context).normalText.copyWith(
+                        fontSize: 13.sp,
                       ),
                 ),
               ),

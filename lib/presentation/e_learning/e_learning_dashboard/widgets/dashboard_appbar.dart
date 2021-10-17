@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:line_icons/line_icons.dart';
 
 class DashBoardAppBar extends StatelessWidget {
   @override
@@ -31,7 +32,7 @@ class DashBoardAppBar extends StatelessWidget {
         ),
         Positioned(
           top: topPadding1,
-          right: rightpadding * 2.5,
+          right: rightpadding * 3,
           child: IconButton(
             onPressed: () {
               AutoRouter.of(context).push(QuestionFormRoute());
@@ -39,19 +40,21 @@ class DashBoardAppBar extends StatelessWidget {
             icon: const Icon(
               FeatherIcons.plusCircle,
               color: Apptheme.primaryColor,
-              size: 30,
+              size: 35,
             ),
           ),
         ),
         Positioned(
           top: topPadding1,
-          right: rightpadding - 10,
+          right: rightpadding,
           child: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              AutoRouter.of(context).push(const StudentsGroupChatScreen());
+            },
             icon: const Icon(
-              FeatherIcons.bell,
+              LineIcons.telegramPlane,
               color: Apptheme.primaryColor,
-              size: 30,
+              size: 40,
             ),
           ),
         )

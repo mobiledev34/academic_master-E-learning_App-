@@ -38,7 +38,7 @@ class _UsersCommentsState extends State<UsersComments> {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return BlocBuilder<AddUserCommentBloc, AddUserCommentState>(
-      builder: (BuildContext context, mystate) {
+      builder: (BuildContext context, pAddUserCommentState) {
         return SingleChildScrollView(
           controller: ModalScrollController.of(context),
           child: SizedBox(
@@ -106,7 +106,7 @@ class _UsersCommentsState extends State<UsersComments> {
                                                                     .userId
                                                                     .getorCrash()),
                                                       ),
-                                                    child: const Userdp(),
+                                                    child: Userdp(),
                                                   )
                                                 else
                                                   const SizedBox(),
@@ -243,7 +243,7 @@ class _UsersCommentsState extends State<UsersComments> {
                                                                     .userId
                                                                     .getorCrash()),
                                                       ),
-                                                    child: const Userdp(),
+                                                    child: Userdp(),
                                                   )
                                                 else
                                                   const SizedBox(),
@@ -297,7 +297,7 @@ class _UsersCommentsState extends State<UsersComments> {
                         onTap: () {
                           context.read<AddUserCommentBloc>().add(
                                 AddUserCommentEvent.addCommentPressed(
-                                  mystate.comment,
+                                  pAddUserCommentState.comment,
                                   widget.questionId,
                                 ),
                               );

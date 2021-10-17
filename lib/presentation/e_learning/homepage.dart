@@ -1,6 +1,5 @@
 import 'package:academic_master/application/auth/auth_bloc.dart';
 import 'package:academic_master/application/e_learning/add_user_comment/add_user_comment_bloc.dart';
-import 'package:academic_master/application/e_learning/question_actor/question_actor_bloc.dart';
 import 'package:academic_master/application/e_learning/question_watcher/question_watcher_bloc.dart';
 import 'package:academic_master/application/e_learning/subject_watcher/subject_watcher_bloc.dart';
 import 'package:academic_master/application/e_learning/users_watcher/users_watcher_bloc.dart';
@@ -18,6 +17,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:line_icons/line_icon.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
+import 'chats_and_friends/chat_room_page.dart';
 import 'profile/profile_page.dart';
 
 // ignore: must_be_immutable
@@ -72,7 +72,7 @@ class Homepage extends HookWidget {
           screens: [
             Dashboard(),
             Subjects(),
-            Text("3"),
+            const ChatRoomPage(),
             ProfilePage(),
           ],
           items: _navBarsItems(),
@@ -120,7 +120,7 @@ class Homepage extends HookWidget {
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),
       PersistentBottomNavBarItem(
-        icon: LineIcon.youtube(
+        icon: LineIcon.facebookMessenger(
           size: 35,
         ),
         activeColorPrimary: Apptheme.primaryColor,

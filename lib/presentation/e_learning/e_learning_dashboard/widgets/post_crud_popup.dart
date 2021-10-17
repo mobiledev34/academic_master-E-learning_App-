@@ -5,6 +5,7 @@ import 'package:academic_master/injection.dart';
 import 'package:academic_master/presentation/core/empty.dart';
 import 'package:academic_master/presentation/core/error.dart';
 import 'package:academic_master/presentation/core/loading.dart';
+import 'package:academic_master/presentation/routes/router.gr.dart';
 import 'package:academic_master/presentation/theme/theme.dart';
 import 'package:academic_master/presentation/utils/constants.dart';
 import 'package:auto_route/auto_route.dart';
@@ -48,127 +49,157 @@ class PostCrudPopup extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const SizedBox(height: 30),
-                            BlocBuilder<QuestionActorBloc, QuestionActorState>(
-                              builder: (context, state) {
-                                return GestureDetector(
-                                  onTap: () {
-                                    if (currentLoginUser.users.first.id
-                                            .getorCrash() ==
-                                        question.userId.getorCrash()) {
-                                      context.read<QuestionActorBloc>().add(
-                                            QuestionActorEvent.deleted(
-                                                question),
-                                          );
+                            GestureDetector(
+                              onTap: () {
+                                if (currentLoginUser.users.first.id
+                                        .getorCrash() ==
+                                    question.userId.getorCrash()) {
+                                  context.read<QuestionActorBloc>().add(
+                                        QuestionActorEvent.deleted(question),
+                                      );
 
-                                      AutoRouter.of(context)
-                                          .pop()
-                                          .then((value) {
-                                        showGeneralDialog(
-                                          barrierLabel: "Barrier",
-                                          barrierDismissible: true,
-                                          barrierColor:
-                                              Colors.black.withOpacity(0.5),
-                                          transitionDuration:
-                                              const Duration(milliseconds: 800),
-                                          context: context,
-                                          pageBuilder: (_, __, ___) {
-                                            return PostDeleteConfirmatationPopup(
-                                              message: "Post deleted",
-                                            );
-                                          },
-                                          transitionBuilder:
-                                              (_, anim, __, child) {
-                                            return SlideTransition(
-                                              // ignore: require_trailing_commas
-                                              position: Tween(
-                                                begin: const Offset(1, 3),
-                                                end: const Offset(0, 0),
-                                              ).animate(anim),
-                                              child: child,
-                                            );
-                                          },
+                                  AutoRouter.of(context).pop().then((value) {
+                                    showGeneralDialog(
+                                      barrierLabel: "Barrier",
+                                      barrierDismissible: true,
+                                      barrierColor:
+                                          Colors.black.withOpacity(0.5),
+                                      transitionDuration:
+                                          const Duration(milliseconds: 800),
+                                      context: context,
+                                      pageBuilder: (_, __, ___) {
+                                        return PostDeleteConfirmatationPopup(
+                                          message: "Post deleted",
                                         );
-                                      });
-                                    } else {
-                                      AutoRouter.of(context)
-                                          .pop()
-                                          .then((value) {
-                                        showGeneralDialog(
-                                          barrierLabel: "Barrier",
-                                          barrierDismissible: true,
-                                          barrierColor:
-                                              Colors.black.withOpacity(0.5),
-                                          transitionDuration:
-                                              const Duration(milliseconds: 800),
-                                          context: context,
-                                          pageBuilder: (_, __, ___) {
-                                            return PostDeleteConfirmatationPopup(
-                                              message:
-                                                  "You do'nt have permission to delete this question",
-                                            );
-                                          },
-                                          transitionBuilder:
-                                              (_, anim, __, child) {
-                                            return SlideTransition(
-                                              // ignore: require_trailing_commas
-                                              position: Tween(
-                                                begin: const Offset(1, 3),
-                                                end: const Offset(0, 0),
-                                              ).animate(anim),
-                                              child: child,
-                                            );
-                                          },
+                                      },
+                                      transitionBuilder: (_, anim, __, child) {
+                                        return SlideTransition(
+                                          // ignore: require_trailing_commas
+                                          position: Tween(
+                                            begin: const Offset(1, 3),
+                                            end: const Offset(0, 0),
+                                          ).animate(anim),
+                                          child: child,
                                         );
-                                      });
-                                    }
-                                  },
-                                  child: Row(
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                          left: leftPadding,
-                                        ),
-                                        child: Text(
-                                          "Delete post",
-                                          style: Apptheme(context)
-                                              .boldText
-                                              .copyWith(
+                                      },
+                                    );
+                                  });
+                                } else {
+                                  AutoRouter.of(context).pop().then((value) {
+                                    showGeneralDialog(
+                                      barrierLabel: "Barrier",
+                                      barrierDismissible: true,
+                                      barrierColor:
+                                          Colors.black.withOpacity(0.5),
+                                      transitionDuration:
+                                          const Duration(milliseconds: 800),
+                                      context: context,
+                                      pageBuilder: (_, __, ___) {
+                                        return PostDeleteConfirmatationPopup(
+                                          message:
+                                              "You do'nt have permission to delete this question",
+                                        );
+                                      },
+                                      transitionBuilder: (_, anim, __, child) {
+                                        return SlideTransition(
+                                          // ignore: require_trailing_commas
+                                          position: Tween(
+                                            begin: const Offset(1, 3),
+                                            end: const Offset(0, 0),
+                                          ).animate(anim),
+                                          child: child,
+                                        );
+                                      },
+                                    );
+                                  });
+                                }
+                              },
+                              child: Row(
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                      left: leftPadding,
+                                    ),
+                                    child: Text(
+                                      "Delete post",
+                                      style:
+                                          Apptheme(context).boldText.copyWith(
                                                 color: Apptheme.assentColor,
                                                 fontSize: 15,
                                                 decoration: TextDecoration.none,
                                               ),
-                                        ),
-                                      ),
-                                      const SizedBox(width: 150),
-                                      const Icon(
-                                        Icons.delete_outline,
-                                      ),
-                                    ],
+                                    ),
                                   ),
-                                );
-                              },
+                                  const SizedBox(width: 150),
+                                  const Icon(
+                                    Icons.delete_outline,
+                                    color: Apptheme.primaryColor,
+                                  ),
+                                ],
+                              ),
                             ),
                             const SizedBox(height: 20),
-                            Row(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                    left: leftPadding,
+                            GestureDetector(
+                              onTap: () {
+                                if (currentLoginUser.users.first.id
+                                        .getorCrash() ==
+                                    question.userId.getorCrash()) {
+                                  AutoRouter.of(context).push(
+                                    QuestionFormRoute(editedQuestion: question),
+                                  );
+                                } else {
+                                  AutoRouter.of(context).pop().then((value) {
+                                    showGeneralDialog(
+                                      barrierLabel: "Barrier",
+                                      barrierDismissible: true,
+                                      barrierColor:
+                                          Colors.black.withOpacity(0.5),
+                                      transitionDuration:
+                                          const Duration(milliseconds: 800),
+                                      context: context,
+                                      pageBuilder: (_, __, ___) {
+                                        return PostDeleteConfirmatationPopup(
+                                          message:
+                                              "You do'nt have permission to edit this question",
+                                        );
+                                      },
+                                      transitionBuilder: (_, anim, __, child) {
+                                        return SlideTransition(
+                                          // ignore: require_trailing_commas
+                                          position: Tween(
+                                            begin: const Offset(1, 3),
+                                            end: const Offset(0, 0),
+                                          ).animate(anim),
+                                          child: child,
+                                        );
+                                      },
+                                    );
+                                  });
+                                }
+                              },
+                              child: Row(
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                      left: leftPadding,
+                                    ),
+                                    child: Text(
+                                      "Edit post",
+                                      style:
+                                          Apptheme(context).boldText.copyWith(
+                                                color: Apptheme.assentColor,
+                                                fontSize: 15,
+                                                decoration: TextDecoration.none,
+                                              ),
+                                    ),
                                   ),
-                                  child: Text(
-                                    "Edit post",
-                                    style: Apptheme(context).boldText.copyWith(
-                                          color: Apptheme.assentColor,
-                                          fontSize: 15,
-                                          decoration: TextDecoration.none,
-                                        ),
+                                  const SizedBox(width: 170),
+                                  const Icon(
+                                    Icons.edit_outlined,
+                                    color: Apptheme.primaryColor,
                                   ),
-                                ),
-                                const SizedBox(width: 170),
-                                const Icon(
-                                  Icons.edit_outlined,
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                             const SizedBox(height: 20),
                             Row(
@@ -191,6 +222,7 @@ class PostCrudPopup extends StatelessWidget {
                                   angle: 15,
                                   child: const Icon(
                                     Icons.link_outlined,
+                                    color: Apptheme.primaryColor,
                                   ),
                                 )
                               ],

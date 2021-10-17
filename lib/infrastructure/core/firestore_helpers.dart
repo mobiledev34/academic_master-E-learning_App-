@@ -54,4 +54,20 @@ extension FirestoreX on FirebaseFirestore {
         .doc(questionId)
         .collection("comment");
   }
+
+  Future<CollectionReference> groupChatCollection(
+    User user,
+    String messageId,
+  ) async {
+    return FirebaseFirestore.instance
+        .collection('courses')
+        .doc(user.course.getorCrash())
+        .collection("branch")
+        .doc(user.branch.getorCrash())
+        .collection(user.year.getorCrash())
+        .doc("chats")
+        .collection("groupChats");
+    // .doc(messageId)
+    // .collection("comment");
+  }
 }
