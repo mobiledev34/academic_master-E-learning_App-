@@ -11,7 +11,6 @@ import 'package:firebase_auth/firebase_auth.dart' hide User;
 import 'package:flutter/foundation.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
-
 import "./firebase_user_mapper.dart";
 
 @LazySingleton(as: IAuthFacade)
@@ -153,11 +152,6 @@ class FirebaseAuthFacade implements IAuthFacade {
       final userDto = UserDto.fromDomain(user);
 
       await userCollection.doc(userDto.id).set(userDto.toJson());
-
-      // final SharedPreferences prefs = await SharedPreferences.getInstance();
-      // int counter = (prefs.getInt('counter') ?? 0) + 1;
-
-      // await prefs.setInt('counter', counter)..prefs.set;
 
       return right(unit);
     } on FirebaseException catch (_) {

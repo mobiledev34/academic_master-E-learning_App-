@@ -10,8 +10,7 @@ part "question.freezed.dart";
 abstract class Question implements _$Question {
   const Question._();
 
-// ignore: sort_unnamed_constructors_first
-
+  // ignore: sort_unnamed_constructors_first
   const factory Question({
     required UniqueId questionId,
     required UniqueId userId,
@@ -24,7 +23,7 @@ abstract class Question implements _$Question {
       questionDescription: QuestionDescription(" "),
       questionId: UniqueId(),
       userId: UniqueId(),
-      mediaUrl: MediaUrl("abcdeffd"),
+      mediaUrl: MediaUrl("initalurl"),
       askAt: Time(""));
 
   Option<ValueFailure<dynamic>> get failureOption {
