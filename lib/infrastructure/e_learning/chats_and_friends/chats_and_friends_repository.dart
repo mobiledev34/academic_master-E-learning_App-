@@ -116,13 +116,46 @@ class ChatsAndFriendsRepository implements IChatsAndFriendsRepository {
           ),
         )
         .handleError((e) {
-      debugPrint("i m error  question sections .......................   $e");
+      debugPrint("i m error  message sections .......................   $e");
       if (e is FirebaseException && e.message!.contains('PERMISSION_DENIED')) {
         return left(const FirebaseFailure.insufficientPermission());
       } else {
         return left(const FirebaseFailure.unexpected());
       }
     });
+  }
+
+//** WE WILL IMPLEMENTS OUR GROUP CHAT MESSAGE DELETION METHOD ; */
+  @override
+  Future<Either<FirebaseFailure, Unit>> deleteGroupChatMessage(
+    Message message,
+  ) async {
+    try {
+      final userDoc = await _firestore.usersCollection();
+      final currentUser = _firebaseAuth.currentUser!.uid;
+      User? user;
+      await userDoc.doc(currentUser).get().then((value) {
+        user =
+            UserDto.fromJson(value.data()! as Map<String, dynamic>).toDomain();
+      });
+      final groupChatCollection = await _firestore.groupChatCollection(
+        user!,
+      );
+
+      final messageId = message.messageId.getorCrash();
+
+      await groupChatCollection.doc(messageId).delete();
+
+      return right(unit);
+    } on FirebaseException catch (e) {
+      if (e.message!.contains('PERMISSION_DENIED')) {
+        return left(const FirebaseFailure.insufficientPermission());
+      } else if (e.message!.contains('NOT_FOUND')) {
+        return left(const FirebaseFailure.unableToUpdate());
+      } else {
+        return left(const FirebaseFailure.unexpected());
+      }
+    }
   }
 
 //*implements methods for creating one to one personal messages;
@@ -167,7 +200,6 @@ class ChatsAndFriendsRepository implements IChatsAndFriendsRepository {
 
       final chatroomCollection = await _firestore.chatRoomCollection(
         user!,
-        partnerId,
       );
 
       final chatroomDto = ChatroomDto.fromDomain(userchatroom).copyWith(
@@ -205,12 +237,12 @@ class ChatsAndFriendsRepository implements IChatsAndFriendsRepository {
       user = UserDto.fromJson(value.data()! as Map<String, dynamic>).toDomain();
     });
 
-    final partnerChatCollection = await _firestore.personalChatCollection(
+    final personalChatCollection = await _firestore.personalChatCollection(
       user!,
       partnerId,
     );
 
-    yield* partnerChatCollection
+    yield* personalChatCollection
         .orderBy(
           "messageAt",
           descending: true,
@@ -224,7 +256,7 @@ class ChatsAndFriendsRepository implements IChatsAndFriendsRepository {
           ),
         )
         .handleError((e) {
-      debugPrint("i m error  question sections .......................   $e");
+      debugPrint("i m error  message sections .......................   $e");
       if (e is FirebaseException && e.message!.contains('PERMISSION_DENIED')) {
         return left(const FirebaseFailure.insufficientPermission());
       } else {
@@ -234,8 +266,80 @@ class ChatsAndFriendsRepository implements IChatsAndFriendsRepository {
   }
 
   @override
-  Stream<Either<FirebaseFailure, KtList<Message>>> watchAllChatrooms() {
-    // TODO: implement watchAllChatrooms
-    throw UnimplementedError();
+  Stream<Either<FirebaseFailure, KtList<Chatroom>>> watchAllChatrooms() async* {
+    final userDoc = await _firestore.usersCollection();
+    final currentUser = _firebaseAuth.currentUser!.uid;
+    User? user;
+    await userDoc.doc(currentUser).get().then((value) {
+      user = UserDto.fromJson(value.data()! as Map<String, dynamic>).toDomain();
+    });
+
+    final chatRoomCollection = await _firestore.chatRoomCollection(
+      user!,
+    );
+
+    debugPrint("this is current userid : ${user!.id.getorCrash()}");
+
+    yield* chatRoomCollection
+        .orderBy(
+          "chatroomAt",
+          descending: true,
+        )
+        .where(
+          "usersId",
+          arrayContains: currentUser,
+        )
+        .snapshots()
+        .map(
+          (snapshot) => right<FirebaseFailure, KtList<Chatroom>>(
+            snapshot.docs
+                .map((doc) => ChatroomDto.fromFirestore(doc).toDomain())
+                .toImmutableList(),
+          ),
+        )
+        .handleError((e) {
+      debugPrint(
+          "i m error  person chat sections .......................   $e");
+      if (e is FirebaseException && e.message!.contains('PERMISSION_DENIED')) {
+        return left(const FirebaseFailure.insufficientPermission());
+      } else {
+        return left(const FirebaseFailure.unexpected());
+      }
+    });
+  }
+
+//** WE WILL IMPLEMENTS OUR PERSONAL CHAT MESSAGE DELETION METHOD ; */
+  @override
+  Future<Either<FirebaseFailure, Unit>> deletePersonalChatMessage(
+    Message message,
+    String partnerId,
+  ) async {
+    try {
+      final userDoc = await _firestore.usersCollection();
+      final currentUser = _firebaseAuth.currentUser!.uid;
+      User? user;
+      await userDoc.doc(currentUser).get().then((value) {
+        user =
+            UserDto.fromJson(value.data()! as Map<String, dynamic>).toDomain();
+      });
+      final messageCollection = await _firestore.personalChatCollection(
+        user!,
+        partnerId,
+      );
+
+      final messageId = message.messageId.getorCrash();
+
+      await messageCollection.doc(messageId).delete();
+
+      return right(unit);
+    } on FirebaseException catch (e) {
+      if (e.message!.contains('PERMISSION_DENIED')) {
+        return left(const FirebaseFailure.insufficientPermission());
+      } else if (e.message!.contains('NOT_FOUND')) {
+        return left(const FirebaseFailure.unableToUpdate());
+      } else {
+        return left(const FirebaseFailure.unexpected());
+      }
+    }
   }
 }

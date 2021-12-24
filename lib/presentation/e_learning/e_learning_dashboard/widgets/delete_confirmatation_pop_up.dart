@@ -1,7 +1,6 @@
 import 'package:academic_master/presentation/theme/theme.dart';
 import 'package:academic_master/presentation/utils/asset_path.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable

@@ -1,3 +1,4 @@
+import 'package:academic_master/application/e_learning/chats_and_friends/personal_chat_message_actor/personal_chat_message_actor_bloc.dart';
 import 'package:academic_master/application/e_learning/chats_and_friends/personal_chat_message_watcher/personal_chat_message_watcher_bloc.dart';
 import 'package:academic_master/application/e_learning/users_watcher/users_watcher_bloc.dart';
 import 'package:academic_master/injection.dart';
@@ -5,11 +6,13 @@ import 'package:academic_master/presentation/core/empty.dart';
 import 'package:academic_master/presentation/core/error.dart';
 import 'package:academic_master/presentation/core/loading.dart';
 import 'package:academic_master/presentation/core/user_dp.dart';
+import 'package:academic_master/presentation/e_learning/e_learning_dashboard/widgets/delete_confirmatation_pop_up.dart';
 import 'package:academic_master/presentation/theme/theme.dart';
 import 'package:academic_master/presentation/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_swipe_action_cell/flutter_swipe_action_cell.dart';
 import 'package:selectable_autolink_text/selectable_autolink_text.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'personal_type_box.dart';
@@ -47,14 +50,20 @@ class PersonalChatBody extends StatelessWidget {
                   ..add(
                     const UsersWatcherEvent.watchCurrentUser(),
                   ),
-              )
+              ),
+              BlocProvider(
+                create: (context) => getIt<PersonalChatMessageActorBloc>(),
+              ),
             ],
             child: BlocBuilder<PersonalChatMessageWatcherBloc,
                 PersonalChatMessageWatcherState>(
               builder: (context, state) {
                 return state.map(
                   empty: (_) => const Center(
-                    child: EmptyScreen(message: "You dont't have any message"),
+                    child: EmptyScreen(
+                      message: "You dont't have any message",
+                      showLottie: true,
+                    ),
                   ),
                   initial: (value) => CircleLoading(),
                   loadFailure: (value) => const ErrorCard(),
@@ -71,6 +80,7 @@ class PersonalChatBody extends StatelessWidget {
                             return currentLoginUserState.map(
                               empty: (_) => const EmptyScreen(
                                 message: "You dont't have any message",
+                                showLottie: true,
                               ),
                               initial: (value) => CircleLoading(),
                               loadFailure: (value) => const ErrorCard(),
@@ -110,19 +120,101 @@ class PersonalChatBody extends StatelessWidget {
                                       width: size.width > 400
                                           ? size.width * 0.7
                                           : size.width * 0.7,
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          color: (currentLoginUser
-                                                      .users.first.id
-                                                      .getorCrash() !=
-                                                  value.message[index].userId
-                                                      .getorCrash())
-                                              ? Apptheme.lightCardColor
-                                              : Apptheme.primaryColor,
-                                          borderRadius:
-                                              BorderRadius.circular(15.0),
-                                        ),
-                                        child: Padding(
+                                      child: SwipeActionCell(
+                                        key: UniqueKey(),
+                                        leadingActions: [
+                                          SwipeAction(
+                                            widthSpace: 120,
+                                            color: Colors.transparent,
+                                            content: Container(
+                                              height: 48.h,
+                                              width: 118.w,
+                                              decoration: BoxDecoration(
+                                                color: Apptheme.secondaryColor,
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                  8,
+                                                ),
+                                              ),
+                                              child: Row(
+                                                children: [
+                                                  const Image(
+                                                    color:
+                                                        Apptheme.primaryColor,
+                                                    image: AssetImage(
+                                                        "assets/images/cancel.png"),
+                                                  ),
+                                                  SizedBox(width: 10.w),
+                                                  const Text(
+                                                    "DELETE",
+                                                    // style: textStyleW300_16Px_white,
+                                                  )
+                                                ],
+                                              ),
+                                            ),
+                                            onTap: (handler) {
+                                              (currentLoginUser.users.first.id
+                                                          .getorCrash() !=
+                                                      value
+                                                          .message[index].userId
+                                                          .getorCrash())
+                                                  ? showGeneralDialog(
+                                                      barrierLabel: "Barrier",
+                                                      barrierDismissible: true,
+                                                      barrierColor: Colors.black
+                                                          .withOpacity(0.5),
+                                                      transitionDuration:
+                                                          const Duration(
+                                                              milliseconds:
+                                                                  800),
+                                                      context: context,
+                                                      pageBuilder:
+                                                          (_, __, ___) {
+                                                        return PostDeleteConfirmatationPopup(
+                                                          message:
+                                                              "You don't have permission to delete this message.",
+                                                        );
+                                                      },
+                                                      transitionBuilder:
+                                                          (_, anim, __, child) {
+                                                        return SlideTransition(
+                                                          // ignore: require_trailing_commas
+                                                          position: Tween(
+                                                            begin: const Offset(
+                                                                1, 3),
+                                                            end: const Offset(
+                                                                0, 0),
+                                                          ).animate(anim),
+                                                          child: child,
+                                                        );
+                                                      },
+                                                    )
+                                                  : context
+                                                      .read<
+                                                          PersonalChatMessageActorBloc>()
+                                                      .add(
+                                                        PersonalChatMessageActorEvent
+                                                            .deleted(
+                                                          value.message[index],
+                                                          partnerId,
+                                                        ),
+                                                      );
+                                            },
+                                          ),
+                                        ],
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            color: (currentLoginUser
+                                                        .users.first.id
+                                                        .getorCrash() !=
+                                                    value.message[index].userId
+                                                        .getorCrash())
+                                                ? Apptheme.lightCardColor
+                                                : Apptheme.primaryColor,
+                                            borderRadius:
+                                                BorderRadius.circular(15.0),
+                                          ),
+                                          child: Padding(
                                             padding: EdgeInsets.only(
                                               left: leftPadding,
                                               right: rightpadding,
@@ -252,7 +344,9 @@ class PersonalChatBody extends StatelessWidget {
                                                   ),
                                                 ),
                                               ],
-                                            )),
+                                            ),
+                                          ),
+                                        ),
                                       ),
                                     ),
                                     const SizedBox(
@@ -268,8 +362,9 @@ class PersonalChatBody extends StatelessWidget {
                                             UsersWatcherBloc>()
                                           ..add(
                                             UsersWatcherEvent.watchCurrentUser(
-                                                uId: value.message[index].userId
-                                                    .getorCrash()),
+                                              uId: value.message[index].userId
+                                                  .getorCrash(),
+                                            ),
                                           ),
                                         child: Userdp(),
                                       )

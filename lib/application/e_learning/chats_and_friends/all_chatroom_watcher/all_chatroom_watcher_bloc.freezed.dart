@@ -17,10 +17,8 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$AllChatroomWatcherEventTearOff {
   const _$AllChatroomWatcherEventTearOff();
 
-  _WatchAllChatrooms watchAllChatrooms(String partnerId) {
-    return _WatchAllChatrooms(
-      partnerId,
-    );
+  _WatchAllChatrooms watchAllChatrooms() {
+    return const _WatchAllChatrooms();
   }
 }
 
@@ -29,21 +27,19 @@ const $AllChatroomWatcherEvent = _$AllChatroomWatcherEventTearOff();
 
 /// @nodoc
 mixin _$AllChatroomWatcherEvent {
-  String get partnerId => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String partnerId) watchAllChatrooms,
+    required TResult Function() watchAllChatrooms,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String partnerId)? watchAllChatrooms,
+    TResult Function()? watchAllChatrooms,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String partnerId)? watchAllChatrooms,
+    TResult Function()? watchAllChatrooms,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -63,10 +59,6 @@ mixin _$AllChatroomWatcherEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $AllChatroomWatcherEventCopyWith<AllChatroomWatcherEvent> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -74,7 +66,6 @@ abstract class $AllChatroomWatcherEventCopyWith<$Res> {
   factory $AllChatroomWatcherEventCopyWith(AllChatroomWatcherEvent value,
           $Res Function(AllChatroomWatcherEvent) then) =
       _$AllChatroomWatcherEventCopyWithImpl<$Res>;
-  $Res call({String partnerId});
 }
 
 /// @nodoc
@@ -85,28 +76,13 @@ class _$AllChatroomWatcherEventCopyWithImpl<$Res>
   final AllChatroomWatcherEvent _value;
   // ignore: unused_field
   final $Res Function(AllChatroomWatcherEvent) _then;
-
-  @override
-  $Res call({
-    Object? partnerId = freezed,
-  }) {
-    return _then(_value.copyWith(
-      partnerId: partnerId == freezed
-          ? _value.partnerId
-          : partnerId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
-abstract class _$WatchAllChatroomsCopyWith<$Res>
-    implements $AllChatroomWatcherEventCopyWith<$Res> {
+abstract class _$WatchAllChatroomsCopyWith<$Res> {
   factory _$WatchAllChatroomsCopyWith(
           _WatchAllChatrooms value, $Res Function(_WatchAllChatrooms) then) =
       __$WatchAllChatroomsCopyWithImpl<$Res>;
-  @override
-  $Res call({String partnerId});
 }
 
 /// @nodoc
@@ -119,74 +95,51 @@ class __$WatchAllChatroomsCopyWithImpl<$Res>
 
   @override
   _WatchAllChatrooms get _value => super._value as _WatchAllChatrooms;
-
-  @override
-  $Res call({
-    Object? partnerId = freezed,
-  }) {
-    return _then(_WatchAllChatrooms(
-      partnerId == freezed
-          ? _value.partnerId
-          : partnerId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$_WatchAllChatrooms implements _WatchAllChatrooms {
-  const _$_WatchAllChatrooms(this.partnerId);
-
-  @override
-  final String partnerId;
+  const _$_WatchAllChatrooms();
 
   @override
   String toString() {
-    return 'AllChatroomWatcherEvent.watchAllChatrooms(partnerId: $partnerId)';
+    return 'AllChatroomWatcherEvent.watchAllChatrooms()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _WatchAllChatrooms &&
-            (identical(other.partnerId, partnerId) ||
-                other.partnerId == partnerId));
+        (other.runtimeType == runtimeType && other is _WatchAllChatrooms);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, partnerId);
-
-  @JsonKey(ignore: true)
-  @override
-  _$WatchAllChatroomsCopyWith<_WatchAllChatrooms> get copyWith =>
-      __$WatchAllChatroomsCopyWithImpl<_WatchAllChatrooms>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String partnerId) watchAllChatrooms,
+    required TResult Function() watchAllChatrooms,
   }) {
-    return watchAllChatrooms(partnerId);
+    return watchAllChatrooms();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String partnerId)? watchAllChatrooms,
+    TResult Function()? watchAllChatrooms,
   }) {
-    return watchAllChatrooms?.call(partnerId);
+    return watchAllChatrooms?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String partnerId)? watchAllChatrooms,
+    TResult Function()? watchAllChatrooms,
     required TResult orElse(),
   }) {
     if (watchAllChatrooms != null) {
-      return watchAllChatrooms(partnerId);
+      return watchAllChatrooms();
     }
     return orElse();
   }
@@ -221,14 +174,7 @@ class _$_WatchAllChatrooms implements _WatchAllChatrooms {
 }
 
 abstract class _WatchAllChatrooms implements AllChatroomWatcherEvent {
-  const factory _WatchAllChatrooms(String partnerId) = _$_WatchAllChatrooms;
-
-  @override
-  String get partnerId;
-  @override
-  @JsonKey(ignore: true)
-  _$WatchAllChatroomsCopyWith<_WatchAllChatrooms> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory _WatchAllChatrooms() = _$_WatchAllChatrooms;
 }
 
 /// @nodoc
@@ -243,9 +189,9 @@ class _$AllChatroomWatcherStateTearOff {
     return const _LoadInProgress();
   }
 
-  _LoadSuccess loadSuccess(KtList<Message> message) {
+  _LoadSuccess loadSuccess(KtList<Chatroom> chatrooms) {
     return _LoadSuccess(
-      message,
+      chatrooms,
     );
   }
 
@@ -269,7 +215,7 @@ mixin _$AllChatroomWatcherState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(KtList<Message> message) loadSuccess,
+    required TResult Function(KtList<Chatroom> chatrooms) loadSuccess,
     required TResult Function(FirebaseFailure firebaseFailure) loadFailure,
     required TResult Function() empty,
   }) =>
@@ -278,7 +224,7 @@ mixin _$AllChatroomWatcherState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<Message> message)? loadSuccess,
+    TResult Function(KtList<Chatroom> chatrooms)? loadSuccess,
     TResult Function(FirebaseFailure firebaseFailure)? loadFailure,
     TResult Function()? empty,
   }) =>
@@ -287,7 +233,7 @@ mixin _$AllChatroomWatcherState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<Message> message)? loadSuccess,
+    TResult Function(KtList<Chatroom> chatrooms)? loadSuccess,
     TResult Function(FirebaseFailure firebaseFailure)? loadFailure,
     TResult Function()? empty,
     required TResult orElse(),
@@ -381,7 +327,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(KtList<Message> message) loadSuccess,
+    required TResult Function(KtList<Chatroom> chatrooms) loadSuccess,
     required TResult Function(FirebaseFailure firebaseFailure) loadFailure,
     required TResult Function() empty,
   }) {
@@ -393,7 +339,7 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<Message> message)? loadSuccess,
+    TResult Function(KtList<Chatroom> chatrooms)? loadSuccess,
     TResult Function(FirebaseFailure firebaseFailure)? loadFailure,
     TResult Function()? empty,
   }) {
@@ -405,7 +351,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<Message> message)? loadSuccess,
+    TResult Function(KtList<Chatroom> chatrooms)? loadSuccess,
     TResult Function(FirebaseFailure firebaseFailure)? loadFailure,
     TResult Function()? empty,
     required TResult orElse(),
@@ -504,7 +450,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(KtList<Message> message) loadSuccess,
+    required TResult Function(KtList<Chatroom> chatrooms) loadSuccess,
     required TResult Function(FirebaseFailure firebaseFailure) loadFailure,
     required TResult Function() empty,
   }) {
@@ -516,7 +462,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<Message> message)? loadSuccess,
+    TResult Function(KtList<Chatroom> chatrooms)? loadSuccess,
     TResult Function(FirebaseFailure firebaseFailure)? loadFailure,
     TResult Function()? empty,
   }) {
@@ -528,7 +474,7 @@ class _$_LoadInProgress implements _LoadInProgress {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<Message> message)? loadSuccess,
+    TResult Function(KtList<Chatroom> chatrooms)? loadSuccess,
     TResult Function(FirebaseFailure firebaseFailure)? loadFailure,
     TResult Function()? empty,
     required TResult orElse(),
@@ -589,7 +535,7 @@ abstract class _$LoadSuccessCopyWith<$Res> {
   factory _$LoadSuccessCopyWith(
           _LoadSuccess value, $Res Function(_LoadSuccess) then) =
       __$LoadSuccessCopyWithImpl<$Res>;
-  $Res call({KtList<Message> message});
+  $Res call({KtList<Chatroom> chatrooms});
 }
 
 /// @nodoc
@@ -605,13 +551,13 @@ class __$LoadSuccessCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? message = freezed,
+    Object? chatrooms = freezed,
   }) {
     return _then(_LoadSuccess(
-      message == freezed
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as KtList<Message>,
+      chatrooms == freezed
+          ? _value.chatrooms
+          : chatrooms // ignore: cast_nullable_to_non_nullable
+              as KtList<Chatroom>,
     ));
   }
 }
@@ -619,14 +565,14 @@ class __$LoadSuccessCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_LoadSuccess implements _LoadSuccess {
-  const _$_LoadSuccess(this.message);
+  const _$_LoadSuccess(this.chatrooms);
 
   @override
-  final KtList<Message> message;
+  final KtList<Chatroom> chatrooms;
 
   @override
   String toString() {
-    return 'AllChatroomWatcherState.loadSuccess(message: $message)';
+    return 'AllChatroomWatcherState.loadSuccess(chatrooms: $chatrooms)';
   }
 
   @override
@@ -634,11 +580,12 @@ class _$_LoadSuccess implements _LoadSuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _LoadSuccess &&
-            (identical(other.message, message) || other.message == message));
+            (identical(other.chatrooms, chatrooms) ||
+                other.chatrooms == chatrooms));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message);
+  int get hashCode => Object.hash(runtimeType, chatrooms);
 
   @JsonKey(ignore: true)
   @override
@@ -650,11 +597,11 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(KtList<Message> message) loadSuccess,
+    required TResult Function(KtList<Chatroom> chatrooms) loadSuccess,
     required TResult Function(FirebaseFailure firebaseFailure) loadFailure,
     required TResult Function() empty,
   }) {
-    return loadSuccess(message);
+    return loadSuccess(chatrooms);
   }
 
   @override
@@ -662,11 +609,11 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<Message> message)? loadSuccess,
+    TResult Function(KtList<Chatroom> chatrooms)? loadSuccess,
     TResult Function(FirebaseFailure firebaseFailure)? loadFailure,
     TResult Function()? empty,
   }) {
-    return loadSuccess?.call(message);
+    return loadSuccess?.call(chatrooms);
   }
 
   @override
@@ -674,13 +621,13 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<Message> message)? loadSuccess,
+    TResult Function(KtList<Chatroom> chatrooms)? loadSuccess,
     TResult Function(FirebaseFailure firebaseFailure)? loadFailure,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
-      return loadSuccess(message);
+      return loadSuccess(chatrooms);
     }
     return orElse();
   }
@@ -727,9 +674,9 @@ class _$_LoadSuccess implements _LoadSuccess {
 }
 
 abstract class _LoadSuccess implements AllChatroomWatcherState {
-  const factory _LoadSuccess(KtList<Message> message) = _$_LoadSuccess;
+  const factory _LoadSuccess(KtList<Chatroom> chatrooms) = _$_LoadSuccess;
 
-  KtList<Message> get message;
+  KtList<Chatroom> get chatrooms;
   @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -811,7 +758,7 @@ class _$_LoadFailure implements _LoadFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(KtList<Message> message) loadSuccess,
+    required TResult Function(KtList<Chatroom> chatrooms) loadSuccess,
     required TResult Function(FirebaseFailure firebaseFailure) loadFailure,
     required TResult Function() empty,
   }) {
@@ -823,7 +770,7 @@ class _$_LoadFailure implements _LoadFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<Message> message)? loadSuccess,
+    TResult Function(KtList<Chatroom> chatrooms)? loadSuccess,
     TResult Function(FirebaseFailure firebaseFailure)? loadFailure,
     TResult Function()? empty,
   }) {
@@ -835,7 +782,7 @@ class _$_LoadFailure implements _LoadFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<Message> message)? loadSuccess,
+    TResult Function(KtList<Chatroom> chatrooms)? loadSuccess,
     TResult Function(FirebaseFailure firebaseFailure)? loadFailure,
     TResult Function()? empty,
     required TResult orElse(),
@@ -937,7 +884,7 @@ class _$_Empty implements _Empty {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(KtList<Message> message) loadSuccess,
+    required TResult Function(KtList<Chatroom> chatrooms) loadSuccess,
     required TResult Function(FirebaseFailure firebaseFailure) loadFailure,
     required TResult Function() empty,
   }) {
@@ -949,7 +896,7 @@ class _$_Empty implements _Empty {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<Message> message)? loadSuccess,
+    TResult Function(KtList<Chatroom> chatrooms)? loadSuccess,
     TResult Function(FirebaseFailure firebaseFailure)? loadFailure,
     TResult Function()? empty,
   }) {
@@ -961,7 +908,7 @@ class _$_Empty implements _Empty {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(KtList<Message> message)? loadSuccess,
+    TResult Function(KtList<Chatroom> chatrooms)? loadSuccess,
     TResult Function(FirebaseFailure firebaseFailure)? loadFailure,
     TResult Function()? empty,
     required TResult orElse(),

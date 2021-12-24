@@ -1,4 +1,5 @@
 import 'package:academic_master/domain/core/firebase_failures.dart';
+import 'package:academic_master/domain/e_learning/chats_and_friends/chatroom.dart';
 import 'package:academic_master/domain/e_learning/chats_and_friends/i_chats_and_friends_repository.dart';
 import 'package:academic_master/domain/e_learning/chats_and_friends/message.dart';
 // ignore: depend_on_referenced_packages
@@ -32,11 +33,11 @@ class AllChatroomWatcherBloc
         yield* _iChatsAndFriendsRepository.watchAllChatrooms().map(
               (failureOrMessages) => failureOrMessages.fold(
                 (f) => AllChatroomWatcherState.loadFailure(f),
-                (messages) {
-                  if (messages.isEmpty()) {
+                (chatroom) {
+                  if (chatroom.isEmpty()) {
                     return const AllChatroomWatcherState.empty();
                   }
-                  return AllChatroomWatcherState.loadSuccess(messages);
+                  return AllChatroomWatcherState.loadSuccess(chatroom);
                 },
               ),
             );

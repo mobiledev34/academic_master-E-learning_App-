@@ -4,7 +4,7 @@ import 'package:academic_master/injection.dart';
 import 'package:academic_master/presentation/auth/sign_in_page.dart';
 import 'package:academic_master/presentation/theme/theme.dart';
 import 'package:academic_master/presentation/utils/constants.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
@@ -146,81 +146,80 @@ class ProfilePage extends StatelessWidget {
                 shrinkWrap: true,
                 padding: EdgeInsets.all(0),
                 children: ListTile.divideTiles(
-                    //          <-- ListTile.divideTiles
-                    context: context,
-                    color: Apptheme.secondaryColor,
-                    tiles: [
-                      ListTile(
-                        onTap: () {
-                          Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(
-                              builder: (context) => SignInPage(),
+                  //          <-- ListTile.divideTiles
+                  context: context,
+                  color: Apptheme.secondaryColor,
+                  tiles: [
+                    ListTile(
+                      onTap: () {
+                        Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(
+                            builder: (context) => SignInPage(),
+                          ),
+                        );
+                        context.read<AuthBloc>().add(const AuthEvent.signOut());
+                      },
+                      leading: Icon(
+                        Icons.logout_outlined,
+                        size: 25.sp,
+                        color: Apptheme.primaryColor,
+                      ),
+                      title: Text(
+                        "Logout",
+                        style: Apptheme(context).normalText.copyWith(
+                              color: Apptheme.assentColor,
+                              fontSize: 14.sp,
                             ),
-                          );
-                          context
-                              .read<AuthBloc>()
-                              .add(const AuthEvent.signOut());
-                        },
-                        leading: Icon(
-                          Icons.logout_outlined,
-                          size: 25.sp,
-                          color: Apptheme.primaryColor,
-                        ),
-                        title: Text(
-                          "Logout",
-                          style: Apptheme(context).normalText.copyWith(
-                                color: Apptheme.assentColor,
-                                fontSize: 14.sp,
-                              ),
-                        ),
                       ),
-                      SizedBox(height: 5.h),
-                      ListTile(
-                        leading: Icon(
-                          Icons.info_outline_rounded,
-                          color: Apptheme.primaryColor,
-                          size: 25.sp,
-                        ),
-                        title: Text(
-                          "Contact Us",
-                          style: Apptheme(context).normalText.copyWith(
-                                color: Apptheme.assentColor,
-                                fontSize: 14.sp,
-                              ),
-                        ),
+                    ),
+                    SizedBox(height: 5.h),
+                    ListTile(
+                      leading: Icon(
+                        Icons.info_outline_rounded,
+                        color: Apptheme.primaryColor,
+                        size: 25.sp,
                       ),
-                      SizedBox(height: 5.h),
-                      ListTile(
-                        leading: Icon(
-                          Icons.edit_outlined,
-                          size: 25.sp,
-                          color: Apptheme.primaryColor,
-                        ),
-                        title: Text(
-                          "Edit Profile",
-                          style: Apptheme(context).normalText.copyWith(
-                                color: Apptheme.assentColor,
-                                fontSize: 14.sp,
-                              ),
-                        ),
+                      title: Text(
+                        "Contact Us",
+                        style: Apptheme(context).normalText.copyWith(
+                              color: Apptheme.assentColor,
+                              fontSize: 14.sp,
+                            ),
                       ),
-                      SizedBox(height: 5.h),
-                      ListTile(
-                        leading: Icon(
-                          LineIcons.helpingHands,
-                          color: Apptheme.primaryColor,
-                          size: 25.sp,
-                        ),
-                        title: Text(
-                          "Help and Informations",
-                          style: Apptheme(context).normalText.copyWith(
-                                color: Apptheme.assentColor,
-                                fontSize: 14.sp,
-                              ),
-                        ),
+                    ),
+                    SizedBox(height: 5.h),
+                    ListTile(
+                      leading: Icon(
+                        Icons.edit_outlined,
+                        size: 25.sp,
+                        color: Apptheme.primaryColor,
                       ),
-                      SizedBox(height: 5.h),
-                    ]).toList(),
+                      title: Text(
+                        "Edit Profile",
+                        style: Apptheme(context).normalText.copyWith(
+                              color: Apptheme.assentColor,
+                              fontSize: 14.sp,
+                            ),
+                      ),
+                    ),
+                    SizedBox(height: 5.h),
+                    ListTile(
+                      leading: Icon(
+                        LineIcons.helpingHands,
+                        color: Apptheme.primaryColor,
+                        size: 25.sp,
+                      ),
+                      title: Text(
+                        "Help and Informations",
+                        style: Apptheme(context).normalText.copyWith(
+                              color: Apptheme.assentColor,
+                              fontSize: 14.sp,
+                            ),
+                      ),
+                    ),
+                    SizedBox(height: 5.h),
+                  ],
+                ).toList(),
               ),
             ),
           )

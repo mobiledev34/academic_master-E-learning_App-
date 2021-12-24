@@ -1,5 +1,7 @@
+import 'package:academic_master/application/e_learning/chats_and_friends/all_chatroom_watcher/all_chatroom_watcher_bloc.dart';
 import 'package:academic_master/application/e_learning/chats_and_friends/watch_all_users_in_our_class/watch_all_users_in_our_class_bloc.dart';
 import 'package:academic_master/application/e_learning/users_watcher/users_watcher_bloc.dart';
+import 'package:academic_master/presentation/core/empty.dart';
 import 'package:academic_master/presentation/core/error.dart';
 import 'package:academic_master/presentation/core/loading.dart';
 import 'package:academic_master/presentation/core/user_dp.dart';
@@ -18,7 +20,7 @@ class ChatRoomPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    final Size size = MediaQuery.of(context).size;
     return Padding(
       padding: EdgeInsets.only(
         left: leftPadding,
@@ -56,57 +58,58 @@ class ChatRoomPage extends StatelessWidget {
                       loadInProgress: (value) => CircleLoading(),
                       loadSuccess: (value) {
                         return BlocProvider(
-                            create: (context) =>
-                                getIt<WatchAllUsersInOurClassBloc>()
-                                  ..add(
-                                    WatchAllUsersInOurClassEvent
-                                        .watchAllUsersInOurClassEvent(
-                                      value.users.first.course.getorCrash(),
-                                      value.users.first.branch.getorCrash(),
-                                      value.users.first.year.getorCrash(),
-                                    ),
+                          create: (context) =>
+                              getIt<WatchAllUsersInOurClassBloc>()
+                                ..add(
+                                  WatchAllUsersInOurClassEvent
+                                      .watchAllUsersInOurClassEvent(
+                                    value.users.first.course.getorCrash(),
+                                    value.users.first.branch.getorCrash(),
+                                    value.users.first.year.getorCrash(),
                                   ),
-                            child: BlocBuilder<WatchAllUsersInOurClassBloc,
-                                WatchAllUsersInOurClassState>(
-                              builder: (context, state) {
-                                return state.map(
-                                  empty: (value) => const Text("Empty"),
-                                  loadFailure: (value) => const ErrorCard(),
-                                  initial: (value) => CircleLoading(),
-                                  loadInProgress: (value) => CircleLoading(),
-                                  loadSuccess: (ourClassUsers) {
-                                    return Row(
-                                      children: [
-                                        for (int i = 0;
-                                            i < ourClassUsers.users.length;
-                                            i++)
-                                          Padding(
-                                            padding: EdgeInsets.only(
-                                              right: rightpadding - 10,
+                                ),
+                          child: BlocBuilder<WatchAllUsersInOurClassBloc,
+                              WatchAllUsersInOurClassState>(
+                            builder: (context, state) {
+                              return state.map(
+                                empty: (value) => const Text("Empty"),
+                                loadFailure: (value) => const ErrorCard(),
+                                initial: (value) => CircleLoading(),
+                                loadInProgress: (value) => CircleLoading(),
+                                loadSuccess: (ourClassUsers) {
+                                  return Row(
+                                    children: [
+                                      for (int i = 0;
+                                          i < ourClassUsers.users.length;
+                                          i++)
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                            right: rightpadding - 10,
+                                          ),
+                                          child: GestureDetector(
+                                            onTap: () {
+                                              AutoRouter.of(context).push(
+                                                PersonalChatScreen(
+                                                  partnerId: ourClassUsers
+                                                      .users[i].id
+                                                      .getorCrash(),
+                                                ),
+                                              );
+                                            },
+                                            child: Userdp(
+                                              userName: ourClassUsers
+                                                  .users[i].name
+                                                  .getorCrash(),
                                             ),
-                                            child: InkWell(
-                                              onTap: () {
-                                                AutoRouter.of(context).push(
-                                                  PersonalChatScreen(
-                                                    partnerId: ourClassUsers
-                                                        .users[i].id
-                                                        .getorCrash(),
-                                                  ),
-                                                );
-                                              },
-                                              child: Userdp(
-                                                userName: ourClassUsers
-                                                    .users[i].name
-                                                    .getorCrash(),
-                                              ),
-                                            ),
-                                          )
-                                      ],
-                                    );
-                                  },
-                                );
-                              },
-                            ));
+                                          ),
+                                        )
+                                    ],
+                                  );
+                                },
+                              );
+                            },
+                          ),
+                        );
                       },
                       initial: (value) => CircleLoading(),
                     );
@@ -126,27 +129,62 @@ class ChatRoomPage extends StatelessWidget {
               ),
             ),
             SizedBox(height: size.height * 0.1 / 4),
-            for (int i = 0; i < 6; i++)
-              InkWell(
-                onTap: () {
-                  // AutoRouter.of(context).push(
-                  //   ChatScreen(),
-                  // );
-                },
-                child: MessageCard(
-                  currentMsg: size.width > 330
-                      ? 'Did you buy tickets for me? '
-                      : 'Did you buy tickets....',
-                  friendDp: ceoDp,
-                  friendName: "Alia",
-                  time: i / 2 == 0 ? "11:34 AM" : 'yesterday',
+            BlocProvider(
+              create: (context) => getIt<AllChatroomWatcherBloc>()
+                ..add(
+                  const AllChatroomWatcherEvent.watchAllChatrooms(),
                 ),
+              child:
+                  BlocBuilder<AllChatroomWatcherBloc, AllChatroomWatcherState>(
+                builder: (context, state) {
+                  return state.map(
+                    empty: (value) => const EmptyScreen(
+                      message:
+                          "You don't have any personal chats,send one to one msg and clear your doubts!",
+                      showLottie: true,
+                    ),
+                    loadFailure: (value) => const ErrorCard(),
+                    initial: (value) => Center(child: CircleLoading()),
+                    loadInProgress: (value) => Center(child: FindLoading()),
+                    loadSuccess: (chatrooms) {
+                      return ListView.builder(
+                        shrinkWrap: true,
+                        padding: EdgeInsets.zero,
+                        itemCount: chatrooms.chatrooms.size,
+                        itemBuilder: (BuildContext context, int index) {
+                          return InkWell(
+                            onTap: () {
+                              AutoRouter.of(context).push(
+                                PersonalChatScreen(
+                                  partnerId: chatrooms
+                                      .chatrooms[index].partnerId
+                                      .getorCrash(),
+                                ),
+                              );
+                            },
+                            child: MessageCard(
+                              currentMsg: size.width > 330
+                                  ? chatrooms
+                                      .chatrooms[index].chatroomDescription
+                                      .getorCrash()
+                                  : chatrooms
+                                      .chatrooms[index].chatroomDescription
+                                      .getorCrash(),
+                              friendDp: ceoDp,
+                              friendId: chatrooms.chatrooms[index].partnerId
+                                  .getorCrash(),
+                              time: chatrooms.chatrooms[index].chatroomAt
+                                  .getorCrash()
+                                  .substring(0, 16),
+                            ),
+                          );
+                        },
+                      );
+                    },
+                  );
+                },
               ),
-            MessageCard(
-                currentMsg: 'How are you Jhony ?...',
-                friendDp: ceoDp,
-                friendName: "Amit",
-                time: "!2:30 PM")
+            ),
           ],
         ),
       ),

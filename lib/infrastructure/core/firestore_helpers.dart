@@ -88,7 +88,6 @@ extension FirestoreX on FirebaseFirestore {
 
   Future<CollectionReference> chatRoomCollection(
     User user,
-    String partnerid,
   ) async {
     return FirebaseFirestore.instance
         .collection('courses')

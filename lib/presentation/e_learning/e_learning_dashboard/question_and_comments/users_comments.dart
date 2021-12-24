@@ -257,8 +257,10 @@ class _UsersCommentsState extends State<UsersComments> {
                                       const ErrorCard(),
                                   empty: (empty) => const Center(
                                     child: EmptyScreen(
-                                        message:
-                                            "This Question does not have any answer"),
+                                      message:
+                                          "This Question does not have any answer",
+                                      showLottie: true,
+                                    ),
                                   ),
                                 );
                               },
@@ -266,8 +268,9 @@ class _UsersCommentsState extends State<UsersComments> {
                           ),
                           loadFailure: (_) => const ErrorCard(),
                           empty: (_) => const EmptyScreen(
-                              message:
-                                  "This Question does not have any answer"),
+                            message: "This Question does not have any answer",
+                            showLottie: true,
+                          ),
                         );
                       },
                     ),

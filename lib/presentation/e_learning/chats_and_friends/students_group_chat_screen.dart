@@ -107,7 +107,9 @@ class StudentsGroupChatScreen extends StatelessWidget {
             ),
             loadFailure: (_) => const ErrorCard(),
             empty: (empty) => const EmptyScreen(
-                message: "You don't have access to chat in groups"),
+              message: "You don't have access to chat in groups",
+              showLottie: false,
+            ),
           );
         },
       ),

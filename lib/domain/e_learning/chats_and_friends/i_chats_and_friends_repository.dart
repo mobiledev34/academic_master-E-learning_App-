@@ -23,6 +23,9 @@ abstract class IChatsAndFriendsRepository {
 
   Stream<Either<FirebaseFailure, KtList<Message>>> watchGroupChatMessages();
 
+  //** THIS METHOD WILL HELP US TO DELETE OUR GROUP CHAT MESSAGE WHEN WE COMMUNICATE WITH OUR FRIEDNS;  */
+  Future<Either<FirebaseFailure, Unit>> deleteGroupChatMessage(Message message);
+
   //** CREATE PERSONAL CHAT MESSAGES ; */
   Future<Either<FirebaseFailure, Unit>> createPersonalMessage(
     Message message,
@@ -35,5 +38,11 @@ abstract class IChatsAndFriendsRepository {
     String partnerId,
   );
 
-  Stream<Either<FirebaseFailure, KtList<Message>>> watchAllChatrooms();
+  //** THIS METHOD WILL HELP US TO DELETE OUR PERSONAL CHAT MESSAGE WHEN WE COMMUNICATE WITH OUR FRIEDNS;  */
+  Future<Either<FirebaseFailure, Unit>> deletePersonalChatMessage(
+    Message question,
+    String partnerId,
+  );
+//** WATCH ALL CHATROOMS SO THAT WE CAN QUICKLY CHATS WITH OUR FRIENDS;  */
+  Stream<Either<FirebaseFailure, KtList<Chatroom>>> watchAllChatrooms();
 }

@@ -6,7 +6,7 @@ abstract class AllChatroomWatcherState with _$AllChatroomWatcherState {
   const factory AllChatroomWatcherState.loadInProgress() = _LoadInProgress;
 
   const factory AllChatroomWatcherState.loadSuccess(
-    KtList<Message> message,
+    KtList<Chatroom> chatrooms,
   ) = _LoadSuccess;
 
   const factory AllChatroomWatcherState.loadFailure(

@@ -229,8 +229,11 @@ class PostCrudPopup extends StatelessWidget {
                             ),
                           ],
                         ),
-                    loadFailure: (_) => ErrorCard(),
-                    empty: (_) => EmptyScreen(message: "No user can delete"));
+                    loadFailure: (_) => const ErrorCard(),
+                    empty: (_) => const EmptyScreen(
+                          message: "No user can delete",
+                          showLottie: false,
+                        ));
               },
             ),
           ),

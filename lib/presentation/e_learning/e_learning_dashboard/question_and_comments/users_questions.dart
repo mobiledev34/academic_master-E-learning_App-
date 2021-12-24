@@ -4,10 +4,8 @@ import 'package:academic_master/injection.dart';
 import 'package:academic_master/presentation/core/critical_failure.dart';
 import 'package:academic_master/presentation/core/empty.dart';
 import 'package:academic_master/presentation/core/user_dp.dart';
-import 'package:academic_master/presentation/routes/router.gr.dart';
 import 'package:academic_master/presentation/theme/theme.dart';
 import 'package:academic_master/presentation/utils/constants.dart';
-import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -65,80 +63,84 @@ class UsersQuestions extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Row(children: [
-                          Userdp(),
-                          SizedBox(
-                            width: 10.w,
-                          ),
-                          Wrap(
-                            direction: Axis.vertical,
-                            children: [
-                              BlocBuilder<UsersWatcherBloc, UsersWatcherState>(
-                                builder: (context, newState) {
-                                  return newState.map(
-                                      empty: (_) => const SizedBox(),
-                                      initial: (value) => const SizedBox(),
-                                      loadFailure: (value) => const SizedBox(),
-                                      loadInProgress: (value) =>
-                                          const SizedBox(),
-                                      loadSuccess: (value) {
-                                        return Text(value.users.first.name
-                                            .getorCrash());
-                                      });
-                                },
-                              ),
-                              SizedBox(height: 5.h),
-                              Wrap(
-                                children: [
-                                  Text(
-                                    state.questions
-                                        .get(index)
-                                        .askAt
-                                        .getorCrash()
-                                        .substring(0, 9),
-                                    style: Apptheme(context)
-                                        .lightboldText
-                                        .copyWith(
-                                          fontSize: 12.sp,
-                                          color: Apptheme.lightColor,
-                                        ),
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                          const Spacer(),
-                          IconButton(
-                            icon: const Icon(
-                              Icons.more_vert,
-                              color: Apptheme.black,
+                        Row(
+                          children: [
+                            Userdp(),
+                            SizedBox(
+                              width: 10.w,
                             ),
-                            onPressed: () {
-                              showGeneralDialog(
-                                barrierLabel: "Barrier",
-                                barrierDismissible: true,
-                                barrierColor: Colors.black.withOpacity(0.5),
-                                transitionDuration:
-                                    const Duration(milliseconds: 800),
-                                context: context,
-                                pageBuilder: (_, __, ___) {
-                                  return PostCrudPopup(
-                                    question: state.questions.get(index),
-                                  );
-                                },
-                                transitionBuilder: (_, anim, __, child) {
-                                  return SlideTransition(
-                                    position: Tween(
-                                            begin: const Offset(1, 3),
-                                            end: const Offset(0, 0))
-                                        .animate(anim),
-                                    child: child,
-                                  );
-                                },
-                              );
-                            },
-                          ),
-                        ]),
+                            Wrap(
+                              direction: Axis.vertical,
+                              children: [
+                                BlocBuilder<UsersWatcherBloc,
+                                    UsersWatcherState>(
+                                  builder: (context, newState) {
+                                    return newState.map(
+                                        empty: (_) => const SizedBox(),
+                                        initial: (value) => const SizedBox(),
+                                        loadFailure: (value) =>
+                                            const SizedBox(),
+                                        loadInProgress: (value) =>
+                                            const SizedBox(),
+                                        loadSuccess: (value) {
+                                          return Text(value.users.first.name
+                                              .getorCrash());
+                                        });
+                                  },
+                                ),
+                                SizedBox(height: 5.h),
+                                Wrap(
+                                  children: [
+                                    Text(
+                                      state.questions
+                                          .get(index)
+                                          .askAt
+                                          .getorCrash()
+                                          .substring(0, 9),
+                                      style: Apptheme(context)
+                                          .lightboldText
+                                          .copyWith(
+                                            fontSize: 12.sp,
+                                            color: Apptheme.lightColor,
+                                          ),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                            const Spacer(),
+                            IconButton(
+                              icon: const Icon(
+                                Icons.more_vert,
+                                color: Apptheme.black,
+                              ),
+                              onPressed: () {
+                                showGeneralDialog(
+                                  barrierLabel: "Barrier",
+                                  barrierDismissible: true,
+                                  barrierColor: Colors.black.withOpacity(0.5),
+                                  transitionDuration:
+                                      const Duration(milliseconds: 800),
+                                  context: context,
+                                  pageBuilder: (_, __, ___) {
+                                    return PostCrudPopup(
+                                      question: state.questions.get(index),
+                                    );
+                                  },
+                                  transitionBuilder: (_, anim, __, child) {
+                                    return SlideTransition(
+                                      position: Tween(
+                                              begin: const Offset(1, 3),
+                                              end: const Offset(0, 0))
+                                          .animate(anim),
+                                      child: child,
+                                    );
+                                  },
+                                );
+                              },
+                            ),
+                          ],
+                        ),
 
                         SizedBox(height: 10.h),
                         SelectableAutoLinkText(
@@ -305,6 +307,7 @@ class UsersQuestions extends StatelessWidget {
           },
           empty: (_) => const EmptyScreen(
             message: 'We do not have any question in your community',
+            showLottie: true,
           ),
         );
       },

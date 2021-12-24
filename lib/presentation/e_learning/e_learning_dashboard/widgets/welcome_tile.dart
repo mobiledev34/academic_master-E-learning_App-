@@ -42,6 +42,7 @@ class WelcomeTile extends StatelessWidget {
               empty: (state) {
                 return const EmptyScreen(
                   message: '''User not found ''',
+                  showLottie: false,
                 );
               }),
         ],
