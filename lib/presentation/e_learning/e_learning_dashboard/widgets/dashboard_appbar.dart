@@ -11,10 +11,12 @@ import 'package:line_icons/line_icons.dart';
 class DashBoardAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(BoxConstraints(
-      maxHeight: MediaQuery.of(context).size.height,
-      maxWidth: MediaQuery.of(context).size.width,
-    ));
+    ScreenUtil.init(
+      BoxConstraints(
+        maxHeight: MediaQuery.of(context).size.height,
+        maxWidth: MediaQuery.of(context).size.width,
+      ),
+    );
     return Stack(
       children: [
         Padding(

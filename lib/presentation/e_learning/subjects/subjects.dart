@@ -5,9 +5,7 @@ import 'package:academic_master/presentation/core/critical_failure.dart';
 import 'package:academic_master/presentation/core/loading.dart';
 import 'package:academic_master/presentation/theme/theme.dart';
 import 'package:flip_card/flip_card.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -18,10 +16,12 @@ import 'widgets/subject_tile.dart';
 class Subjects extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(BoxConstraints(
-      maxHeight: MediaQuery.of(context).size.height,
-      maxWidth: MediaQuery.of(context).size.width,
-    ));
+    ScreenUtil.init(
+      BoxConstraints(
+        maxHeight: MediaQuery.of(context).size.height,
+        maxWidth: MediaQuery.of(context).size.width,
+      ),
+    );
     return SafeArea(
       child: Scaffold(
         appBar: myAppBar(),
@@ -88,10 +88,12 @@ class SubjectDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(BoxConstraints(
-      maxHeight: MediaQuery.of(context).size.height,
-      maxWidth: MediaQuery.of(context).size.width,
-    ));
+    ScreenUtil.init(
+      BoxConstraints(
+        maxHeight: MediaQuery.of(context).size.height,
+        maxWidth: MediaQuery.of(context).size.width,
+      ),
+    );
     return Padding(
       padding: EdgeInsets.only(
         left: 10.h,

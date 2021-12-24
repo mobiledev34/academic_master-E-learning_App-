@@ -152,8 +152,9 @@ class _QuestionFormPageScaffoldState extends State<QuestionFormPageScaffold> {
             padding: const EdgeInsets.all(16.0),
             child: Form(
               // ignore: deprecated_member_use
+              autovalidateMode: AutovalidateMode.always,
 
-              autovalidate: state.showErrorMessages,
+              // autovalidate: state.showErrorMessages,
               child: ListView(
                 children: [
                   const SizedBox(height: 16),

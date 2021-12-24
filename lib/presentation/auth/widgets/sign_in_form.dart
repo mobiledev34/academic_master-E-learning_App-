@@ -16,6 +16,15 @@ import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
 class SignInForm extends StatelessWidget {
+  Widget buildAsset() {
+    return Lottie.asset(
+      'assets/lottiefiles/signinmen.json',
+      animate: true,
+      height: 100.w * 2,
+      width: 100.w * 2,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<AuthTabProvider>(context, listen: false);
@@ -55,9 +64,11 @@ class SignInForm extends StatelessWidget {
       },
       builder: (context, state) {
         final signInForm = Form(
-          autovalidate: state.showErrorMessages,
+          // autovalidate: state.showErrorMessages,
+          autovalidateMode: AutovalidateMode.always,
           child: ListView(
             shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
             children: [
               Padding(
                 padding: EdgeInsets.only(
@@ -256,15 +267,6 @@ class SignInForm extends StatelessWidget {
                 ),
         );
       },
-    );
-  }
-
-  Widget buildAsset() {
-    return Lottie.asset(
-      'assets/lottiefiles/signinmen.json',
-      animate: true,
-      height: 100.w * 2,
-      width: 100.w * 2,
     );
   }
 }

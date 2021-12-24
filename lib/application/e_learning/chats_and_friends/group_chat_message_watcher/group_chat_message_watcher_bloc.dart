@@ -24,19 +24,21 @@ class GroupChatMessageWatcherBloc
   @override
   Stream<GroupChatMessageWatcherState> mapEventToState(
       GroupChatMessageWatcherEvent event) async* {
-    yield* event.map(watchGroupChatMessages: (e) async* {
-      yield const GroupChatMessageWatcherState.loadInProgress();
-      yield* _iChatsAndFriendsRepository.watchGroupChatMessages().map(
-            (failureOrMessages) => failureOrMessages.fold(
-              (f) => GroupChatMessageWatcherState.loadFailure(f),
-              (messages) {
-                if (messages.isEmpty()) {
-                  return const GroupChatMessageWatcherState.empty();
-                }
-                return GroupChatMessageWatcherState.loadSuccess(messages);
-              },
-            ),
-          );
-    });
+    yield* event.map(
+      watchGroupChatMessages: (e) async* {
+        yield const GroupChatMessageWatcherState.loadInProgress();
+        yield* _iChatsAndFriendsRepository.watchGroupChatMessages().map(
+              (failureOrMessages) => failureOrMessages.fold(
+                (f) => GroupChatMessageWatcherState.loadFailure(f),
+                (messages) {
+                  if (messages.isEmpty()) {
+                    return const GroupChatMessageWatcherState.empty();
+                  }
+                  return GroupChatMessageWatcherState.loadSuccess(messages);
+                },
+              ),
+            );
+      },
+    );
   }
 }

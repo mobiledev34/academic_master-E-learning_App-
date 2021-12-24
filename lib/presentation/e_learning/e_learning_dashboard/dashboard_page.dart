@@ -9,10 +9,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class DashboardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(BoxConstraints(
-      maxHeight: MediaQuery.of(context).size.height,
-      maxWidth: MediaQuery.of(context).size.width,
-    ));
+    ScreenUtil.init(
+      BoxConstraints(
+        maxHeight: MediaQuery.of(context).size.height,
+        maxWidth: MediaQuery.of(context).size.width,
+      ),
+    );
     return Container(
       color: Colors.white,
       child: SafeArea(

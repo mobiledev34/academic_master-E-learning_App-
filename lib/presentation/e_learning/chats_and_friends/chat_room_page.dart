@@ -3,17 +3,13 @@ import 'package:academic_master/application/e_learning/users_watcher/users_watch
 import 'package:academic_master/presentation/core/error.dart';
 import 'package:academic_master/presentation/core/loading.dart';
 import 'package:academic_master/presentation/core/user_dp.dart';
-import 'package:academic_master/presentation/e_learning/e_learning_dashboard/widgets/group_and_ask_question_tile.dart';
+import 'package:academic_master/presentation/routes/router.gr.dart';
 import 'package:academic_master/presentation/theme/theme.dart';
 import 'package:academic_master/presentation/utils/asset_path.dart';
 import 'package:academic_master/presentation/utils/constants.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:line_icons/line_icon.dart';
-import 'package:line_icons/line_icons.dart';
-
 import '../../../injection.dart';
 import 'widgets/message_card.dart';
 
@@ -88,10 +84,21 @@ class ChatRoomPage extends StatelessWidget {
                                             padding: EdgeInsets.only(
                                               right: rightpadding - 10,
                                             ),
-                                            child: Userdp(
-                                              userName: ourClassUsers
-                                                  .users[i].name
-                                                  .getorCrash(),
+                                            child: InkWell(
+                                              onTap: () {
+                                                AutoRouter.of(context).push(
+                                                  PersonalChatScreen(
+                                                    partnerId: ourClassUsers
+                                                        .users[i].id
+                                                        .getorCrash(),
+                                                  ),
+                                                );
+                                              },
+                                              child: Userdp(
+                                                userName: ourClassUsers
+                                                    .users[i].name
+                                                    .getorCrash(),
+                                              ),
                                             ),
                                           )
                                       ],

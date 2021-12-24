@@ -71,9 +71,10 @@ class ElearningRepository implements IElearningRepository {
         .snapshots()
         .map(
           (snapshot) => right<FirebaseFailure, KtList<Subject>>(
-            snapshot.docs
-                .map((doc) => SubjectDto.fromFirestore(doc).toDomain())
-                .toImmutableList(),
+            snapshot.docs.map((doc) {
+              debugPrint("this iiiiiiiiiii doc :${doc.data()}");
+              return SubjectDto.fromFirestore(doc).toDomain();
+            }).toImmutableList(),
           ),
         )
         .handleError((e) {

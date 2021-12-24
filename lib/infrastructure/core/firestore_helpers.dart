@@ -25,7 +25,9 @@ extension FirestoreX on FirebaseFirestore {
         .doc(user.course.getorCrash())
         .collection("branch")
         .doc(user.branch.getorCrash())
-        .collection(user.year.getorCrash());
+        .collection(user.year.getorCrash())
+        .doc("subjectsMaterials")
+        .collection("studyMaterials");
   }
 
   Future<CollectionReference> questionCollection(User user) async {
@@ -66,5 +68,35 @@ extension FirestoreX on FirebaseFirestore {
         .collection(user.year.getorCrash())
         .doc("chats")
         .collection("groupChats");
+  }
+
+  Future<CollectionReference> personalChatCollection(
+    User user,
+    String partnerid,
+  ) async {
+    return FirebaseFirestore.instance
+        .collection('courses')
+        .doc(user.course.getorCrash())
+        .collection("branch")
+        .doc(user.branch.getorCrash())
+        .collection(user.year.getorCrash())
+        .doc("chats")
+        .collection("chatRoom")
+        .doc(user.id.getorCrash() + partnerid)
+        .collection("chats");
+  }
+
+  Future<CollectionReference> chatRoomCollection(
+    User user,
+    String partnerid,
+  ) async {
+    return FirebaseFirestore.instance
+        .collection('courses')
+        .doc(user.course.getorCrash())
+        .collection("branch")
+        .doc(user.branch.getorCrash())
+        .collection(user.year.getorCrash())
+        .doc("chats")
+        .collection("chatRoom");
   }
 }

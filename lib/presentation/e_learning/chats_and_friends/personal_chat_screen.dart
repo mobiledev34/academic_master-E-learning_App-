@@ -9,19 +9,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:line_icons/line_icons.dart';
+import 'widgets/personal_chat_body.dart';
 
-import 'widgets/students_group_chat_body.dart';
-
-class StudentsGroupChatScreen extends StatelessWidget {
-  const StudentsGroupChatScreen({Key? key}) : super(key: key);
+class PersonalChatScreen extends StatelessWidget {
+  final String partnerId;
+  const PersonalChatScreen({
+    Key? key,
+    required this.partnerId,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     ScreenUtil.init(
       BoxConstraints(
-          maxWidth: MediaQuery.of(context).size.width,
-          maxHeight: MediaQuery.of(context).size.height),
+        maxWidth: MediaQuery.of(context).size.width,
+        maxHeight: MediaQuery.of(context).size.height,
+      ),
     );
     return BlocProvider(
       create: (context) => getIt<UsersWatcherBloc>()
@@ -90,7 +94,7 @@ class StudentsGroupChatScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        "(  ${currentUserDetails.users.first.year.getorCrash().toUpperCase()}  )",
+                        "(  ${currentUserDetails.users.first.year.getorCrash().toUpperCase()} )",
                         style: Apptheme(context).lightboldText.copyWith(
                               color: Apptheme.primaryColor,
                               fontSize: 12,
@@ -103,7 +107,10 @@ class StudentsGroupChatScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              body: StudentGroupChatsBody(size: size),
+              body: PersonalChatBody(
+                size: size,
+                partnerId: partnerId,
+              ),
             ),
             loadFailure: (_) => const ErrorCard(),
             empty: (empty) => const EmptyScreen(

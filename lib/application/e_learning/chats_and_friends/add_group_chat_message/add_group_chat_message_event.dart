@@ -1,8 +1,3 @@
-// part of 'add_group_chat_message_bloc.dart';
-
-// @immutable
-// abstract class AddGroupChatMessageEvent {}
-
 part of 'add_group_chat_message_bloc.dart';
 
 @freezed

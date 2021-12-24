@@ -1,4 +1,4 @@
-import 'package:academic_master/application/e_learning/chats_and_friends/group_chat_message_watcher/group_chat_message_watcher_bloc.dart';
+import 'package:academic_master/application/e_learning/chats_and_friends/personal_chat_message_watcher/personal_chat_message_watcher_bloc.dart';
 import 'package:academic_master/application/e_learning/users_watcher/users_watcher_bloc.dart';
 import 'package:academic_master/injection.dart';
 import 'package:academic_master/presentation/core/empty.dart';
@@ -12,16 +12,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:selectable_autolink_text/selectable_autolink_text.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'personal_type_box.dart';
 
-import 'type_message_box.dart';
-
-class StudentGroupChatsBody extends StatelessWidget {
-  const StudentGroupChatsBody({
+class PersonalChatBody extends StatelessWidget {
+  const PersonalChatBody({
     Key? key,
     required this.size,
+    required this.partnerId,
   }) : super(key: key);
 
   final Size size;
+  final String partnerId;
 
   @override
   Widget build(BuildContext context) {
@@ -34,9 +35,12 @@ class StudentGroupChatsBody extends StatelessWidget {
           MultiBlocProvider(
             providers: [
               BlocProvider(
-                create: (context) => getIt<GroupChatMessageWatcherBloc>()
-                  ..add(const GroupChatMessageWatcherEvent
-                      .watchGroupChatMessages()),
+                create: (context) => getIt<PersonalChatMessageWatcherBloc>()
+                  ..add(
+                    PersonalChatMessageWatcherEvent.watchPersonalChatMessages(
+                      partnerId,
+                    ),
+                  ),
               ),
               BlocProvider(
                 create: (context) => getIt<UsersWatcherBloc>()
@@ -45,15 +49,16 @@ class StudentGroupChatsBody extends StatelessWidget {
                   ),
               )
             ],
-            child: BlocBuilder<GroupChatMessageWatcherBloc,
-                GroupChatMessageWatcherState>(
+            child: BlocBuilder<PersonalChatMessageWatcherBloc,
+                PersonalChatMessageWatcherState>(
               builder: (context, state) {
                 return state.map(
-                  empty: (_) =>
-                      const EmptyScreen(message: "You dont't have any message"),
+                  empty: (_) => const Center(
+                    child: EmptyScreen(message: "You dont't have any message"),
+                  ),
                   initial: (value) => CircleLoading(),
                   loadFailure: (value) => const ErrorCard(),
-                  loadInProgress: (value) => CircleLoading(),
+                  loadInProgress: (value) => Center(child: CircleLoading()),
                   loadSuccess: (value) => SizedBox(
                     height: 1.sh / 1.4,
                     child: ListView.builder(
@@ -65,7 +70,8 @@ class StudentGroupChatsBody extends StatelessWidget {
                           builder: (context, currentLoginUserState) {
                             return currentLoginUserState.map(
                               empty: (_) => const EmptyScreen(
-                                  message: "You dont't have any message"),
+                                message: "You dont't have any message",
+                              ),
                               initial: (value) => CircleLoading(),
                               loadFailure: (value) => const ErrorCard(),
                               loadInProgress: (value) => CircleLoading(),
@@ -282,11 +288,15 @@ class StudentGroupChatsBody extends StatelessWidget {
               },
             ),
           ),
-          const SizedBox(height: 15),
+          const SizedBox(
+            height: 15,
+          ),
           const Spacer(),
-          const Align(
+          Align(
             alignment: Alignment.bottomCenter,
-            child: MessageInputField(),
+            child: PersonalTypeBoxField(
+              partnerId: partnerId,
+            ),
           ),
         ],
       ),

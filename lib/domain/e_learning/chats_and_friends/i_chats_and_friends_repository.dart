@@ -1,5 +1,6 @@
 import 'package:academic_master/domain/auth/user.dart';
 import 'package:academic_master/domain/core/firebase_failures.dart';
+import 'package:academic_master/domain/e_learning/chats_and_friends/chatroom.dart';
 import 'package:academic_master/domain/e_learning/chats_and_friends/message.dart';
 import 'package:dartz/dartz.dart';
 import 'package:kt_dart/kt.dart';
@@ -12,10 +13,27 @@ abstract class IChatsAndFriendsRepository {
   // does not have any branch **//
 
   Stream<Either<FirebaseFailure, List<User>>> watchAllUsersInOurClass(
-      String course, String? branch, String year);
+    String course,
+    String? branch,
+    String year,
+  );
 
 //create group message to disscuss their doubts in same class ;
   Future<Either<FirebaseFailure, Unit>> createGroupMessage(Message message);
 
   Stream<Either<FirebaseFailure, KtList<Message>>> watchGroupChatMessages();
+
+  //** CREATE PERSONAL CHAT MESSAGES ; */
+  Future<Either<FirebaseFailure, Unit>> createPersonalMessage(
+    Message message,
+    String partnerId,
+    Chatroom chatroom,
+  );
+
+//** WATCH PERSONAL CHAT MESSAGES : */
+  Stream<Either<FirebaseFailure, KtList<Message>>> watchPersonalChatMessages(
+    String partnerId,
+  );
+
+  Stream<Either<FirebaseFailure, KtList<Message>>> watchAllChatrooms();
 }

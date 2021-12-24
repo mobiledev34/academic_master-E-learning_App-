@@ -21,13 +21,17 @@ class Sujectile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(BoxConstraints(
-      maxHeight: MediaQuery.of(context).size.height,
-      maxWidth: MediaQuery.of(context).size.width,
-    ));
+    ScreenUtil.init(
+      BoxConstraints(
+        maxHeight: MediaQuery.of(context).size.height,
+        maxWidth: MediaQuery.of(context).size.width,
+      ),
+    );
     return Padding(
       padding: EdgeInsets.only(
-          bottom: 1.sw > 450 ? 0.h : 20.h, top: 1.sw > 450 ? 20.h : 1.h),
+        bottom: 1.sw > 450 ? 0.h : 20.h,
+        top: 1.sw > 450 ? 20.h : 1.h,
+      ),
       child: Container(
         decoration: BoxDecoration(
           color: Color(int.parse(backColor)),
@@ -42,7 +46,7 @@ class Sujectile extends StatelessWidget {
                 padding: EdgeInsets.only(left: 10.h, top: 10.h, bottom: 10.h),
                 child: Text(
                   title,
-                  style: Apptheme(context).normalText.copyWith(
+                  style: Apptheme(context).boldText.copyWith(
                         fontSize: 13.sp,
                       ),
                 ),
@@ -50,8 +54,11 @@ class Sujectile extends StatelessWidget {
             ),
             Expanded(
               child: IconButton(
-                icon: const Image(
-                  image: AssetImage("assets/images/download.png"),
+                icon: const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Image(
+                    image: AssetImage("assets/images/download.png"),
+                  ),
                 ),
                 onPressed: () async {
                   if ((defaultTargetPlatform == TargetPlatform.iOS) ||
