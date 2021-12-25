@@ -308,6 +308,7 @@ class UsersQuestions extends StatelessWidget {
           empty: (_) => const EmptyScreen(
             message: 'We do not have any question in your community',
             showLottie: true,
+            lottiefile: "assets/lottiefiles/network_issue.json",
           ),
         );
       },

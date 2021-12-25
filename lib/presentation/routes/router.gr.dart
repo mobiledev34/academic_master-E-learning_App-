@@ -8,79 +8,85 @@
 // AutoRouteGenerator
 // **************************************************************************
 
-import 'package:auto_route/auto_route.dart' as _i8;
-import 'package:flutter/material.dart' as _i9;
+import 'package:auto_route/auto_route.dart' as _i9;
+import 'package:flutter/material.dart' as _i10;
 
-import '../../domain/e_learning/question.dart' as _i10;
+import '../../domain/e_learning/question.dart' as _i11;
 import '../auth/sign_in_page.dart' as _i2;
 import '../e_learning/chats_and_friends/personal_chat_screen.dart' as _i7;
 import '../e_learning/chats_and_friends/students_group_chat_screen.dart' as _i6;
 import '../e_learning/e_learning_dashboard/question_and_comments/question_form.dart'
     as _i5;
 import '../e_learning/homepage.dart' as _i3;
+import '../e_learning/profile/edit_profile.dart' as _i8;
 import '../e_learning/subjects/widgets/subject_pdfview.dart' as _i4;
 import '../splash/splash_page.dart' as _i1;
 
-class AppRouter extends _i8.RootStackRouter {
-  AppRouter([_i9.GlobalKey<_i9.NavigatorState>? navigatorKey])
+class AppRouter extends _i9.RootStackRouter {
+  AppRouter([_i10.GlobalKey<_i10.NavigatorState>? navigatorKey])
       : super(navigatorKey);
 
   @override
-  final Map<String, _i8.PageFactory> pagesMap = {
+  final Map<String, _i9.PageFactory> pagesMap = {
     SplashRoute.name: (routeData) {
-      return _i8.MaterialPageX<dynamic>(
+      return _i9.MaterialPageX<dynamic>(
           routeData: routeData, child: _i1.SplashPage());
     },
     SignInRoute.name: (routeData) {
-      return _i8.MaterialPageX<dynamic>(
+      return _i9.MaterialPageX<dynamic>(
           routeData: routeData, child: _i2.SignInPage());
     },
     Homepage.name: (routeData) {
-      return _i8.MaterialPageX<dynamic>(
+      return _i9.MaterialPageX<dynamic>(
           routeData: routeData, child: _i3.Homepage());
     },
     SubjectPdfView.name: (routeData) {
       final args = routeData.argsAs<SubjectPdfViewArgs>();
-      return _i8.MaterialPageX<dynamic>(
+      return _i9.MaterialPageX<dynamic>(
           routeData: routeData, child: _i4.SubjectPdfView(args.url));
     },
     QuestionFormRoute.name: (routeData) {
       final args = routeData.argsAs<QuestionFormRouteArgs>(
           orElse: () => const QuestionFormRouteArgs());
-      return _i8.MaterialPageX<dynamic>(
+      return _i9.MaterialPageX<dynamic>(
           routeData: routeData,
           child: _i5.QuestionFormPage(
               key: args.key, editedQuestion: args.editedQuestion));
     },
     StudentsGroupChatScreen.name: (routeData) {
-      return _i8.MaterialPageX<dynamic>(
+      return _i9.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i6.StudentsGroupChatScreen());
     },
     PersonalChatScreen.name: (routeData) {
       final args = routeData.argsAs<PersonalChatScreenArgs>();
-      return _i8.MaterialPageX<dynamic>(
+      return _i9.MaterialPageX<dynamic>(
           routeData: routeData,
           child:
               _i7.PersonalChatScreen(key: args.key, partnerId: args.partnerId));
+    },
+    EditProfileRoute.name: (routeData) {
+      return _i9.MaterialPageX<dynamic>(
+          routeData: routeData, child: const _i8.EditProfilePage());
     }
   };
 
   @override
-  List<_i8.RouteConfig> get routes => [
-        _i8.RouteConfig(SplashRoute.name, path: '/'),
-        _i8.RouteConfig(SignInRoute.name, path: '/sign-in-page'),
-        _i8.RouteConfig(Homepage.name, path: '/Homepage'),
-        _i8.RouteConfig(SubjectPdfView.name, path: '/subject-pdf-view'),
-        _i8.RouteConfig(QuestionFormRoute.name, path: '/question-form-page'),
-        _i8.RouteConfig(StudentsGroupChatScreen.name,
+  List<_i9.RouteConfig> get routes => [
+        _i9.RouteConfig(SplashRoute.name, path: '/'),
+        _i9.RouteConfig(SignInRoute.name, path: '/sign-in-page'),
+        _i9.RouteConfig(Homepage.name, path: '/Homepage'),
+        _i9.RouteConfig(SubjectPdfView.name, path: '/subject-pdf-view'),
+        _i9.RouteConfig(QuestionFormRoute.name, path: '/question-form-page'),
+        _i9.RouteConfig(StudentsGroupChatScreen.name,
             path: '/students-group-chat-screen'),
-        _i8.RouteConfig(PersonalChatScreen.name, path: '/personal-chat-screen')
+        _i9.RouteConfig(PersonalChatScreen.name, path: '/personal-chat-screen'),
+        _i9.RouteConfig(EditProfileRoute.name, path: '/edit-profile-page')
       ];
 }
 
 /// generated route for
 /// [_i1.SplashPage]
-class SplashRoute extends _i8.PageRouteInfo<void> {
+class SplashRoute extends _i9.PageRouteInfo<void> {
   const SplashRoute() : super(SplashRoute.name, path: '/');
 
   static const String name = 'SplashRoute';
@@ -88,7 +94,7 @@ class SplashRoute extends _i8.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i2.SignInPage]
-class SignInRoute extends _i8.PageRouteInfo<void> {
+class SignInRoute extends _i9.PageRouteInfo<void> {
   const SignInRoute() : super(SignInRoute.name, path: '/sign-in-page');
 
   static const String name = 'SignInRoute';
@@ -96,7 +102,7 @@ class SignInRoute extends _i8.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i3.Homepage]
-class Homepage extends _i8.PageRouteInfo<void> {
+class Homepage extends _i9.PageRouteInfo<void> {
   const Homepage() : super(Homepage.name, path: '/Homepage');
 
   static const String name = 'Homepage';
@@ -104,7 +110,7 @@ class Homepage extends _i8.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i4.SubjectPdfView]
-class SubjectPdfView extends _i8.PageRouteInfo<SubjectPdfViewArgs> {
+class SubjectPdfView extends _i9.PageRouteInfo<SubjectPdfViewArgs> {
   SubjectPdfView({required String url})
       : super(SubjectPdfView.name,
             path: '/subject-pdf-view', args: SubjectPdfViewArgs(url: url));
@@ -125,8 +131,8 @@ class SubjectPdfViewArgs {
 
 /// generated route for
 /// [_i5.QuestionFormPage]
-class QuestionFormRoute extends _i8.PageRouteInfo<QuestionFormRouteArgs> {
-  QuestionFormRoute({_i9.Key? key, _i10.Question? editedQuestion})
+class QuestionFormRoute extends _i9.PageRouteInfo<QuestionFormRouteArgs> {
+  QuestionFormRoute({_i10.Key? key, _i11.Question? editedQuestion})
       : super(QuestionFormRoute.name,
             path: '/question-form-page',
             args: QuestionFormRouteArgs(
@@ -138,9 +144,9 @@ class QuestionFormRoute extends _i8.PageRouteInfo<QuestionFormRouteArgs> {
 class QuestionFormRouteArgs {
   const QuestionFormRouteArgs({this.key, this.editedQuestion});
 
-  final _i9.Key? key;
+  final _i10.Key? key;
 
-  final _i10.Question? editedQuestion;
+  final _i11.Question? editedQuestion;
 
   @override
   String toString() {
@@ -150,7 +156,7 @@ class QuestionFormRouteArgs {
 
 /// generated route for
 /// [_i6.StudentsGroupChatScreen]
-class StudentsGroupChatScreen extends _i8.PageRouteInfo<void> {
+class StudentsGroupChatScreen extends _i9.PageRouteInfo<void> {
   const StudentsGroupChatScreen()
       : super(StudentsGroupChatScreen.name,
             path: '/students-group-chat-screen');
@@ -160,8 +166,8 @@ class StudentsGroupChatScreen extends _i8.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i7.PersonalChatScreen]
-class PersonalChatScreen extends _i8.PageRouteInfo<PersonalChatScreenArgs> {
-  PersonalChatScreen({_i9.Key? key, required String partnerId})
+class PersonalChatScreen extends _i9.PageRouteInfo<PersonalChatScreenArgs> {
+  PersonalChatScreen({_i10.Key? key, required String partnerId})
       : super(PersonalChatScreen.name,
             path: '/personal-chat-screen',
             args: PersonalChatScreenArgs(key: key, partnerId: partnerId));
@@ -172,7 +178,7 @@ class PersonalChatScreen extends _i8.PageRouteInfo<PersonalChatScreenArgs> {
 class PersonalChatScreenArgs {
   const PersonalChatScreenArgs({this.key, required this.partnerId});
 
-  final _i9.Key? key;
+  final _i10.Key? key;
 
   final String partnerId;
 
@@ -180,4 +186,13 @@ class PersonalChatScreenArgs {
   String toString() {
     return 'PersonalChatScreenArgs{key: $key, partnerId: $partnerId}';
   }
+}
+
+/// generated route for
+/// [_i8.EditProfilePage]
+class EditProfileRoute extends _i9.PageRouteInfo<void> {
+  const EditProfileRoute()
+      : super(EditProfileRoute.name, path: '/edit-profile-page');
+
+  static const String name = 'EditProfileRoute';
 }

@@ -29,7 +29,7 @@ class Sujectile extends StatelessWidget {
     );
     return Padding(
       padding: EdgeInsets.only(
-        bottom: 1.sw > 450 ? 0.h : 20.h,
+        bottom: 1.sw > 450 ? 0.h : 10.h,
         top: 1.sw > 450 ? 20.h : 1.h,
       ),
       child: Container(

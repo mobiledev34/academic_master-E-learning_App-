@@ -12,8 +12,9 @@ import 'package:google_sign_in/google_sign_in.dart' as _i6;
 import 'package:injectable/injectable.dart' as _i2;
 
 import 'application/auth/auth_bloc.dart' as _i27;
+import 'application/auth/edit_profile/edit_profile_bloc.dart' as _i29;
 import 'application/auth/forgot_password_form/forgot_password_bloc.dart'
-    as _i29;
+    as _i30;
 import 'application/auth/register_form/register_form_bloc.dart' as _i17;
 import 'application/auth/sign_in_form/sign_in_form_bloc.dart' as _i18;
 import 'application/e_learning/add_question_form/add_question_form_bloc.dart'
@@ -27,9 +28,9 @@ import 'application/e_learning/chats_and_friends/add_personal_chat_message/add_p
 import 'application/e_learning/chats_and_friends/all_chatroom_watcher/all_chatroom_watcher_bloc.dart'
     as _i26;
 import 'application/e_learning/chats_and_friends/group_chat_message_actor/group_chat_message_actor_bloc.dart'
-    as _i30;
-import 'application/e_learning/chats_and_friends/group_chat_message_watcher/group_chat_message_watcher_bloc.dart'
     as _i31;
+import 'application/e_learning/chats_and_friends/group_chat_message_watcher/group_chat_message_watcher_bloc.dart'
+    as _i32;
 import 'application/e_learning/chats_and_friends/personal_chat_message_actor/personal_chat_message_actor_bloc.dart'
     as _i13;
 import 'application/e_learning/chats_and_friends/personal_chat_message_watcher/personal_chat_message_watcher_bloc.dart'
@@ -49,7 +50,7 @@ import 'domain/e_learning/chats_and_friends/i_chats_and_friends_repository.dart'
     as _i9;
 import 'domain/e_learning/i_e_learning_repository.dart' as _i11;
 import 'infrastructure/auth/firebase_auth_facade.dart' as _i8;
-import 'infrastructure/core/firebase_injectable_module.dart' as _i32;
+import 'infrastructure/core/firebase_injectable_module.dart' as _i33;
 import 'infrastructure/e_learning/chats_and_friends/chats_and_friends_repository.dart'
     as _i10;
 import 'infrastructure/e_learning/e_learning_repository.dart'
@@ -110,13 +111,15 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i27.AuthBloc>(() => _i27.AuthBloc(get<_i7.IAuthFacade>()));
   gh.factory<_i28.CommentsWatcherBloc>(
       () => _i28.CommentsWatcherBloc(get<_i11.IElearningRepository>()));
-  gh.factory<_i29.ForgotPasswordBloc>(
-      () => _i29.ForgotPasswordBloc(get<_i7.IAuthFacade>()));
-  gh.factory<_i30.GroupChatMessageActorBloc>(() =>
-      _i30.GroupChatMessageActorBloc(get<_i9.IChatsAndFriendsRepository>()));
-  gh.factory<_i31.GroupChatMessageWatcherBloc>(() =>
-      _i31.GroupChatMessageWatcherBloc(get<_i9.IChatsAndFriendsRepository>()));
+  gh.factory<_i29.EditProfileBloc>(
+      () => _i29.EditProfileBloc(get<_i7.IAuthFacade>()));
+  gh.factory<_i30.ForgotPasswordBloc>(
+      () => _i30.ForgotPasswordBloc(get<_i7.IAuthFacade>()));
+  gh.factory<_i31.GroupChatMessageActorBloc>(() =>
+      _i31.GroupChatMessageActorBloc(get<_i9.IChatsAndFriendsRepository>()));
+  gh.factory<_i32.GroupChatMessageWatcherBloc>(() =>
+      _i32.GroupChatMessageWatcherBloc(get<_i9.IChatsAndFriendsRepository>()));
   return get;
 }
 
-class _$FirebaseInjectableModule extends _i32.FirebaseInjectableModule {}
+class _$FirebaseInjectableModule extends _i33.FirebaseInjectableModule {}

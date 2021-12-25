@@ -5,6 +5,7 @@ import 'package:auto_route/auto_route.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lottie/lottie.dart';
 
 class SplashPage extends StatelessWidget {
   @override
@@ -25,9 +26,9 @@ class SplashPage extends StatelessWidget {
         );
       },
       child: Scaffold(
-        body: SafeArea(
-          child: Text(
-            "......${MediaQuery.of(context).size.height}  x ${MediaQuery.of(context).size.width},",
+        body: Center(
+          child: Lottie.asset(
+            "assets/lottiefiles/splash.json", height: 150, width: 150,
           ),
         ),
       ),

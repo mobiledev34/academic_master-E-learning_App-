@@ -4,10 +4,12 @@ import 'package:lottie/lottie.dart';
 class EmptyScreen extends StatelessWidget {
   final String message;
   final bool showLottie;
+  final String? lottiefile;
   const EmptyScreen({
     Key? key,
     required this.message,
     required this.showLottie,
+    this.lottiefile,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class EmptyScreen extends StatelessWidget {
         Text('Empty!', style: Theme.of(context).textTheme.headline4),
         if (showLottie)
           Lottie.asset(
-            "assets/lottiefiles/empty_chat.json",
+            lottiefile ?? "assets/lottiefiles/empty_chat.json",
             repeat: false,
           )
         else

@@ -2,6 +2,7 @@ import 'package:academic_master/domain/auth/auth_failure.dart';
 import 'package:academic_master/domain/auth/i_auth_facade.dart';
 import 'package:academic_master/domain/auth/user.dart';
 import 'package:academic_master/domain/auth/value_objects.dart';
+import 'package:academic_master/domain/core/firebase_failures.dart';
 import 'package:academic_master/domain/core/value_objects.dart';
 import 'package:academic_master/infrastructure/core/firestore_helpers.dart';
 import 'package:academic_master/infrastructure/core/user_dtos.dart';
@@ -156,6 +157,65 @@ class FirebaseAuthFacade implements IAuthFacade {
       return right(unit);
     } on FirebaseException catch (_) {
       return left(const AuthFailure.serverError());
+    }
+  }
+
+//**IMPLEMENTS EDIT PROFILE DETAILS METHOD */
+  @override
+  Future<Either<FirebaseFailure, Unit>> editProfile({
+    required EmailAddress emailAddress,
+    required Name name,
+    required PhoneNumber phoneNumber,
+    required Branch branch,
+    required Course course,
+    required College college,
+    required Year year,
+  }) async {
+    try {
+      debugPrint("im gone ....");
+      final userCollection = await _firestore.usersCollection();
+
+      _firebaseAuth.currentUser!.uid;
+
+      debugPrint(
+          "this is email ${emailAddress.getorCrash()}nd namestr ${name.getorCrash()}");
+
+      final emailAddressStr = emailAddress.getorCrash();
+      final nameStr = name.getorCrash();
+      final phoneNumberStr = phoneNumber.getorCrash();
+      final branchStr = branch.getorCrash();
+      final courseStr = course.getorCrash();
+      final collegeStr = college.getorCrash();
+      final yearStr = year.getorCrash();
+
+      debugPrint("im......");
+
+      final user = User(
+        id: UniqueId.fromUniqueString(_firebaseAuth.currentUser!.uid),
+        email: EmailAddress(emailAddressStr),
+        name: Name(nameStr),
+        contactNumber: PhoneNumber(phoneNumberStr),
+        branch: Branch(branchStr),
+        course: Course(courseStr),
+        college: College(collegeStr),
+        year: Year(yearStr),
+      );
+
+      final userDto = UserDto.fromDomain(user);
+
+      debugPrint("im gone to edit in infra");
+
+      await userCollection.doc(userDto.id).update(userDto.toJson());
+      debugPrint("im gone to edit infra layer done");
+
+       
+
+      return right(unit);
+    } on FirebaseException catch (_) {
+      debugPrint("im error in infra...... $_");
+      return left(
+        const FirebaseFailure.unableToUpdate(),
+      );
     }
   }
 }

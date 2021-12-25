@@ -18,6 +18,9 @@ class InputField extends StatefulWidget {
   final void Function()? onTap;
   final int? maxLines;
   final int? minLines;
+  final TextStyle? textStyle;
+  final InputBorder? inputBorder;
+  final InputBorder? focusBorder;
 
   const InputField({
     Key? key,
@@ -38,6 +41,9 @@ class InputField extends StatefulWidget {
     this.maxLines,
     this.minLines,
     this.onTap,
+    this.textStyle,
+    this.inputBorder,
+    this.focusBorder,
   }) : super(key: key);
 
   @override
@@ -60,6 +66,7 @@ class _InputFieldState extends State<InputField> {
       child: GestureDetector(
         onDoubleTap: () => widget.onDoubleTap,
         child: TextFormField(
+          style: widget.textStyle,
           validator: widget.validator,
           onChanged: widget.onChanged,
           readOnly: widget.readOnly,
@@ -74,13 +81,15 @@ class _InputFieldState extends State<InputField> {
           decoration: InputDecoration(
             helperText: widget.helperText,
             fillColor: widget.backgroundColor,
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(30),
-              borderSide: const BorderSide(
-                width: 1,
-                style: BorderStyle.none,
-              ),
-            ),
+            border: widget.inputBorder ??
+                OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30),
+                  borderSide: const BorderSide(
+                    width: 1,
+                    style: BorderStyle.none,
+                  ),
+                ),
+            focusedBorder: widget.focusBorder,
             suffixIcon: widget.isPassword
                 ? InkResponse(
                     onTap: () {
