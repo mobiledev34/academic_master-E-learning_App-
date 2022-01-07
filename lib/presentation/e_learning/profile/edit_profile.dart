@@ -56,11 +56,11 @@ class EditProfilePage extends StatelessWidget {
                             value.users.first.email.getorCrash(),
                           ),
                         );
-                    context.read<EditProfileBloc>().add(
-                          EditProfileEvent.nameChanged(
-                            value.users.first.name.getorCrash(),
-                          ),
-                        );
+                    // context.read<EditProfileBloc>().add(
+                    //       EditProfileEvent.nameChanged(
+                    //         value.users.first.name.getorCrash(),
+                    //       ),
+                    //     );
                     context.read<EditProfileBloc>().add(
                           EditProfileEvent.courseChanged(
                             value.users.first.course.getorCrash(),
@@ -81,11 +81,11 @@ class EditProfilePage extends StatelessWidget {
                           EditProfileEvent.phoneNumberChanged(
                               value.users.first.contactNumber.getorCrash()),
                         );
-                    context.read<EditProfileBloc>().add(
-                          EditProfileEvent.collegeChanged(
-                            value.users.first.college.getorCrash(),
-                          ),
-                        );
+                    // context.read<EditProfileBloc>().add(
+                    //       EditProfileEvent.collegeChanged(
+                    //         value.users.first.college.getorCrash(),
+                    //       ),
+                    //     );
 
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -151,6 +151,7 @@ class EditProfilePage extends StatelessWidget {
                           inputBorder: const UnderlineInputBorder(),
                           focusBorder: const UnderlineInputBorder(),
                           onChanged: (value) {
+                            debugPrint("this is name changed");
                             context
                                 .read<EditProfileBloc>()
                                 .add(EditProfileEvent.nameChanged(value!));
