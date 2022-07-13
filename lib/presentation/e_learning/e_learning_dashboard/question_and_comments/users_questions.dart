@@ -5,6 +5,7 @@ import 'package:academic_master/presentation/core/critical_failure.dart';
 import 'package:academic_master/presentation/core/empty.dart';
 import 'package:academic_master/presentation/core/user_dp.dart';
 import 'package:academic_master/presentation/theme/theme.dart';
+import 'package:academic_master/presentation/utils/add_helper.dart';
 import 'package:academic_master/presentation/utils/constants.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:selectable_autolink_text/selectable_autolink_text.dart';
 import 'package:share/share.dart';
@@ -20,11 +23,47 @@ import 'package:url_launcher/url_launcher.dart';
 import '../widgets/post_crud_popup.dart';
 import 'users_comments.dart';
 
-class UsersQuestions extends StatelessWidget {
+class UsersQuestions extends StatefulWidget {
+  @override
+  State<UsersQuestions> createState() => _UsersQuestionsState();
+}
+
+class _UsersQuestionsState extends State<UsersQuestions> {
+  late BannerAd _bannerAd;
+
+  bool _isBannerAdReady = false;
+  Future<InitializationStatus> _initGoogleMobileAds() {
+    // TODO: Initialize Google Mobile Ads SDK
+    return MobileAds.instance.initialize();
+  }
+
+  @override
+  void initState() {
+    // _initGoogleMobileAds();
+    // _bannerAd = BannerAd(
+    //   adUnitId: AdHelper.bannerAdUnitId,
+    //   request: const AdRequest(),
+    //   size: AdSize.banner,
+    //   listener: BannerAdListener(
+    //     onAdLoaded: (_) {
+    //       setState(() {
+    //         _isBannerAdReady = true;
+    //       });
+    //     },
+    //     onAdFailedToLoad: (ad, err) {
+    //       _isBannerAdReady = false;
+    //       ad.dispose();
+    //     },
+    //   ),
+    // );
+
+    // _bannerAd.load();
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    // Size size = MediaQuery.of(context).size;
-
     return BlocBuilder<QuestionWatcherBloc, QuestionWatcherState>(
       builder: (context, state) {
         return state.map(
@@ -38,7 +77,8 @@ class UsersQuestions extends StatelessWidget {
             return ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              itemCount: state.questions.size,
+              itemCount: 1,
+              // state.questions.size,
               itemBuilder: (
                 context,
                 index,
@@ -63,6 +103,15 @@ class UsersQuestions extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        if (_isBannerAdReady)
+                          Align(
+                            alignment: Alignment.topCenter,
+                            child: SizedBox(
+                              width: _bannerAd.size.width.toDouble(),
+                              height: _bannerAd.size.height.toDouble(),
+                              child: AdWidget(ad: _bannerAd),
+                            ),
+                          ),
                         Row(
                           children: [
                             Userdp(),
@@ -76,16 +125,16 @@ class UsersQuestions extends StatelessWidget {
                                     UsersWatcherState>(
                                   builder: (context, newState) {
                                     return newState.map(
-                                        empty: (_) => const SizedBox(),
-                                        initial: (value) => const SizedBox(),
-                                        loadFailure: (value) =>
-                                            const SizedBox(),
-                                        loadInProgress: (value) =>
-                                            const SizedBox(),
-                                        loadSuccess: (value) {
-                                          return Text(value.users.first.name
-                                              .getorCrash());
-                                        });
+                                      empty: (_) => const SizedBox(),
+                                      initial: (value) => const SizedBox(),
+                                      loadFailure: (value) => const SizedBox(),
+                                      loadInProgress: (value) =>
+                                          const SizedBox(),
+                                      loadSuccess: (value) {
+                                        return Text(value.users.first.name
+                                            .getorCrash());
+                                      },
+                                    );
                                   },
                                 ),
                                 SizedBox(height: 5.h),
@@ -235,7 +284,14 @@ class UsersQuestions extends StatelessWidget {
                             Column(
                               children: [
                                 IconButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Fluttertoast.showToast(
+                                      msg:
+                                          "This feature is currently unavailable",
+                                      backgroundColor: Apptheme.primaryColor,
+                                      textColor: Apptheme.assentColor,
+                                    );
+                                  },
                                   icon: const Icon(
                                     FeatherIcons.thumbsUp,
                                     color: Apptheme.primaryColor,
@@ -313,5 +369,11 @@ class UsersQuestions extends StatelessWidget {
         );
       },
     );
+  }
+
+  @override
+  void dispose() {
+    _bannerAd.dispose();
+    super.dispose();
   }
 }

@@ -56,25 +56,25 @@ class StudentsGroupChatScreen extends StatelessWidget {
                 actions: [
                   IconButton(
                     onPressed: () {
-                      showGeneralDialog(
-                        barrierLabel: "Barrier",
-                        barrierDismissible: true,
-                        barrierColor: Colors.black.withOpacity(0.5),
-                        transitionDuration: Duration(milliseconds: 800),
-                        context: context,
-                        pageBuilder: (_, __, ___) {
-                          return Text("reported");
-                          // return ReportPopup();
-                        },
-                        transitionBuilder: (_, anim, __, child) {
-                          return SlideTransition(
-                            position:
-                                Tween(begin: Offset(1, 3), end: Offset(0, 0))
-                                    .animate(anim),
-                            child: child,
-                          );
-                        },
-                      );
+                      // showGeneralDialog(
+                      //   barrierLabel: "Barrier",
+                      //   barrierDismissible: true,
+                      //   barrierColor: Colors.black.withOpacity(0.5),
+                      //   transitionDuration: Duration(milliseconds: 800),
+                      //   context: context,
+                      //   pageBuilder: (_, __, ___) {
+                      //     return Text("reported");
+                      //     // return ReportPopup();
+                      //   },
+                      //   transitionBuilder: (_, anim, __, child) {
+                      //     return SlideTransition(
+                      //       position:
+                      //           Tween(begin: Offset(1, 3), end: Offset(0, 0))
+                      //               .animate(anim),
+                      //       child: child,
+                      //     );
+                      //   },
+                      // );
                     },
                     icon: const Icon(
                       LineIcons.infoCircle,
